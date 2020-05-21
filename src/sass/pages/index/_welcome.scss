@@ -1,0 +1,35 @@
+
+.welcome{
+
+  padding: 80px 0 150px 0;
+  background-size:auto,auto;
+  background-repeat: no-repeat,no-repeat;
+  background-position: 3% 17%, 97% 7%;
+  @include respond-to(lg){
+    background-position: 1000% 1000%, 1000% 1000%;
+  }
+  .welcome__title{
+    color: $dark;
+    text-align: center;
+  }
+  .welcome__description{
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .welcome__item{
+    @include respond-to(lg){
+      margin-bottom: 40px;
+    }
+    .welcome__item-img{
+      width: 100%;
+      height: auto;
+      margin-bottom: 30px;
+    }
+    .welcome__item-title{
+      color: $dark;
+      text-align: center;
+      margin-bottom: 0;
+    }
+  }
+
+}

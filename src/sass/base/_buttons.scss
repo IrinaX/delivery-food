@@ -1,0 +1,34 @@
+@import "../variables";
+
+.btn {
+  border-radius: 80px;
+  font-family: "Poster Bodoni", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 100%;
+  display: block;
+  text-align: center;
+  padding: 13px 30px;
+  border: none;
+  box-sizing: border-box;
+  color: $primary;
+  &.btn_primary {
+background-color: $danger;
+  }
+
+  &.btn_secondary {
+    background-color: $green;
+  }
+
+  &.btn_dark {
+    background-color: $brown;
+  }
+
+  &.btn_link {
+    background: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+}

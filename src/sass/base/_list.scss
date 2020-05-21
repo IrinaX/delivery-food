@@ -1,0 +1,19 @@
+ul.list-styled {
+  li {
+    list-style: none;
+    position: relative;
+  }
+
+  li:before {
+    content: "";
+    background: #003c4d;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    line-height: 1rem;
+    top: 0.7rem;
+    left: -15px;
+    border-radius: 50% 0 50% 50%;
+    transform: rotate(45deg);
+  }
+}

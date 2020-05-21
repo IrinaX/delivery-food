@@ -1,0 +1,29 @@
+.swiper-container{
+  padding: 0 15px;
+}
+.swiper-button-next, .swiper-button-prev {
+  &:after {
+    content: none;
+  }
+  display: block;
+  align-items: initial;
+  justify-content: initial;
+  color: rgba($secondary,.8);
+  width: auto;
+  height: auto;
+  .fas {
+    font-size: 50px;
+  }
+}
+.swiper-button-next{
+  right: 0;
+}
+.swiper-button-prev{
+  left: 0;
+}
+
+.reviews-swiper{
+  .swiper-button-next, .swiper-button-prev {
+    color: rgba($light,.8);
+  }
+}

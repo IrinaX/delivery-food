@@ -1,0 +1,23 @@
+.reviews {
+  padding: 120px 0;
+
+  .reviews__title {
+    color: $dark;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .reviews__item {
+    padding: 0 30px;
+    text-align: center;
+
+    .reviews__item-title {
+      color: $dark;
+      margin-bottom: 25px;
+    }
+
+    .reviews__item-text {
+      font-size: 16px;
+    }
+  }
+}

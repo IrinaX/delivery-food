@@ -1,0 +1,97 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include respond-to(lg){
+    flex-wrap: wrap;
+  }
+  @include respond-to(sm){
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .navbar-nav {
+    @include respond-to(lg){
+      order:1;
+    }
+    @include respond-to(sm){
+      margin-bottom: 20px;
+      flex-direction: column;
+    }
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+    .nav-item {
+      @include respond-to(sm){
+        margin-right: 0;
+        margin-bottom: 20px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+        text-align: center;
+      }
+      margin-right: 40px;
+      &:last-child{
+        margin-right: 0;
+      }
+      .nav-link {
+        font-size: 18px;
+        font-family: "Poster Bodoni", Helvetica, Arial, sans-serif;
+        line-height: 28px;
+        font-weight: 400;
+        font-style: normal;
+
+        &.active {
+          border-bottom: 3px solid $primary;
+        }
+      }
+    }
+  }
+  .navbar-brand {
+    @include respond-to(lg){
+      order: 0;
+    }
+    font-size: 88px;
+    font-family: "Streetbrush", serif;
+    color: $primary;
+    text-align: center;
+    span{
+      display: block;
+      transform: rotate(-10deg);
+      @include respond-to(sm){
+        padding-bottom: 40px;
+        margin-bottom: 0;
+      }
+    }
+
+  }
+  .nav-contact {
+    @include respond-to(lg){
+      order: 2;
+      margin-right: 0;
+      margin-left: auto;
+    }
+    @include respond-to(sm){
+      margin-right: auto;
+
+    }
+    .nav-link {
+      font-family: "Poster Bodoni", Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 400;
+      color: $secondary;
+      text-transform: capitalize;
+      .fas {
+      }
+      .fa-phone-alt {
+      }
+
+    }
+  }
+
+}
+

@@ -1,0 +1,100 @@
+@import "../variables";
+@font-face {
+  font-family: "Poster Bodoni";
+  font-style: normal;
+  src: url("../fonts/PosterBodoni.svg") format('svg'),
+  url("../fonts/PosterBodoni.woff") format('woff'),
+  url("../fonts/PosterBodoni.woff2") format('woff2'),
+  url("../fonts/PosterBodoni.eot") format('eot'),
+  url("../fonts/PosterBodoni.otf") format('otf'),
+  url("../fonts/PosterBodoni.ttf") format('ttf');
+}
+@font-face {
+  font-family: "Streetbrush";
+  font-style: normal;
+  src: url("../fonts/StreetbrushW01-Regular.svg") format('svg'),
+  url("../fonts/StreetbrushW01-Regular.woff") format('woff'),
+  url("../fonts/StreetbrushW01-Regular.woff2") format('woff2'),
+  url("../fonts/StreetbrushW01-Regular.eot") format('eot'),
+  url("../fonts/StreetbrushW01-Regular.otf") format('otf'),
+  url("../fonts/StreetbrushW01-Regular.ttf") format('ttf');
+}
+
+
+body {
+  font: $base-font;
+  color: #848484;
+}
+
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+  font-weight: bold;
+}
+
+h1, .h1 {
+  font: $h1-font;
+  margin-bottom: $h1-margin-bottom;
+}
+
+h2, .h2 {
+  font: $h2-font;
+  margin-bottom: $h2-margin-bottom;
+}
+
+h3, .h3 {
+  font: $h3-font;
+  margin-bottom: $h3-margin-bottom;
+}
+
+h4, .h4 {
+  font: $h4-font;
+  margin-bottom: $h4-margin-bottom;
+}
+
+h5, .h5 {
+  font: $h5-font;
+  margin-bottom: $h5-margin-bottom;
+}
+
+@include respond-to(sm) {
+  //body{
+  //  font-size: 14px;
+  //}
+
+  h1, .h1 {
+    font: $h1-font-sm;
+  }
+
+  h2, .h2 {
+    font: $h2-font-sm;
+  }
+
+  h3, .h3 {
+    font: $h3-font-sm;
+  }
+
+  h4, .h4 {
+    font: $h4-font-sm;
+  }
+
+  h5, .h5 {
+    font: $h5-font-sm;
+  }
+}
+
+a {
+  color: $primary;
+
+  &:hover {
+    text-decoration: none;
+    color: $primary;
+  }
+}
+
+p, .list-styled {
+  a {
+    border-bottom: 1px dashed orange;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

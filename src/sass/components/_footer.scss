@@ -1,0 +1,79 @@
+.footer {
+  padding: 0 0 130px;
+  background-size: contain, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center top, center bottom;
+  @include respond-to(xl) {
+    background-size: auto, cover;
+  }
+
+  .scroll-up-btn {
+    border: none;
+    color: $primary;
+    margin: 0 auto 120px;
+    border-radius: 50%;
+    background-color: $secondary;
+    display: block;
+    text-align: center;
+    padding: 17px;
+    font-size: 43px;
+    height: 80px;
+    width: 80px;
+  }
+
+  .footer__address {
+    font-family: "Poster Bodoni", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    line-height: 150%;
+    color: $primary;
+    @include respond-to(lg) {
+      font-size: 24px;
+    }
+    @include respond-to(md) {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 22px;
+    }
+  }
+
+  .footer__contact {
+    font-family: "Poster Bodoni", Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    line-height: 30px;
+    @include respond-to(lg) {
+      text-align: right;
+    }
+    @include respond-to(md) {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+
+    .footer__contact-link {
+      margin-bottom: 15px;
+      display: block;
+      color: $secondary;
+      @include respond-to(md) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .footer__social {
+    text-align: right;
+    @include respond-to(md) {
+      text-align: center;
+    }
+
+    .footer__social-link {
+      margin-right: 30px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      font-size: 36px;
+      color: $primary;
+    }
+  }
+}

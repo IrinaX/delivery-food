@@ -1,0 +1,9 @@
+.index-menu{
+  padding: 130px 0 80px;
+  background-size:auto,auto;
+  background-repeat: no-repeat,no-repeat;
+  background-position: 3% 85%, right top;
+  @include respond-to(lg){
+    background-position: 1000% 1000%, 1000% 1000%;
+  }
+}

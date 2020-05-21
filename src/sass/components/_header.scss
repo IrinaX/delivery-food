@@ -1,0 +1,17 @@
+.header {
+  padding: 30px 0 135px 0;
+  background-size: contain, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center bottom, center center;
+  @include respond-to(xl) {
+    background-size: auto, cover;
+  }
+  @include respond-to(md) {
+    background-size: auto, cover;
+    background-position: center bottom, center center;
+  }
+  @include respond-to(sm) {
+    padding: 30px 0 90px 0;
+  }
+}
+
