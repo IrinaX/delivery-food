@@ -30,7 +30,7 @@
 						<span>pizzeria</span>
 					</a>
 					<div class="nav-contact">
-						<a class="nav-link" href="tel:20700659993"><i class="fas fa-phone-alt"></i> Orders: +20 (700)
+						<a class="nav-link" href="tel:20700659993"><span><i class="fas fa-phone-alt"></i> Orders: </span> +20 (700)
 							659 993</a>
 					</div>
 				</nav>
@@ -39,225 +39,125 @@
 	</div>
 </header>
 <main>
-	<section class="wrapper menu"
-	         style="background-image:url('images/menu-bg/pizza.jpg'),url('images/menu-bg/vegetables.jpg'),url('images/menu-bg/croissant.jpg'),url('images/menu-bg/leaves.jpg');">
+	<section class="wrapper menu" style="background-image:url('images/menu-bg/pizza.jpg'),url('images/menu-bg/vegetables.jpg');">
 		<div class="container">
-			<h2 class="menu__title">Our Menu</h2>
-			<div class="row">
-				<div class="col-6">
-					<div class="main-menu">
-						<div class="price-list">
-							<div class="price-list__item">
-								<div class="price-list__item-main">
-									<div class="price-list__item-name">Roast chicken & crispy bread</div>
-									<div class="price-list__item-dotted-separator"></div>
-									<div class="price-list__item-price">$11.99</div>
+			<h2 class="menu__title">
+				Our Menu
+			</h2>
+			<div class="tabs">
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="first-group-product-tab" data-toggle="tab"
+						   href="#first-group-product" role="tab" aria-controls="first-group-product"
+						   aria-selected="true">Pizzas</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="second-group-product-tab" data-toggle="tab" href="#second-group-product"
+						   role="tab" aria-controls="second-group-product" aria-selected="false">Salads</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="third-group-product-tab" data-toggle="tab" href="#third-group-product"
+						   role="tab" aria-controls="third-group-product" aria-selected="false">Deserts</a>
+					</li>
+				</ul>
+				<div class="tab-content" id="myTabContent">
+					<div class="tab-pane fade show active" id="first-group-product" role="tabpanel"
+					     aria-labelledby="first-group-product-tab">
+						<div class="product-card__wrap">
+							<div class="product-card">
+								<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png"
+								                                         alt="">
 								</div>
-								<div class="price-list__item-description">olive oil, lemon, garlic, ciabatta, pine
-									nuts
+								<h5 class="product-card__title">Veggie Fresco Pizza</h5>
+								<div class="product-card__subtitle">Tomato, Green Peppers, Onions, Mushrooms,
+									Black-Olives,
+									Melted Mozzarella, Perfect Stone Fired Crust
 								</div>
+								<div class="product-card__price">$18.99</div>
+								<button class="product-card__btn btn btn_primary">Make an Offer</button>
 							</div>
-							<div class="price-list__item">
-								<div class="price-list__item-main">
-									<div class="price-list__item-name">Golden Chevre</div>
-									<div class="price-list__item-dotted-separator"></div>
-									<div class="price-list__item-price">$13.99</div>
+							<div class="product-card">
+								<div class="product-card__img-wrap"><img src="images/menu/Best-Pizza.png" alt=""></div>
+								<h5 class="product-card__title">Best Pizza</h5>
+								<div class="product-card__subtitle">Tomato, Green Peppers, Onions, Mushrooms,
+									Black-Olives,
+									Melted Mozzarella, Perfect Stone Fired Crust
 								</div>
-								<div class="price-list__item-description">breaded goat cheese, mixed greens,
-									strawberries, dried cranberries
-								</div>
+								<div class="product-card__price">$14.99</div>
+								<button class="product-card__btn btn btn_primary">Make an Offer</button>
 							</div>
-							<div class="price-list__item">
-								<div class="price-list__item-main">
-									<div class="price-list__item-name">Spinach Salad</div>
-									<div class="price-list__item-dotted-separator"></div>
-									<div class="price-list__item-price">$14.99</div>
-								</div>
-								<div class="price-list__item-description">spinach, raisins, walnuts, gorgonzola,
-									balsamic & dijon vinaigrette
-								</div>
-							</div>
-							<div class="price-list__item">
-								<div class="price-list__item-main">
-									<div class="price-list__item-name">Chop Salad</div>
-									<div class="price-list__item-dotted-separator"></div>
-									<div class="price-list__item-price">$15.99</div>
-								</div>
-								<div class="price-list__item-description">romaine, egg, red onion, tomato, bleu cheese,
-									bacon
-								</div>
-							</div>
-							<div class="price-list__item">
-								<div class="price-list__item-main">
-									<div class="price-list__item-name">Caesar</div>
-									<div class="price-list__item-dotted-separator"></div>
-									<div class="price-list__item-price">$14.99</div>
-								</div>
-								<div class="price-list__item-description">romaine, parmesan</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-6">
-					<div class="main-menu">
-					<div class="price-list">
-						<div class="price-list__item">
-							<div class="price-list__item-main">
-								<div class="price-list__item-name">Roast chicken & crispy bread</div>
-								<div class="price-list__item-dotted-separator"></div>
-								<div class="price-list__item-price">$11.99</div>
-							</div>
-							<div class="price-list__item-description">olive oil, lemon, garlic, ciabatta, pine
-								nuts
-							</div>
-						</div>
-						<div class="price-list__item">
-							<div class="price-list__item-main">
-								<div class="price-list__item-name">Golden Chevre</div>
-								<div class="price-list__item-dotted-separator"></div>
-								<div class="price-list__item-price">$13.99</div>
-							</div>
-							<div class="price-list__item-description">breaded goat cheese, mixed greens,
-								strawberries, dried cranberries
-							</div>
-						</div>
-						<div class="price-list__item">
-							<div class="price-list__item-main">
-								<div class="price-list__item-name">Spinach Salad</div>
-								<div class="price-list__item-dotted-separator"></div>
-								<div class="price-list__item-price">$14.99</div>
-							</div>
-							<div class="price-list__item-description">spinach, raisins, walnuts, gorgonzola,
-								balsamic & dijon vinaigrette
-							</div>
-						</div>
-						<div class="price-list__item">
-							<div class="price-list__item-main">
-								<div class="price-list__item-name">Chop Salad</div>
-								<div class="price-list__item-dotted-separator"></div>
-								<div class="price-list__item-price">$15.99</div>
-							</div>
-							<div class="price-list__item-description">romaine, egg, red onion, tomato, bleu cheese,
-								bacon
-							</div>
-						</div>
-						<div class="price-list__item">
-							<div class="price-list__item-main">
-								<div class="price-list__item-name">Caesar</div>
-								<div class="price-list__item-dotted-separator"></div>
-								<div class="price-list__item-price">$14.99</div>
-							</div>
-							<div class="price-list__item-description">romaine, parmesan</div>
-						</div>
-					</div>
-					</div>
-				</div>
-			</div>
-			<div class="menu-right">
-				<h3 class="menu-right__title">Salads</h3>
-				<div class="row">
-					<div class="col-lg-6 col-12">
-						<div class="menu__img-wrap">
-							<img class="menu__img" src="images/menu/steak.jpg" alt="">
-						</div>
-					</div>
-					<div class="col-lg-6 col-12">
-						<div class="price-list">
-							<div class="price-list__item">
-								<div class="price-list__item-main">
-									<div class="price-list__item-name">Roast chicken & crispy bread</div>
-									<div class="price-list__item-dotted-separator"></div>
-									<div class="price-list__item-price">$11.99</div>
-								</div>
-								<div class="price-list__item-description">olive oil, lemon, garlic, ciabatta, pine
-									nuts
-								</div>
-							</div>
-							<div class="price-list__item">
-								<div class="price-list__item-main">
-									<div class="price-list__item-name">Golden Chevre</div>
-									<div class="price-list__item-dotted-separator"></div>
-									<div class="price-list__item-price">$13.99</div>
-								</div>
-								<div class="price-list__item-description">breaded goat cheese, mixed greens,
-									strawberries, dried cranberries
-								</div>
-							</div>
-							<div class="price-list__item">
-								<div class="price-list__item-main">
-									<div class="price-list__item-name">Spinach Salad</div>
-									<div class="price-list__item-dotted-separator"></div>
-									<div class="price-list__item-price">$14.99</div>
-								</div>
-								<div class="price-list__item-description">spinach, raisins, walnuts, gorgonzola,
-									balsamic & dijon vinaigrette
-								</div>
-							</div>
-							<div class="price-list__item">
-								<div class="price-list__item-main">
-									<div class="price-list__item-name">Chop Salad</div>
-									<div class="price-list__item-dotted-separator"></div>
-									<div class="price-list__item-price">$15.99</div>
-								</div>
-								<div class="price-list__item-description">romaine, egg, red onion, tomato, bleu cheese,
-									bacon
-								</div>
-							</div>
-							<div class="price-list__item">
-								<div class="price-list__item-main">
-									<div class="price-list__item-name">Caesar</div>
-									<div class="price-list__item-dotted-separator"></div>
-									<div class="price-list__item-price">$14.99</div>
-								</div>
-								<div class="price-list__item-description">romaine, parmesan</div>
-							</div>
-							<button class="btn btn_secondary">See Salads</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="menu-left">
-				<h3 class="menu-left__title">Deserts</h3>
-				<div class="row">
-					<div class="col-lg-6 order-lg-0 order-1 col-12">
-						<div class="price-list">
-							<div class="price-list__item">
-								<div class="price-list__item-main">
-									<div class="price-list__item-name">Lychee Icecream</div>
-									<div class="price-list__item-dotted-separator"></div>
-									<div class="price-list__item-price">$5.99</div>
-								</div>
-								<div class="price-list__item-description">Lychee Flavored Ice Cream</div>
-							</div>
-							<div class="price-list__item">
-								<div class="price-list__item-main">
-									<div class="price-list__item-name">Coconut Icecream</div>
-									<div class="price-list__item-dotted-separator"></div>
-									<div class="price-list__item-price">$4.99</div>
-								</div>
-								<div class="price-list__item-description">Coconut Flavored Indian Ice Cream</div>
-							</div>
-							<div class="price-list__item">
-								<div class="price-list__item-main">
-									<div class="price-list__item-name">Mint Lemonade</div>
-									<div class="price-list__item-dotted-separator"></div>
-									<div class="price-list__item-price">$3.99</div>
-								</div>
-								<div class="price-list__item-description">Mint Flavored Lemonade</div>
-							</div>
-							<button class="btn btn_dark">See Deserts</button>
-						</div>
-					</div>
-					<div class="col-lg-6 order-lg-0 order-0 col-12">
-						<div class="menu__img-wrap">
-							<img class="menu__img" src="images/menu/cake.jpg" alt="">
-						</div>
-					</div>
-				</div>
 
+						</div>
+					</div>
+					<div class="tab-pane fade" id="second-group-product" role="tabpanel"
+					     aria-labelledby="second-group-product-tab">
+						<div class="product-card__wrap">
+							<div class="product-card">
+								<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt="">
+								</div>
+								<h5 class="product-card__title">Roast chicken & crispy bread</h5>
+								<div class="product-card__subtitle">olive oil, lemon, garlic, ciabatta, pine nuts</div>
+								<div class="product-card__price">$11.99</div>
+								<button class="product-card__btn btn btn_primary">Make an Offer</button>
+							</div>
+							<div class="product-card">
+								<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt=""></div>
+								<h5 class="product-card__title">Golden Chevre</h5>
+								<div class="product-card__subtitle">breaded goat cheese, mixed greens, strawberries, dried cranberries</div>
+								<div class="product-card__price">$13.99</div>
+								<button class="product-card__btn btn btn_primary">Make an Offer</button>
+							</div>
+							<div class="product-card">
+								<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt="">
+								</div>
+								<h5 class="product-card__title">Spinach Salad</h5>
+								<div class="product-card__subtitle">spinach, raisins, walnuts, gorgonzola, balsamic & dijon vinaigrette</div>
+								<div class="product-card__price">$14.99</div>
+								<button class="product-card__btn btn btn_primary">Make an Offer</button>
+							</div>
+							<div class="product-card">
+								<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt="">
+								</div>
+								<h5 class="product-card__title">Chop Salad</h5>
+								<div class="product-card__subtitle">romaine, egg, red onion, tomato, bleu cheese, bacon</div>
+								<div class="product-card__price">$15.99</div>
+								<button class="product-card__btn btn btn_primary">Make an Offer</button>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="third-group-product" role="tabpanel"
+					     aria-labelledby="third-group-product-tab">
+						<div class="product-card__wrap">
+							<div class="product-card">
+								<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt="">
+								</div>
+								<h5 class="product-card__title">Lychee Icecream</h5>
+								<div class="product-card__subtitle">Lychee Flavored Ice Cream</div>
+								<div class="product-card__price">$5.99</div>
+								<button class="product-card__btn btn btn_primary">Make an Offer</button>
+							</div>
+							<div class="product-card">
+								<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt=""></div>
+								<h5 class="product-card__title">Coconut Icecream</h5>
+								<div class="product-card__subtitle">Coconut Flavored Indian Ice Cream</div>
+								<div class="product-card__price">$4.99</div>
+								<button class="product-card__btn btn btn_primary">Make an Offer</button>
+							</div>
+							<div class="product-card">
+								<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt="">
+								</div>
+								<h5 class="product-card__title">Mint Lemonade</h5>
+								<div class="product-card__subtitle">Mint Flavored Lemonade</div>
+								<div class="product-card__price">$3.99</div>
+								<button class="product-card__btn btn btn_primary">Make an Offer</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
+
 </main>
 <footer class="footer"
         style="background-image:url('images/general-bg/top_deco.png'),url('images/general-bg/main-bg.jpg');">

@@ -25,6 +25,13 @@
     align-items: center;
 
     .nav-item {
+      margin-right: 40px;
+      &:last-child{
+        margin-right: 0;
+      }
+      @include respond-to(md){
+        margin-right: 15px;
+      }
       @include respond-to(sm){
         margin-right: 0;
         margin-bottom: 20px;
@@ -33,19 +40,17 @@
         }
         text-align: center;
       }
-      margin-right: 40px;
-      &:last-child{
-        margin-right: 0;
-      }
       .nav-link {
         font-size: 18px;
         font-family: "Poster Bodoni", Helvetica, Arial, sans-serif;
         line-height: 28px;
         font-weight: 400;
         font-style: normal;
-
         &.active {
           border-bottom: 3px solid $primary;
+        }
+        @include respond-to(md){
+          padding: .5rem;
         }
       }
     }
@@ -54,6 +59,7 @@
     @include respond-to(lg){
       order: 0;
     }
+
     font-size: 88px;
     font-family: "Streetbrush", serif;
     color: $primary;
@@ -61,10 +67,14 @@
     span{
       display: block;
       transform: rotate(-10deg);
+      @include respond-to(md){
+        margin-left: 15px;
+      }
       @include respond-to(sm){
         padding-bottom: 40px;
         margin-bottom: 0;
       }
+
     }
 
   }
@@ -76,7 +86,6 @@
     }
     @include respond-to(sm){
       margin-right: auto;
-
     }
     .nav-link {
       font-family: "Poster Bodoni", Helvetica, Arial, sans-serif;
@@ -85,9 +94,17 @@
       font-weight: 400;
       color: $secondary;
       text-transform: capitalize;
-      .fas {
+      @include respond-to(md){
+        text-align: right;
+        padding: .5rem;
       }
-      .fa-phone-alt {
+      @include respond-to(sm){
+        text-align: center;
+      }
+      span{
+        @include respond-to(sm){
+          display: block;
+        }
       }
 
     }

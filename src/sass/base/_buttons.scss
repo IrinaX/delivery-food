@@ -14,13 +14,15 @@
   box-sizing: border-box;
   color: $primary;
   &.btn_primary {
-background-color: $danger;
+  background-color: $danger;
   }
 
   &.btn_secondary {
+    background-color: $secondary;
+  }
+  &.btn_green {
     background-color: $green;
   }
-
   &.btn_dark {
     background-color: $brown;
   }
