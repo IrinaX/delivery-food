@@ -1,0 +1,44 @@
+.feedback__form {
+  .form-group {
+    position: relative;
+    margin-bottom: 15px;
+
+    .form-label {
+      background: white;
+      margin-bottom: 0;
+      color: #848484;
+      font-size: 10px;
+      line-height: 150%;
+      font-weight: bold;
+      text-transform: uppercase;
+      position: absolute;
+      top: 6px;
+      left: 15px;
+      cursor: text;
+      transition: color .25s ease;
+    }
+
+    .form-control {
+      padding: 20px 15px 8px;
+      display: block;
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: rgba($dark, .7);
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+
+      &:focus ~ .form-label {
+        color: rgba($dark, .7);
+      }
+    }
+  }
+
+  .btn {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}

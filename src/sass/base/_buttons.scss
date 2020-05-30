@@ -1,5 +1,7 @@
 @import "../variables";
-
+button:focus{
+  outline: none;
+}
 .btn {
   border-radius: 80px;
   font-family: "Poster Bodoni", Helvetica, Arial, sans-serif;
@@ -13,18 +15,37 @@
   border: none;
   box-sizing: border-box;
   color: $primary;
+  &:active{
+    opacity: 0.8;
+  }
+  &:focus{
+
+    box-shadow: 0 0 0 0.2rem rgba($primary,.5);
+  }
   &.btn_primary {
   background-color: $danger;
+    &:focus{
+      box-shadow: 0 0 0 0.2rem rgba($danger,.5);
+    }
   }
 
   &.btn_secondary {
     background-color: $secondary;
+    &:focus{
+      box-shadow: 0 0 0 0.2rem rgba($secondary,.5);
+    }
   }
   &.btn_green {
     background-color: $green;
+    &:focus{
+      box-shadow: 0 0 0 0.2rem rgba($green,.5);
+    }
   }
   &.btn_dark {
     background-color: $brown;
+    &:focus{
+      box-shadow: 0 0 0 0.2rem rgba($brown,.5);
+    }
   }
 
   &.btn_link {
@@ -32,5 +53,15 @@
     box-shadow: none;
     border: none;
     padding: 0;
+  }
+}
+.scroll-up-btn{
+  &:focus{
+    box-shadow: 0 0 0 0.2rem rgba($secondary,.5);
+  }
+}
+.cart-item__btn{
+  &:focus{
+    box-shadow: 0 0 0 0.2rem rgba($secondary,.5);
   }
 }

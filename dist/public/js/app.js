@@ -9394,95 +9394,94 @@ function backToTop() {
   }
 }
 
-smoothScrollUp.addEventListener('click', backToTop); //
-// let searchBlockInput = document.getElementById('search-block-input'),
-//     searchBlockForm = document.getElementById('search-block-form'),
-//     mapFilter = document.getElementById('map-filter'),
-//     mapFilterHidePanelBtn = document.getElementById('filter-map-hide-panel-btn'),
-//     mapFilterShowPanelBtn = document.getElementById('filter-map-show-panel-btn'),
-//     selectSkillsTitle = document.getElementById("select-skills-title"),
-//     selectSkillsText = document.getElementById("select-skills-text"),
-//     selectSkillsListWrap = document.getElementById("select-skills-list-wrap"),
-//     selectSkillsList = document.getElementById("select-skills-list");
-//
-// searchBlockInput.onfocus = function () {
-//     searchBlockForm.classList.add('search-block__form-focused');
-// };
-// searchBlockInput.onblur = function () {
-//     if (searchBlockForm.classList.contains('search-block__form-focused')) {
-//         searchBlockForm.classList.remove('search-block__form-focused');
-//     }
-// };
-//
-// mapFilterHidePanelBtn.onclick = function () {
-//     mapFilter.classList.remove("d-block");
-//     mapFilter.classList.add("d-none");
-//     mapFilterShowPanelBtn.classList.remove("d-none");
-//     mapFilterShowPanelBtn.classList.add("d-block");
-// };
-//
-// mapFilterShowPanelBtn.onclick = function () {
-//     mapFilter.classList.remove("d-none");
-//     mapFilter.classList.add("d-block");
-//     mapFilterShowPanelBtn.classList.remove("d-block");
-//     mapFilterShowPanelBtn.classList.add("d-none");
-// };
-//
-//
-// function toggleList(marginX) {
-//     let skillsChecked = document.querySelectorAll('.select-skills__checkbox-item > input:checked');
-//     if (skillsChecked.length > 0) {
-//         selectSkillsTitle.classList.remove("col-lg-6");
-//         selectSkillsTitle.classList.add("text-center");
-//         selectSkillsText.classList.remove("d-block");
-//         selectSkillsText.classList.add("d-none");
-//         if (window.innerWidth < 1024) {
-//             selectSkillsTitle.style.margin = marginX + 'px 0';
-//         }
-//         selectSkillsListWrap.classList.remove("d-none");
-//         selectSkillsListWrap.classList.add("d-block");
-//     } else {
-//         selectSkillsTitle.classList.add("col-lg-6");
-//         selectSkillsTitle.classList.remove("text-center");
-//         selectSkillsText.classList.remove("d-none");
-//         selectSkillsText.classList.add("d-block");
-//         selectSkillsTitle.style.margin = '0';
-//         selectSkillsListWrap.classList.remove("d-block");
-//         selectSkillsListWrap.classList.add("d-none");
-//     }
-// }
-//
-// let skillsArr = document.getElementsByName("skill");
-// let j, k;
-// for (k = 0; k < skillsArr.length; k++) {
-//     skillsArr[k].onclick = function (event) {
-//         let skillsListItems = document.querySelectorAll('.select-skills__list li');
-//         let marginX = selectSkillsText.offsetHeight / 2;
-//         if (marginX !== 0) {
-//             toggleList(marginX);
-//         } else {
-//             let newMargin = selectSkillsTitle.style.marginTop;
-//             toggleList(newMargin);
-//         }
-//
-//         if (event.currentTarget.checked) {
-//             for (j = 0; j < skillsListItems.length; j++) {
-//                 if (skillsListItems[j].innerHTML === event.currentTarget.value) {
-//                     skillsListItems[j].remove();
-//                 }
-//             }
-//             let liLast = document.createElement('li');
-//             liLast.innerHTML = event.currentTarget.value;
-//             selectSkillsList.append(liLast); // вставить liLast в конец <ul>
-//         } else {
-//             for (j = 0; j < skillsListItems.length; j++) {
-//                 if (skillsListItems[j].innerHTML === event.currentTarget.value) {
-//                     skillsListItems[j].remove();
-//                 }
-//             }
-//         }
-//     }
-// }
+smoothScrollUp.addEventListener('click', backToTop);
+;
+
+(function () {
+  var cartDOMElement = document.querySelector('.js-cart');
+
+  if (!cartDOMElement) {
+    return;
+  }
+
+  var cart = {};
+  var cartItemsCounterDOMElements = document.querySelector('js-cart-total-count-items');
+  var cartTotalPriceDOMElements = document.querySelector('js-cart-total-price');
+  var cartTotalPriceInputDOMElements = document.querySelector('js-cart-total-price-input');
+
+  var renderCartItem = function renderCartItem(_ref) {
+    var id = _ref.id,
+        name = _ref.name,
+        price = _ref.price,
+        src = _ref.src,
+        quantity = _ref.quantity;
+    var cartItemDOMElement = document.createElement('div');
+    var cartItemTemplate = "\n<div class=\"cart-item cart__item\">\n    <div class=\"cart-item__main\">\n        <div class=\"cart-item__start\">\n            <button class=\"cart-item__btn cart-item__btn--remove js-btn-cart-item-remove\" type=\"button\"></button>\n        </div>\n        <div class=\"cart-item__img-wrapper\">\n            <img class=\"cart-item__img\" src=\"".concat(src, "\" alt=\"\">\n        </div>\n        <div class=\"cart-item__content\">\n            <div class=\"cart-item__title\">").concat(name, "</div>\n            <input type=\"hidden\" name=\"").concat(id, "-\u0422\u043E\u0432\u0430\u0440\" value=\"").concat(name, "\">\n            <input class=\"js-cart-input-quantity\" type=\"hidden\" name=\"").concat(id, "-\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E\" value=\"").concat(quantity, "\">\n            <input class=\"js-cart-input-price\" type=\"hidden\" name=\"").concat(id, "-\u0426\u0435\u043D\u0430\" value=\"").concat(price * quantity, "\">\n        </div>\n    </div>\n    <div class=\"cart-item__end\">\n        <div class=\"cart-item__actions\">\n            <button class=\"cart-item__btn js-btn-product-decrease-quantity\" type=\"button\">-</button>\n            <span class=\"cart-item__quantity js-cart-item-quantity\">").concat(quantity, "</span>\n            <button class=\"cart-item__btn js-btn-product-increase-quantity\" type=\"button\">+</button>\n        </div>\n        <p class=\"cart-item__price\"><span class=\"js-cart-item-price\">").concat(price * quantity, "</span> \u0440\u0443\u0431.</p>\n    </div>\n</div>\n");
+    cartItemDOMElement.innerHTML = cartItemTemplate;
+    cartItemDOMElement.setAttribute('data-product-id', id);
+    cartItemDOMElement.classList.add('js-cart-item');
+    cartDOMElement.appendChild(cartItemDOMElement);
+  };
+
+  var updateCart = function updateCart() {
+    console.log(cart);
+  };
+
+  var deleteCartItem = function deleteCartItem(id) {
+    var cartItemDOMElement = cartDOMElement.querySelector("[data-product-id=\"".concat(id, "\"]"));
+    cartDOMElement.removeChild(cartItemDOMElement);
+    delete cart[id];
+    updateCart();
+  };
+
+  var addCartItem = function addCartItem(data) {
+    var id = data.id;
+    cart[id] = data;
+    renderCartItem(data);
+    updateCart();
+  };
+
+  var generateID = function generateID(string1) {
+    return "".concat(string1).replace(new RegExp(" ", "g"), '-');
+  };
+
+  var getProductData = function getProductData(productDOMElement) {
+    var name = productDOMElement.getAttribute('data-product-name');
+    var price = productDOMElement.getAttribute('data-product-price');
+    var src = productDOMElement.getAttribute('data-product-src');
+    var quantity = 1;
+    var id = generateID(name);
+    return {
+      name: name,
+      price: price,
+      src: src,
+      quantity: quantity,
+      id: id
+    };
+  };
+
+  var carInit = function carInit() {
+    document.querySelector('body').addEventListener('click', function (e) {
+      var target = e.target;
+
+      if (target.classList.contains('js-btn-add-to-card')) {
+        e.preventDefault();
+        var productDOMElement = target.closest('.js-product');
+        var data = getProductData(productDOMElement);
+        addCartItem(data);
+      }
+
+      if (target.classList.contains('js-btn-cart-item-remove')) {
+        e.preventDefault();
+        var cartItemDOMElement = target.closest('.js-cart-item');
+        var productID = cartItemDOMElement.getAttribute('data-product-id');
+        deleteCartItem(productID);
+      }
+    });
+  };
+
+  carInit();
+})();
 
 /***/ }),
 
@@ -9518,6 +9517,54 @@ try {
 
     switch (preset) {
       case 'products-swiper':
+        options = {
+          loop: true,
+          breakpoints: {
+            0: {
+              slidesPerView: 1
+            },
+            768: {
+              slidesPerView: 2
+            },
+            1024: {
+              slidesPerView: 3
+            },
+            1440: {
+              slidesPerView: 4
+            }
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }
+        };
+        break;
+
+      case 'salads-swiper':
+        options = {
+          loop: true,
+          breakpoints: {
+            0: {
+              slidesPerView: 1
+            },
+            768: {
+              slidesPerView: 2
+            },
+            1024: {
+              slidesPerView: 3
+            },
+            1440: {
+              slidesPerView: 4
+            }
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }
+        };
+        break;
+
+      case 'deserts-swiper':
         options = {
           loop: true,
           breakpoints: {

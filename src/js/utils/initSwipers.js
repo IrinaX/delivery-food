@@ -32,6 +32,52 @@ for (let swiper of swipers) {
                 }
             };
             break;
+        case 'salads-swiper':
+            options = {
+                loop: true,
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                    1440: {
+                        slidesPerView: 4,
+                    },
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            };
+            break;
+        case 'deserts-swiper':
+            options = {
+                loop: true,
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                    1440: {
+                        slidesPerView: 4,
+                    },
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            };
+            break;
         case 'reviews-swiper':
             options = {
                 loop: true,

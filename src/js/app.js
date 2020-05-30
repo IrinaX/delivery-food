@@ -12,10 +12,6 @@ import 'bootstrap.native/dist/bootstrap-native-v4.min'
 // import jQuery from "jquery";
 // window.$ = window.jQuery = jQuery;
 
-
-
-
-
 let smoothScrollUp = document.getElementById('scroll-up');
 
 function backToTop() {
@@ -24,96 +20,104 @@ function backToTop() {
         setTimeout(backToTop, 0);
     }
 }
+
 smoothScrollUp.addEventListener('click', backToTop);
 
+;(function () {
+    const cartDOMElement = document.querySelector('.js-cart');
+    if (!cartDOMElement) {
+        return;
+    }
+    const cart = {};
+    const cartItemsCounterDOMElements = document.querySelector('js-cart-total-count-items');
+    const cartTotalPriceDOMElements = document.querySelector('js-cart-total-price');
+    const cartTotalPriceInputDOMElements = document.querySelector('js-cart-total-price-input');
+
+    const renderCartItem = ({id, name, price, src, quantity}) => {
+        const cartItemDOMElement = document.createElement('div');
+        const cartItemTemplate = `
+<div class="cart-item cart__item">
+    <div class="cart-item__main">
+        <div class="cart-item__start">
+            <button class="cart-item__btn cart-item__btn--remove js-btn-cart-item-remove" type="button"></button>
+        </div>
+        <div class="cart-item__img-wrapper">
+            <img class="cart-item__img" src="${src}" alt="">
+        </div>
+        <div class="cart-item__content">
+            <div class="cart-item__title">${name}</div>
+            <input type="hidden" name="${id}-Товар" value="${name}">
+            <input class="js-cart-input-quantity" type="hidden" name="${id}-Количество" value="${quantity}">
+            <input class="js-cart-input-price" type="hidden" name="${id}-Цена" value="${price * quantity}">
+        </div>
+    </div>
+    <div class="cart-item__end">
+        <div class="cart-item__actions">
+            <button class="cart-item__btn js-btn-product-decrease-quantity" type="button">-</button>
+            <span class="cart-item__quantity js-cart-item-quantity">${quantity}</span>
+            <button class="cart-item__btn js-btn-product-increase-quantity" type="button">+</button>
+        </div>
+        <p class="cart-item__price"><span class="js-cart-item-price">${price * quantity}</span> руб.</p>
+    </div>
+</div>
+`;
+        cartItemDOMElement.innerHTML = cartItemTemplate;
+        cartItemDOMElement.setAttribute('data-product-id', id);
+        cartItemDOMElement.classList.add('js-cart-item');
+
+        cartDOMElement.appendChild(cartItemDOMElement);
+    };
+
+    const updateCart = () => {
+        console.log(cart);
+    };
+
+    const deleteCartItem = (id) => {
+        const cartItemDOMElement = cartDOMElement.querySelector(`[data-product-id="${id}"]`);
+        cartDOMElement.removeChild(cartItemDOMElement);
+        delete cart[id];
+        updateCart();
+    };
+
+    const addCartItem = (data) => {
+        const {id} = data;
+        cart[id] = data;
+        renderCartItem(data);
+        updateCart();
+    };
 
 
-//
-// let searchBlockInput = document.getElementById('search-block-input'),
-//     searchBlockForm = document.getElementById('search-block-form'),
-//     mapFilter = document.getElementById('map-filter'),
-//     mapFilterHidePanelBtn = document.getElementById('filter-map-hide-panel-btn'),
-//     mapFilterShowPanelBtn = document.getElementById('filter-map-show-panel-btn'),
-//     selectSkillsTitle = document.getElementById("select-skills-title"),
-//     selectSkillsText = document.getElementById("select-skills-text"),
-//     selectSkillsListWrap = document.getElementById("select-skills-list-wrap"),
-//     selectSkillsList = document.getElementById("select-skills-list");
-//
-// searchBlockInput.onfocus = function () {
-//     searchBlockForm.classList.add('search-block__form-focused');
-// };
-// searchBlockInput.onblur = function () {
-//     if (searchBlockForm.classList.contains('search-block__form-focused')) {
-//         searchBlockForm.classList.remove('search-block__form-focused');
-//     }
-// };
-//
-// mapFilterHidePanelBtn.onclick = function () {
-//     mapFilter.classList.remove("d-block");
-//     mapFilter.classList.add("d-none");
-//     mapFilterShowPanelBtn.classList.remove("d-none");
-//     mapFilterShowPanelBtn.classList.add("d-block");
-// };
-//
-// mapFilterShowPanelBtn.onclick = function () {
-//     mapFilter.classList.remove("d-none");
-//     mapFilter.classList.add("d-block");
-//     mapFilterShowPanelBtn.classList.remove("d-block");
-//     mapFilterShowPanelBtn.classList.add("d-none");
-// };
-//
-//
-// function toggleList(marginX) {
-//     let skillsChecked = document.querySelectorAll('.select-skills__checkbox-item > input:checked');
-//     if (skillsChecked.length > 0) {
-//         selectSkillsTitle.classList.remove("col-lg-6");
-//         selectSkillsTitle.classList.add("text-center");
-//         selectSkillsText.classList.remove("d-block");
-//         selectSkillsText.classList.add("d-none");
-//         if (window.innerWidth < 1024) {
-//             selectSkillsTitle.style.margin = marginX + 'px 0';
-//         }
-//         selectSkillsListWrap.classList.remove("d-none");
-//         selectSkillsListWrap.classList.add("d-block");
-//     } else {
-//         selectSkillsTitle.classList.add("col-lg-6");
-//         selectSkillsTitle.classList.remove("text-center");
-//         selectSkillsText.classList.remove("d-none");
-//         selectSkillsText.classList.add("d-block");
-//         selectSkillsTitle.style.margin = '0';
-//         selectSkillsListWrap.classList.remove("d-block");
-//         selectSkillsListWrap.classList.add("d-none");
-//     }
-// }
-//
-// let skillsArr = document.getElementsByName("skill");
-// let j, k;
-// for (k = 0; k < skillsArr.length; k++) {
-//     skillsArr[k].onclick = function (event) {
-//         let skillsListItems = document.querySelectorAll('.select-skills__list li');
-//         let marginX = selectSkillsText.offsetHeight / 2;
-//         if (marginX !== 0) {
-//             toggleList(marginX);
-//         } else {
-//             let newMargin = selectSkillsTitle.style.marginTop;
-//             toggleList(newMargin);
-//         }
-//
-//         if (event.currentTarget.checked) {
-//             for (j = 0; j < skillsListItems.length; j++) {
-//                 if (skillsListItems[j].innerHTML === event.currentTarget.value) {
-//                     skillsListItems[j].remove();
-//                 }
-//             }
-//             let liLast = document.createElement('li');
-//             liLast.innerHTML = event.currentTarget.value;
-//             selectSkillsList.append(liLast); // вставить liLast в конец <ul>
-//         } else {
-//             for (j = 0; j < skillsListItems.length; j++) {
-//                 if (skillsListItems[j].innerHTML === event.currentTarget.value) {
-//                     skillsListItems[j].remove();
-//                 }
-//             }
-//         }
-//     }
-// }
+
+    const generateID = (string1) => {
+        return `${string1}`.replace(new RegExp(" ", "g"), '-');
+    };
+    const getProductData = (productDOMElement) => {
+        const name = productDOMElement.getAttribute('data-product-name');
+        const price = productDOMElement.getAttribute('data-product-price');
+        const src = productDOMElement.getAttribute('data-product-src');
+        const quantity = 1;
+        const id = generateID(name);
+        return {name, price, src, quantity, id};
+    };
+
+    const carInit = () => {
+        document.querySelector('body').addEventListener('click', (e) => {
+            const target = e.target;
+
+            if (target.classList.contains('js-btn-add-to-card')) {
+                e.preventDefault();
+                const productDOMElement = target.closest('.js-product');
+                const data = getProductData(productDOMElement);
+                addCartItem(data);
+            }
+            if (target.classList.contains('js-btn-cart-item-remove')) {
+                e.preventDefault();
+                const cartItemDOMElement = target.closest('.js-cart-item');
+                const productID = cartItemDOMElement.getAttribute('data-product-id');
+                deleteCartItem(productID);
+            }
+
+        });
+    };
+    carInit();
+})();

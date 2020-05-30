@@ -2,69 +2,25 @@
   padding: 130px 0 80px;
   background-size:auto,auto;
   background-repeat: no-repeat,no-repeat;
-  background-position: 3% 85%, right top;
+  background-position: left bottom, right top;
   @include respond-to(lg){
     background-position: 1000% 1000%, 1000% 1000%;
   }
 
-  .menu__img-wrap
-  {
-    @include respond-to(lg){
-      padding: 0 100px;
-    }
-    @include respond-to(sm){
-      padding: 0 15px;
-    }
-    .menu__img {
-      width: 100%;
-      height: auto;
+  .salads-swiper,.deserts-swiper{
+    margin-bottom: 120px;
+    .product-card__title {
+      color: $dark;
     }
   }
-
-  .menu-right__title,.menu-left__title {
+  .index-menu__title {
     text-align: center;
     margin-bottom: 50px;
-  }
-  .menu-right__title {
-    color: $green;
-  }
-  .menu-left__title {
-    color: $brown;
-  }
-
-  .price-list {
-    padding: 30px 30px 80px;
-    @include respond-to(md){
-      padding: 30px 0 60px 0;
+    &.green {
+      color: $green;
     }
-    .price-list__item {
-      margin-bottom: 30px;
-      .price-list__item-main {
-        margin-bottom: 10px;
-        display: flex;
-        align-items: flex-end;
-        .price-list__item-name {
-          font-weight: 700;
-          color: $dark;
-        }
-
-        .price-list__item-dotted-separator {
-          margin: 0 3px 7px 5px;
-          flex: 1 1 auto;
-          border-bottom: 3px dotted rgba($light,.5);
-        }
-
-        .price-list__item-price {
-          font-weight: 700;
-          color: $light;
-        }
-      }
-      .price-list__item-description {
-        font-size: 16px;
-      }
-    }
-    button{
-      margin: 0 auto;
+    &.brown {
+      color: $brown;
     }
   }
 }
