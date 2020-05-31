@@ -28,10 +28,10 @@ smoothScrollUp.addEventListener('click', backToTop);
     if (!cartDOMElement) {
         return;
     }
-    const cart = {};
-    const cartItemsCounterDOMElements = document.querySelector('js-cart-total-count-items');
-    const cartTotalPriceDOMElements = document.querySelector('js-cart-total-price');
-    const cartTotalPriceInputDOMElements = document.querySelector('js-cart-total-price-input');
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    const cartItemsCounterDOMElement = document.querySelector('.js-cart-total-count-items');
+    const cartTotalPriceDOMElement = document.querySelector('.js-cart-total-price');
+    const cartTotalPriceInputDOMElement = document.querySelector('.js-cart-total-price-input');
 
     const renderCartItem = ({id, name, price, src, quantity}) => {
         const cartItemDOMElement = document.createElement('div');
@@ -67,9 +67,43 @@ smoothScrollUp.addEventListener('click', backToTop);
 
         cartDOMElement.appendChild(cartItemDOMElement);
     };
+    const saveCart = () => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    };
+
+    const updateCartTotalPrice = () => {
+        const ids = Object.keys(cart);
+        let totalPrice = 0;
+
+        for (let i = 0; i < ids.length; i++) {
+            const id = ids[i];
+            totalPrice += cart[id].price * cart[id].quantity;
+        }
+        if (cartTotalPriceInputDOMElement) {
+            cartTotalPriceInputDOMElement.value = totalPrice;
+        }
+        if (cartTotalPriceDOMElement) {
+            cartTotalPriceDOMElement.textContent = totalPrice;
+        }
+    };
+    const updateCartTotalItemsCounter = () => {
+        const ids = Object.keys(cart);
+        let totalQuantity = 0;
+
+        for (let i = 0; i < ids.length; i++) {
+            const id = ids[i];
+            totalQuantity += cart[id].quantity;
+        }
+        if (cartItemsCounterDOMElement) {
+            cartItemsCounterDOMElement.textContent = totalQuantity;
+        }
+    };
 
     const updateCart = () => {
         console.log(cart);
+        updateCartTotalPrice();
+        updateCartTotalItemsCounter();
+        saveCart();
     };
 
     const deleteCartItem = (id) => {
@@ -81,13 +115,34 @@ smoothScrollUp.addEventListener('click', backToTop);
 
     const addCartItem = (data) => {
         const {id} = data;
+        if (cart[id]) {
+            increaseQuantity(id);
+            return;
+        }
         cart[id] = data;
         renderCartItem(data);
         updateCart();
     };
 
-
-
+    const updateQuantity = (id, quantity) => {
+        const cartItemDOMElement = cartDOMElement.querySelector(`[data-product-id="${id}"]`);
+        const cartItemQuantityDOMElement = cartItemDOMElement.querySelector('.js-cart-item-quantity');
+        const cartItemPriceDOMElement = cartItemDOMElement.querySelector('.js-cart-item-price');
+        cart[id].quantity = quantity;
+        cartItemQuantityDOMElement.textContent = quantity;
+        cartItemPriceDOMElement.textContent = quantity * cart[id].price;
+        updateCart();
+    };
+    const decreaseQuantity = (id) => {
+        const newQuantity = cart[id].quantity - 1;
+        if (newQuantity >= 1) {
+            updateQuantity(id, newQuantity);
+        }
+    };
+    const increaseQuantity = (id) => {
+        const newQuantity = cart[id].quantity + 1;
+        updateQuantity(id, newQuantity);
+    };
     const generateID = (string1) => {
         return `${string1}`.replace(new RegExp(" ", "g"), '-');
     };
@@ -99,8 +154,13 @@ smoothScrollUp.addEventListener('click', backToTop);
         const id = generateID(name);
         return {name, price, src, quantity, id};
     };
-
+    const renderCart = () => {
+        const ids = Object.keys(cart);
+        ids.forEach((id) => renderCartItem(cart[id]));
+    };
     const carInit = () => {
+        renderCart();
+        updateCart();
         document.querySelector('body').addEventListener('click', (e) => {
             const target = e.target;
 
@@ -115,6 +175,18 @@ smoothScrollUp.addEventListener('click', backToTop);
                 const cartItemDOMElement = target.closest('.js-cart-item');
                 const productID = cartItemDOMElement.getAttribute('data-product-id');
                 deleteCartItem(productID);
+            }
+            if (target.classList.contains('js-btn-product-increase-quantity')) {
+                e.preventDefault();
+                const cartItemDOMElement = target.closest('.js-cart-item');
+                const productID = cartItemDOMElement.getAttribute('data-product-id');
+                increaseQuantity(productID);
+            }
+            if (target.classList.contains('js-btn-product-decrease-quantity')) {
+                e.preventDefault();
+                const cartItemDOMElement = target.closest('.js-cart-item');
+                const productID = cartItemDOMElement.getAttribute('data-product-id');
+                decreaseQuantity(productID);
             }
 
         });
