@@ -9370,13 +9370,39 @@ module.exports = g;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_initSwipers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/initSwipers */ "./src/js/utils/initSwipers.js");
-/* harmony import */ var swiper_js_swiper_min__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/js/swiper.min */ "./node_modules/swiper/js/swiper.min.js");
-/* harmony import */ var swiper_js_swiper_min__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(swiper_js_swiper_min__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap.native/dist/bootstrap-native-v4.min */ "./node_modules/bootstrap.native/dist/bootstrap-native-v4.min.js");
-/* harmony import */ var bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _cart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cart */ "./src/js/cart.js");
+/* harmony import */ var _cart__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_cart__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form */ "./src/js/form.js");
+/* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_form__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./popup */ "./src/js/popup.js");
+/* harmony import */ var swiper_js_swiper_min__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/js/swiper.min */ "./node_modules/swiper/js/swiper.min.js");
+/* harmony import */ var swiper_js_swiper_min__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(swiper_js_swiper_min__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! bootstrap.native/dist/bootstrap-native-v4.min */ "./node_modules/bootstrap.native/dist/bootstrap-native-v4.min.js");
+/* harmony import */ var bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
+
+
+ // import 'bootstrap.native/lib/V4/utils'
+// import 'bootstrap.native/lib/V4/tab-native'
+// import 'bootstrap/dist/js/bootstrap'
+// import 'bootstrap/js/dist/util'
+// import 'bootstrap/js/dist/tab'
+//
+// import jQuery from "jquery";
+// window.$ = window.jQuery = jQuery;
+
+/***/ }),
+
+/***/ "./src/js/cart.js":
+/*!************************!*\
+  !*** ./src/js/cart.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+;
 
 (function () {
   var cartDOMElement = document.querySelector('.js-cart');
@@ -9386,7 +9412,6 @@ __webpack_require__.r(__webpack_exports__);
   }
 
   var cart = JSON.parse(localStorage.getItem('cart')) || {};
-  var cartItemsCounterDOMElement = document.querySelector('.js-cart-total-count-items');
   var cartItemsCountersDOMElement = document.querySelectorAll('.js-cart-total-count-items');
   var cartTotalPriceDOMElement = document.querySelector('.js-cart-total-price');
   var cartTotalPriceInputDOMElement = document.querySelector('.js-cart-total-price-input');
@@ -9399,7 +9424,7 @@ __webpack_require__.r(__webpack_exports__);
         src = _ref.src,
         quantity = _ref.quantity;
     var cartItemDOMElement = document.createElement('div');
-    var cartItemTemplate = "\n<div class=\"cart-item\">\n<!--    <div class=\"cart-item__main\">-->\n        <div class=\"cart-item__start\">\n            <button class=\"cart-item__btn cart-item__btn--remove js-btn-cart-item-remove\" type=\"button\"><i class=\"fas fa-times js-btn-cart-item-remove\"></i></button>\n        <div class=\"cart-item__img-wrapper\">\n            <img class=\"cart-item__img\" src=\"".concat(src, "\" alt=\"\">\n        </div>\n        </div>\n        \n        <div class=\"cart-item__content\">\n            <div class=\"cart-item__title\">").concat(name, "</div>\n            <input type=\"hidden\" name=\"").concat(id, "-\u0422\u043E\u0432\u0430\u0440\" value=\"").concat(name, "\">\n            <input class=\"js-cart-input-quantity\" type=\"hidden\" name=\"").concat(id, "-\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E\" value=\"").concat(quantity, "\">\n            <input class=\"js-cart-input-price\" type=\"hidden\" name=\"").concat(id, "-\u0426\u0435\u043D\u0430\" value=\"").concat(price * quantity, "\">\n            <div class=\"cart-item__end\">\n                 <div class=\"cart-item__actions\">\n                    <button class=\"cart-item__btn js-btn-product-decrease-quantity\" type=\"button\"><i class=\"fas fa-minus-circle js-btn-product-decrease-quantity\"></i></button>\n                    <span class=\"cart-item__quantity js-cart-item-quantity\">").concat(quantity, "</span>\n                    <button class=\"cart-item__btn js-btn-product-increase-quantity\" type=\"button\"><i class=\"fas fa-plus-circle js-btn-product-increase-quantity\"></i></button>\n                </div>\n                <p class=\"cart-item__price\"><span class=\"js-cart-item-price\">").concat(price * quantity, "</span>&#8381;</p>\n            </div>\n        </div>\n<!--    </div>-->\n</div>\n");
+    var cartItemTemplate = "\n<div class=\"cart-item\">\n        <div class=\"cart-item__start\">\n            <button class=\"cart-item__btn cart-item__btn--remove js-btn-cart-item-remove\" type=\"button\"><i class=\"fas fa-times js-btn-cart-item-remove\"></i></button>\n        <div class=\"cart-item__img-wrapper\">\n            <img class=\"cart-item__img\" src=\"".concat(src, "\" alt=\"\">\n        </div>\n        </div>\n        <div class=\"cart-item__content\">\n            <div class=\"cart-item__title\">").concat(name, "</div>\n            <input type=\"hidden\" name=\"").concat(id, "-\u0422\u043E\u0432\u0430\u0440\" value=\"").concat(name, "\">\n            <input class=\"js-cart-input-quantity\" type=\"hidden\" name=\"").concat(id, "-\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E\" value=\"").concat(quantity, "\">\n            <input class=\"js-cart-input-price\" type=\"hidden\" name=\"").concat(id, "-\u0426\u0435\u043D\u0430\" value=\"").concat(price * quantity, "\">\n            <div class=\"cart-item__end\">\n                 <div class=\"cart-item__actions\">\n                    <button class=\"cart-item__btn js-btn-product-decrease-quantity\" type=\"button\"><i class=\"fas fa-minus-circle js-btn-product-decrease-quantity\"></i></button>\n                    <span class=\"cart-item__quantity js-cart-item-quantity\">").concat(quantity, "</span>\n                    <button class=\"cart-item__btn js-btn-product-increase-quantity\" type=\"button\"><i class=\"fas fa-plus-circle js-btn-product-increase-quantity\"></i></button>\n                </div>\n                <p class=\"cart-item__price\"><span class=\"js-cart-item-price\">").concat(price * quantity, "</span>&#8381;</p>\n            </div>\n        </div>\n</div>\n");
     cartItemDOMElement.innerHTML = cartItemTemplate;
     cartItemDOMElement.setAttribute('data-product-id', id);
     cartItemDOMElement.classList.add('js-cart-item');
@@ -9481,9 +9506,13 @@ __webpack_require__.r(__webpack_exports__);
     var cartItemDOMElement = cartDOMElement.querySelector("[data-product-id=\"".concat(id, "\"]"));
     var cartItemQuantityDOMElement = cartItemDOMElement.querySelector('.js-cart-item-quantity');
     var cartItemPriceDOMElement = cartItemDOMElement.querySelector('.js-cart-item-price');
+    var cartItemInputPriceDOMElement = cartItemDOMElement.querySelector('.js-cart-input-price');
+    var cartItemInputQuantityDOMElement = cartItemDOMElement.querySelector('.js-cart-input-quantity');
     cart[id].quantity = quantity;
     cartItemQuantityDOMElement.textContent = quantity;
     cartItemPriceDOMElement.textContent = quantity * cart[id].price;
+    cartItemInputPriceDOMElement.value = quantity * cart[id].price;
+    cartItemInputQuantityDOMElement.value = quantity;
     updateCart();
   };
 
@@ -9525,6 +9554,14 @@ __webpack_require__.r(__webpack_exports__);
       return renderCartItem(cart[id]);
     });
   };
+
+  var resetCart = function resetCart() {
+    var ids = Object.keys(cart);
+    ids.forEach(function (id) {
+      return deleteCartItem(cart[id].id);
+    });
+  }; // setTimeout(() => resetCart(), 2000);
+
 
   var carInit = function carInit() {
     renderCart();
@@ -9569,8 +9606,56 @@ __webpack_require__.r(__webpack_exports__);
   };
 
   carInit();
-})(); //mylib
+})();
 
+/***/ }),
+
+/***/ "./src/js/form.js":
+/*!************************!*\
+  !*** ./src/js/form.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+;
+
+(function () {
+  var forms = document.querySelectorAll('.form-send');
+
+  if (forms.length === 0) {
+    return;
+  }
+
+  var formSend = function formSend(form) {
+    var xhr = new XMLHttpRequest();
+    var url = 'mail/mail.php';
+    xhr.open('POST', url);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function () {
+      console.log('done');
+    };
+
+    xhr.send();
+  };
+
+  for (var i = 0; i < forms.length; i++) {
+    forms[i].addEventListener('submit', function (e) {
+      e.preventDefault();
+      var form = e.currentTarget;
+      formSend(form);
+    });
+  }
+})();
+
+/***/ }),
+
+/***/ "./src/js/myLib.js":
+/*!*************************!*\
+  !*** ./src/js/myLib.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 ;
 
@@ -9611,8 +9696,21 @@ __webpack_require__.r(__webpack_exports__);
   window.myLib.toggleScroll = function () {
     myLib.body.classList.toggle('no-scroll');
   };
-})(); //end mylib
+})();
 
+/***/ }),
+
+/***/ "./src/js/popup.js":
+/*!*************************!*\
+  !*** ./src/js/popup.js ***!
+  \*************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _myLib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./myLib */ "./src/js/myLib.js");
+/* harmony import */ var _myLib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_myLib__WEBPACK_IMPORTED_MODULE_0__);
 
 ;
 
