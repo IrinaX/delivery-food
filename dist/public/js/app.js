@@ -9376,26 +9376,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_2__);
 
 
- // import 'bootstrap.native/lib/V4/utils'
-// import 'bootstrap.native/lib/V4/tab-native'
-// import 'bootstrap/dist/js/bootstrap'
-// import 'bootstrap/js/dist/util'
-// import 'bootstrap/js/dist/tab'
-//
-// import jQuery from "jquery";
-// window.$ = window.jQuery = jQuery;
 
-var smoothScrollUp = document.getElementById('scroll-up');
-
-function backToTop() {
-  if (window.pageYOffset > 0) {
-    window.scrollBy(0, -60);
-    setTimeout(backToTop, 0);
-  }
-}
-
-smoothScrollUp.addEventListener('click', backToTop);
-;
 
 (function () {
   var cartDOMElement = document.querySelector('.js-cart');
@@ -9406,8 +9387,10 @@ smoothScrollUp.addEventListener('click', backToTop);
 
   var cart = JSON.parse(localStorage.getItem('cart')) || {};
   var cartItemsCounterDOMElement = document.querySelector('.js-cart-total-count-items');
+  var cartItemsCountersDOMElement = document.querySelectorAll('.js-cart-total-count-items');
   var cartTotalPriceDOMElement = document.querySelector('.js-cart-total-price');
   var cartTotalPriceInputDOMElement = document.querySelector('.js-cart-total-price-input');
+  var cartWrapperDOMElement = document.querySelector('.js-cart-wrapper');
 
   var renderCartItem = function renderCartItem(_ref) {
     var id = _ref.id,
@@ -9416,7 +9399,7 @@ smoothScrollUp.addEventListener('click', backToTop);
         src = _ref.src,
         quantity = _ref.quantity;
     var cartItemDOMElement = document.createElement('div');
-    var cartItemTemplate = "\n<div class=\"cart-item cart__item\">\n    <div class=\"cart-item__main\">\n        <div class=\"cart-item__start\">\n            <button class=\"cart-item__btn cart-item__btn--remove js-btn-cart-item-remove\" type=\"button\"></button>\n        </div>\n        <div class=\"cart-item__img-wrapper\">\n            <img class=\"cart-item__img\" src=\"".concat(src, "\" alt=\"\">\n        </div>\n        <div class=\"cart-item__content\">\n            <div class=\"cart-item__title\">").concat(name, "</div>\n            <input type=\"hidden\" name=\"").concat(id, "-\u0422\u043E\u0432\u0430\u0440\" value=\"").concat(name, "\">\n            <input class=\"js-cart-input-quantity\" type=\"hidden\" name=\"").concat(id, "-\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E\" value=\"").concat(quantity, "\">\n            <input class=\"js-cart-input-price\" type=\"hidden\" name=\"").concat(id, "-\u0426\u0435\u043D\u0430\" value=\"").concat(price * quantity, "\">\n        </div>\n    </div>\n    <div class=\"cart-item__end\">\n        <div class=\"cart-item__actions\">\n            <button class=\"cart-item__btn js-btn-product-decrease-quantity\" type=\"button\">-</button>\n            <span class=\"cart-item__quantity js-cart-item-quantity\">").concat(quantity, "</span>\n            <button class=\"cart-item__btn js-btn-product-increase-quantity\" type=\"button\">+</button>\n        </div>\n        <p class=\"cart-item__price\"><span class=\"js-cart-item-price\">").concat(price * quantity, "</span> \u0440\u0443\u0431.</p>\n    </div>\n</div>\n");
+    var cartItemTemplate = "\n<div class=\"cart-item\">\n<!--    <div class=\"cart-item__main\">-->\n        <div class=\"cart-item__start\">\n            <button class=\"cart-item__btn cart-item__btn--remove js-btn-cart-item-remove\" type=\"button\"><i class=\"fas fa-times js-btn-cart-item-remove\"></i></button>\n        <div class=\"cart-item__img-wrapper\">\n            <img class=\"cart-item__img\" src=\"".concat(src, "\" alt=\"\">\n        </div>\n        </div>\n        \n        <div class=\"cart-item__content\">\n            <div class=\"cart-item__title\">").concat(name, "</div>\n            <input type=\"hidden\" name=\"").concat(id, "-\u0422\u043E\u0432\u0430\u0440\" value=\"").concat(name, "\">\n            <input class=\"js-cart-input-quantity\" type=\"hidden\" name=\"").concat(id, "-\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E\" value=\"").concat(quantity, "\">\n            <input class=\"js-cart-input-price\" type=\"hidden\" name=\"").concat(id, "-\u0426\u0435\u043D\u0430\" value=\"").concat(price * quantity, "\">\n            <div class=\"cart-item__end\">\n                 <div class=\"cart-item__actions\">\n                    <button class=\"cart-item__btn js-btn-product-decrease-quantity\" type=\"button\"><i class=\"fas fa-minus-circle js-btn-product-decrease-quantity\"></i></button>\n                    <span class=\"cart-item__quantity js-cart-item-quantity\">").concat(quantity, "</span>\n                    <button class=\"cart-item__btn js-btn-product-increase-quantity\" type=\"button\"><i class=\"fas fa-plus-circle js-btn-product-increase-quantity\"></i></button>\n                </div>\n                <p class=\"cart-item__price\"><span class=\"js-cart-item-price\">").concat(price * quantity, "</span>&#8381;</p>\n            </div>\n        </div>\n<!--    </div>-->\n</div>\n");
     cartItemDOMElement.innerHTML = cartItemTemplate;
     cartItemDOMElement.setAttribute('data-product-id', id);
     cartItemDOMElement.classList.add('js-cart-item');
@@ -9454,16 +9437,24 @@ smoothScrollUp.addEventListener('click', backToTop);
       totalQuantity += cart[id].quantity;
     }
 
-    if (cartItemsCounterDOMElement) {
-      cartItemsCounterDOMElement.textContent = totalQuantity;
-    }
+    cartItemsCountersDOMElement.forEach(function (element) {
+      if (element) {
+        element.textContent = totalQuantity;
+      }
+    });
+    return totalQuantity;
   };
 
   var updateCart = function updateCart() {
-    console.log(cart);
+    var totalQuantity = updateCartTotalItemsCounter();
     updateCartTotalPrice();
-    updateCartTotalItemsCounter();
     saveCart();
+
+    if (totalQuantity === 0) {
+      cartWrapperDOMElement.classList.add("is-empty");
+    } else {
+      cartWrapperDOMElement.classList.remove("is-empty");
+    }
   };
 
   var deleteCartItem = function deleteCartItem(id) {
@@ -9578,6 +9569,99 @@ smoothScrollUp.addEventListener('click', backToTop);
   };
 
   carInit();
+})(); //mylib
+
+
+;
+
+(function () {
+  window.myLib = {};
+  window.myLib.body = document.querySelector('body');
+
+  window.myLib.closestAttr = function (item, attr) {
+    var node = item;
+
+    while (node) {
+      var attrValue = node.getAttribute(attr);
+
+      if (attrValue) {
+        return attrValue;
+      }
+
+      node = node.parentElement;
+    }
+
+    return null;
+  };
+
+  window.myLib.closestItemByClass = function (item, className) {
+    var node = item;
+
+    while (node) {
+      if (node.classList.contains(className)) {
+        return node;
+      }
+
+      node = node.parentElement;
+    }
+
+    return null;
+  };
+
+  window.myLib.toggleScroll = function () {
+    myLib.body.classList.toggle('no-scroll');
+  };
+})(); //end mylib
+
+
+;
+
+(function () {
+  var showPopup = function showPopup(target) {
+    target.classList.add('is-active');
+  };
+
+  var closePopup = function closePopup(target) {
+    target.classList.remove('is-active');
+  };
+
+  myLib.body.addEventListener('click', function (e) {
+    var target = e.target;
+    var popupClass = myLib.closestAttr(target, 'data-popup');
+
+    if (popupClass === null) {
+      return;
+    }
+
+    e.preventDefault();
+    var popup = document.querySelector('.' + popupClass);
+
+    if (popup) {
+      showPopup(popup);
+      myLib.toggleScroll();
+    }
+  });
+  myLib.body.addEventListener('click', function (e) {
+    var target = e.target;
+
+    if (target.classList.contains('popup-close') || target.classList.contains('popup__inner')) {
+      var popup = myLib.closestItemByClass(target, 'popup');
+      closePopup(popup);
+      myLib.toggleScroll();
+    }
+  });
+  myLib.body.addEventListener('keydown', function (e) {
+    if (e.keyCode !== 27) {
+      return;
+    }
+
+    var popup = document.querySelector('.popup.is-active');
+
+    if (popup) {
+      closePopup(popup);
+      myLib.toggleScroll();
+    }
+  });
 })();
 
 /***/ }),
@@ -9615,7 +9699,7 @@ try {
     switch (preset) {
       case 'products-swiper':
         options = {
-          loop: true,
+          loop: false,
           breakpoints: {
             0: {
               slidesPerView: 1
@@ -9639,7 +9723,7 @@ try {
 
       case 'salads-swiper':
         options = {
-          loop: true,
+          loop: false,
           breakpoints: {
             0: {
               slidesPerView: 1
@@ -9663,7 +9747,7 @@ try {
 
       case 'deserts-swiper':
         options = {
-          loop: true,
+          loop: false,
           breakpoints: {
             0: {
               slidesPerView: 1
@@ -9687,7 +9771,7 @@ try {
 
       case 'reviews-swiper':
         options = {
-          loop: true,
+          loop: false,
           breakpoints: {
             0: {
               slidesPerView: 1

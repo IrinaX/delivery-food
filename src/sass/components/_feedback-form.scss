@@ -22,17 +22,16 @@
       padding: 20px 15px 8px;
       display: block;
       width: 100%;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.5;
+      font: inherit;
       color: rgba($dark, .7);
       background-color: #fff;
       background-clip: padding-box;
       border: 1px solid #ced4da;
       border-radius: .25rem;
 
-      &:focus ~ .form-label {
-        color: rgba($dark, .7);
+      &:focus{
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgba($secondary, .7);
       }
     }
   }

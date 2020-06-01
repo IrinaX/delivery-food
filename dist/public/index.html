@@ -8,404 +8,479 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<header class="header header-home"
-        style="background-image:url('images/general-bg/bottom_deco.png'),url('images/home-header/header-pizza.png'),url('images/general-bg/main-bg.jpg');">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<nav class="navbar">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<a class="nav-link active" href="index.html">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="menu.html">Menu</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="contact.html">Contact</a>
-						</li>
-					</ul>
-					<a class="navbar-brand" href="#">
-						<img src="images/home-header/logo.png" alt="">
-						<span>pizzeria</span>
-					</a>
-					<div class="nav-contact">
-						<a class="nav-link" href="tel:207006093"><span><i
-								class="fas fa-phone-alt"></i> Orders: </span> +20 (700)
-							65903</a>
-					</div>
-				</nav>
-			</div>
-		</div>
-		<div class="header-content">
-			<h1 class="header-content__title">Try not to get too</h1>
-			<div class="header-content__description">
-				<span>attached</span>
-			</div>
-		</div>
-	</div>
-</header>
-<main>
-	<section class="wrapper welcome"
-	         style="background-image:url('images/menu-bg/pizza.jpg'),url('images/menu-bg/vegetables.jpg');">
+<div class="wrap">
+	<header class="header header-home" id="header"
+	        style="background-image:url('images/general-bg/bottom_deco.png'),url('images/home-header/header-pizza.png'),url('images/general-bg/main-bg.jpg');">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-7 col-md-12 mx-auto">
-					<h2 class="welcome__title">
-						Welcome to our <br> Pizzeria
-					</h2>
-					<div class="welcome__description">Collaboratively benchmark multifunctional methodologies vis-a-vis
-						effective imperatives. Completely morph proactive bandwidth vis-a-vis highly efficient niches
+				<div class="col-12">
+					<nav class="navbar">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link active" href="index.html">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="menu.html">Menu</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="contact.html">Contact</a>
+							</li>
+						</ul>
+						<a class="navbar-brand" href="#">
+							<img src="images/home-header/logo.png" alt="">
+							<span>pizzeria</span>
+						</a>
+						<div class="nav-contact">
+							<a class="nav-link" href="tel:207006093"><span><i
+									class="fas fa-phone-alt"></i> Orders: </span> +20 (700)
+								65903</a>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<div class="header-content">
+				<h1 class="header-content__title">Try not to get too</h1>
+				<div class="header-content__description">
+					<span>attached</span>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main>
+		<section class="wrapper welcome"
+		         style="background-image:url('images/menu-bg/pizza.jpg'),url('images/menu-bg/vegetables.jpg');">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7 col-md-12 mx-auto">
+						<h2 class="welcome__title">
+							Welcome to our <br> Pizzeria
+						</h2>
+						<div class="welcome__description">Collaboratively benchmark multifunctional methodologies
+							vis-a-vis
+							effective imperatives. Completely morph proactive bandwidth vis-a-vis highly efficient
+							niches
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-6 col-12">
+						<div class="welcome__item">
+							<img class="welcome__item-img" src="images/welcome/pizza1.jpg" alt="">
+							<h5 class="welcome__item-title">Italian Flavours</h5>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 col-12">
+						<div class="welcome__item">
+							<img class="welcome__item-img" src="images/welcome/pizza2.jpg" alt="">
+							<h5 class="welcome__item-title">Home Delivery</h5>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 mx-md-auto col-12">
+						<div class="welcome__item mb-0">
+							<img class="welcome__item-img" src="images/welcome/people.jpg" alt="">
+							<h5 class="welcome__item-title">Enjoy With Your Friends</h5>
+						</div>
 					</div>
 				</div>
 			</div>
+		</section>
+		<section class="products"
+		         style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')">
+			<div class="container">
+				<h2 class="products__title">Selected Pizzas</h2>
+				<div class="swiper-container products-swiper" data-preset="products-swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
+							     data-product-name="Veggie Fresco Pizza" data-product-price="180">
+								<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png" alt=""></div>
+								<h5 class="product-card__title">Veggie Fresco Pizza</h5>
+								<div class="product-card__subtitle">Tomato, Green Peppers, Onions, Mushrooms,
+									Black-Olives,
+									Melted Mozzarella, Perfect Stone Fired Crust
+								</div>
+								<div class="product-card__price">180 руб.</div>
+								<button class="js-btn-add-to-card product-card__btn btn btn_primary">Make an Offer</button>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="product-card js-product" data-product-src="images/menu/Best-Pizza.png"
+							     data-product-name="Best Pizza" data-product-price="140">
+								<div class="product-card__img-wrap"><img src="images/menu/Best-Pizza.png" alt=""></div>
+								<h5 class="product-card__title">Best Pizza</h5>
+								<div class="product-card__subtitle">Tomato, Green Peppers, Onions, Mushrooms,
+									Black-Olives,
+									Melted Mozzarella, Perfect Stone Fired Crust
+								</div>
+								<div class="product-card__price">140 руб.</div>
+								<button class="js-btn-add-to-card product-card__btn btn btn_primary">Make an Offer</button>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="product-card js-product" data-product-src="images/menu/4-Cheese-Classico.png"
+							     data-product-name="4 Cheese Classico" data-product-price="110">
+								<div class="product-card__img-wrap"><img src="images/menu/4-Cheese-Classico.png" alt=""></div>
+								<h5 class="product-card__title">4 Cheese Classico</h5>
+								<div class="product-card__subtitle">Tomato, Green Peppers, Onions, Mushrooms,
+									Black-Olives,
+									Melted Mozzarella, Perfect Stone Fired Crust
+								</div>
+								<div class="product-card__price">110 руб.</div>
+								<button class="js-btn-add-to-card product-card__btn btn btn_primary">Make an Offer</button>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="product-card js-product" data-product-src="images/menu/BBQ-Chicken-Pizza.png"
+							     data-product-name="BBQ Chicken Pizza" data-product-price="160">
+								<div class="product-card__img-wrap"><img src="images/menu/BBQ-Chicken-Pizza.png" alt="">
+								</div>
+								<h5 class="product-card__title">BBQ Chicken Pizza</h5>
+								<div class="product-card__subtitle">Tomato, Green Peppers, Onions, Mushrooms,
+									Black-Olives,
+									Melted Mozzarella, Perfect Stone Fired Crust
+								</div>
+								<div class="product-card__price">160 руб.</div>
+								<button class="js-btn-add-to-card product-card__btn btn btn_primary">Make an Offer</button>
+							</div>
+						</div>
+					</div>
+					<!-- Add Arrows -->
+					<div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
+					<div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
+				</div>
+			</div>
+		</section>
+		<section class="wrapper index-menu"
+		         style="background-image:url('images/menu-bg/croissant.jpg'),url('images/menu-bg/leaves.jpg');">
+			<div class="container">
+				<h3 class="index-menu__title green">Salads</h3>
+				<div class="swiper-container salads-swiper" data-preset="salads-swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="product-card js-product" data-product-src="images/menu/steak.jpg"
+							     data-product-name="Roast chicken & crispy bread" data-product-price="110">
+								<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt="">
+								</div>
+								<h5 class="product-card__title">Roast chicken & crispy bread</h5>
+								<div class="product-card__subtitle">olive oil, lemon, garlic, ciabatta, pine
+									nuts
+								</div>
+								<div class="product-card__price">110 руб.</div>
+								<button class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer</button>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="product-card js-product" data-product-src="images/menu/steak.jpg"
+							     data-product-name="Golden Chevre" data-product-price="130">
+								<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt=""></div>
+								<h5 class="product-card__title">Golden Chevre</h5>
+								<div class="product-card__subtitle">breaded goat cheese, mixed greens,
+									strawberries, dried cranberries
+								</div>
+								<div class="product-card__price">130 руб.</div>
+								<button 								        class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer
+								</button>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="product-card js-product" data-product-src="images/menu/steak.jpg"
+							     data-product-name="Spinach Salad" data-product-price="140">
+								<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt="">
+								</div>
+								<h5 class="product-card__title">Spinach Salad</h5>
+								<div class="product-card__subtitle">spinach, raisins, walnuts, gorgonzola,
+									balsamic & dijon vinaigrette
+								</div>
+								<div class="product-card__price">140 руб.</div>
+								<button 								        class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer
+								</button>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="product-card js-product" data-product-src="images/menu/steak.jpg"
+							     data-product-name="Chop Salad" data-product-price="150">
+								<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt="">
+								</div>
+								<h5 class="product-card__title">Chop Salad</h5>
+								<div class="product-card__subtitle">romaine, egg, red onion, tomato, bleu cheese,
+									bacon
+								</div>
+								<div class="product-card__price">150 руб.</div>
+								<button 								        class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer
+								</button>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="product-card js-product" data-product-src="images/menu/steak.jpg"
+							     data-product-name="Caesar" data-product-price="140">
+								<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt="">
+								</div>
+								<h5 class="product-card__title">Caesar</h5>
+								<div class="product-card__subtitle">romaine, parmesan
+								</div>
+								<div class="product-card__price">140 руб.</div>
+								<button 								        class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer
+								</button>
+							</div>
+						</div>
+					</div>
+					<!-- Add Arrows -->
+					<div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
+					<div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
+				</div>
+				<h3 class="index-menu__title brown">Deserts</h3>
+				<div class="swiper-container deserts-swiper" data-preset="deserts-swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="product-card js-product" data-product-src="images/menu/cake.jpg"
+							     data-product-name="Lychee Icecream" data-product-price="50">
+								<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt="">
+								</div>
+								<h5 class="product-card__title">Lychee Icecream</h5>
+								<div class="product-card__subtitle">Lychee Flavored Ice Cream</div>
+								<div class="product-card__price">50 руб.</div>
+								<button 								        class="js-btn-add-to-card product-card__btn btn btn_dark">Make an Offer
+								</button>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="product-card js-product" data-product-src="images/menu/cake.jpg"
+							     data-product-name="Coconut Icecream" data-product-price="40">
+								<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt=""></div>
+								<h5 class="product-card__title">Coconut Icecream</h5>
+								<div class="product-card__subtitle">Coconut Flavored Indian Ice Cream</div>
+								<div class="product-card__price">40 руб.</div>
+								<button 								        class="js-btn-add-to-card product-card__btn btn btn_dark">Make an Offer
+								</button>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="product-card js-product" data-product-src="images/menu/cake.jpg"
+							     data-product-name="Mint Lemonade" data-product-price="30">
+								<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt="">
+								</div>
+								<h5 class="product-card__title">Mint Lemonade</h5>
+								<div class="product-card__subtitle">Mint Flavored Lemonade</div>
+								<div class="product-card__price">30 руб.</div>
+								<button 								        class="js-btn-add-to-card product-card__btn btn btn_dark">Make an Offer
+								</button>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="product-card js-product" data-product-src="images/menu/cake.jpg"
+							     data-product-name="Mint Lemonade" data-product-price="30">
+								<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt="">
+								</div>
+								<h5 class="product-card__title">Mint Lemonade</h5>
+								<div class="product-card__subtitle">Mint Flavored Lemonade</div>
+								<div class="product-card__price">30 руб.</div>
+								<button 								        class="js-btn-add-to-card product-card__btn btn btn_dark">Make an Offer
+								</button>
+							</div>
+						</div>
+					</div>
+					<!-- Add Arrows -->
+					<div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
+					<div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
+				</div>
+			</div>
+		</section>
+		<section class="wrapper advantages">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xl-5 col-lg-4 advantages__img-wrap">
+						<img src="images/advantage/pizza.png" alt="" class="advantages__img">
+					</div>
+					<div class="col-xl-7 col-lg-8 col-12 px-0 ">
+						<div class="advantages-content">
+							<h2 class="advantages-content__title">We use only fresh ingredients</h2>
+							<div class="advantages-content__text">Collaboratively benchmark multifunctional
+								methodologies
+								vis-a-vis effective imperatives. Completely morph proactive bandwidth vis-a-vis highly
+								efficient
+								niches. Competently empower clicks-and-mortar data via timely systems. Completely
+								unleash
+								top-line services via emerging e-business
+							</div>
+							<div class="advantages-content__images">
+								<div class="advantages-content__img-wrap"><img src="images/advantage/leaves.png" alt="">
+								</div>
+								<div class="advantages-content__img-wrap"><img src="images/advantage/tomato.png" alt="">
+								</div>
+								<div class="advantages-content__img-wrap"><img src="images/advantage/mango.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="reviews">
+			<div class="container">
+				<h2 class="reviews__title">What They Say</h2>
+				<div class="swiper-container reviews-swiper" data-preset="reviews-swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="reviews__item">
+								<h4 class="reviews__item-title">Amanda Seinfield</h4>
+								<div class="reviews__item-text">“Kallyas Pizza has great pizza. Not only do you get
+									served
+									with
+									a
+									great attitude and delivered delicious pizza, you get a great price. I buy lunch
+									slices
+									in
+									Port
+									Angeles frequently when I’m there, and the price never fails to make me smile.”
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="reviews__item">
+								<h4 class="reviews__item-title">Victor Ried</h4>
+								<div class="reviews__item-text">“The pizza was delivered within a decent time frame, was
+									delicious and
+									tasted like real toppings! The service was great, too, as was the online ordering
+									system.”
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="reviews__item">
+								<h4 class="reviews__item-title">Susana Wellbrook</h4>
+								<div class="reviews__item-text">“These people are great! Kallyas is the longest lasting
+									pizza
+									place in
+									our town and is well run and staffed. We are thankful they are there. Prices are
+									great
+									and
+									allow us
+									to keep coming back.”
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
+					<div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer"
+	        style="background-image:url('images/general-bg/top_deco.png'),url('images/general-bg/main-bg.jpg');">
+		<a href="#header" class="scroll-up-btn"><i class="fas fa-angle-up"></i></a>
+		<div class="container">
 			<div class="row">
+				<div class="col-lg-5 col-md-6 col-12">
+					<div class="footer__address">1944 Zappia Drive <br> Little Rock <br> Arkansas 72219</div>
+				</div>
 				<div class="col-lg-4 col-md-6 col-12">
-					<div class="welcome__item">
-						<img class="welcome__item-img" src="images/welcome/pizza1.jpg" alt="">
-						<h5 class="welcome__item-title">Italian Flavours</h5>
+					<div class="footer__contact">
+						<a href="tel:207006093" class="footer__contact-link">+20 (700) 65903</a>
+						<a href="mailto:orders@kallyaspizza.com"
+						   class="footer__contact-link">orders@kallyaspizza.com</a>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<div class="welcome__item">
-						<img class="welcome__item-img" src="images/welcome/pizza2.jpg" alt="">
-						<h5 class="welcome__item-title">Home Delivery</h5>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 mx-md-auto col-12">
-					<div class="welcome__item mb-0">
-						<img class="welcome__item-img" src="images/welcome/people.jpg" alt="">
-						<h5 class="welcome__item-title">Enjoy With Your Friends</h5>
+				<div class="col-lg-3 col-12">
+					<div class="footer__social">
+						<a class="footer__social-link" href="#"><i class="fab fa-vk"></i></a>
+						<a class="footer__social-link" href="#"><i class="fab fa-instagram"></i></a>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-	<section class="products"
-	         style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')">
-		<div class="container">
-			<h2 class="products__title">Selected Pizzas</h2>
-			<div class="swiper-container products-swiper" data-preset="products-swiper">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png" data-product-name="Veggie Fresco Pizza" data-product-price="180">
-							<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png" alt="">
+	</footer>
+</div>
+<button type="button" class="cart-btn" data-popup="popup-order">
+	<span class="cart-btn__counter js-cart-total-count-items"></span>
+	<span class="cart-btn__icon"><i class="fas fa-shopping-cart"></i></span>
+</button>
+<!-- popup-order &#8381;-->
+<div class="popup popup-order">
+	<div class="popup__wrapper">
+		<div class="popup__inner">
+			<div class="popup__content">
+				<button class="btn-close popup__btn-close popup-close"><i class="fas fa-times popup-close"></i></button>
+				<!--				<h2 class="page-title popup__title">Заполните форму</h2>-->
+				<!--				<p class="popup__subtitle popup__subtitle&#45;&#45;order">Мы привезем вам горячую пиццу за 50 минут</p>-->
+				<div class="order">
+					<h3 class="section-cart__title">Ваш заказ</h3>
+					<div class="cart js-cart-wrapper">
+						<form class="form cart__form">
+							<div class="cart__items js-cart"></div>
+							<div class="cart__totals">
+								<div>Всего элементов: <span class="js-cart-total-count-items cart__bold"></span></div>
+								<div>Итого: <span class="cart__bold"><span
+										class="js-cart-total-price"></span>&#8381;</span></div>
 							</div>
-							<h5 class="product-card__title">Veggie Fresco Pizza</h5>
-							<div class="product-card__subtitle">Tomato, Green Peppers, Onions, Mushrooms, Black-Olives,
-								Melted Mozzarella, Perfect Stone Fired Crust
+							<div class="feedback__form-wrap">
+								<h4 class="feedback__form-title">Заполните форму</h4>
+								<div class="feedback__form">
+									<div class="form-group">
+										<input type="text" class="form-control" id="name" name="Имя" required>
+										<label class="form-label" for="name">Ваше имя</label>
+									</div>
+									<div class="form-group">
+										<input type="tel" class="form-control" id="phone" name="Телефон" required>
+										<label class="form-label" for="phone">Ваш телефон</label>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" id="address" name="Адрес" required>
+										<label class="form-label" for="address">Ваш адрес</label>
+									</div>
+									<input class="js-cart-total-price-input" type="hidden" name="Общая сумма">
+									<div class="form-group">
+										<label class="form-label" for="select-payment">Способ оплаты:</label>
+										<select class="form-control" id="select-payment" name="Способ оплаты">
+											<option value="Оплата картой">картой</option>
+											<option value="Оплата наличными">наличными</option>
+										</select>
+									</div>
+									<button type="submit" class="btn btn_secondary">Отправить заказ</button>
+								</div>
 							</div>
-							<div class="product-card__price">180</div>
-							<button class="js-btn-add-to-card product-card__btn btn btn_primary">Make an Offer</button>
+						</form>
+						<div class="cart__empty">
+							<p class="cart__info">Пусто</p>
 						</div>
 					</div>
-					<div class="swiper-slide">
-						<div class="product-card js-product" data-product-src="images/menu/Best-Pizza.png" data-product-name="Best Pizza" data-product-price="140">
-							<div class="product-card__img-wrap"><img src="images/menu/Best-Pizza.png" alt=""></div>
-							<h5 class="product-card__title">Best Pizza</h5>
-							<div class="product-card__subtitle">Tomato, Green Peppers, Onions, Mushrooms, Black-Olives,
-								Melted Mozzarella, Perfect Stone Fired Crust
-							</div>
-							<div class="product-card__price">140</div>
-							<button class="js-btn-add-to-card product-card__btn btn btn_primary">Make an Offer</button>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="product-card js-product" data-product-src="images/menu/4-Cheese-Classico.png" data-product-name="4 Cheese Classico" data-product-price="110">
-							<div class="product-card__img-wrap"><img src="images/menu/4-Cheese-Classico.png" alt="">
-							</div>
-							<h5 class="product-card__title">4 Cheese Classico</h5>
-							<div class="product-card__subtitle">Tomato, Green Peppers, Onions, Mushrooms, Black-Olives,
-								Melted Mozzarella, Perfect Stone Fired Crust
-							</div>
-							<div class="product-card__price">110</div>
-							<button class="js-btn-add-to-card product-card__btn btn btn_primary">Make an Offer</button>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="product-card js-product" data-product-src="images/menu/BBQ-Chicken-Pizza.png" data-product-name="BBQ Chicken Pizza" data-product-price="160">
-							<div class="product-card__img-wrap"><img src="images/menu/BBQ-Chicken-Pizza.png" alt="">
-							</div>
-							<h5 class="product-card__title">BBQ Chicken Pizza</h5>
-							<div class="product-card__subtitle">Tomato, Green Peppers, Onions, Mushrooms, Black-Olives,
-								Melted Mozzarella, Perfect Stone Fired Crust
-							</div>
-							<div class="product-card__price">160</div>
-							<button class="js-btn-add-to-card product-card__btn btn btn_primary">Make an Offer</button>
-						</div>
-					</div>
-				</div>
-				<!-- Add Arrows -->
-				<div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
-				<div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
-			</div>
-		</div>
-	</section>
-	<section class="wrapper index-menu"
-	         style="background-image:url('images/menu-bg/croissant.jpg'),url('images/menu-bg/leaves.jpg');">
-		<div class="container">
-			<h3 class="index-menu__title green">Salads</h3>
-			<div class="swiper-container salads-swiper" data-preset="salads-swiper">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="product-card js-product" data-product-src="images/menu/steak.jpg" data-product-name="Roast chicken & crispy bread" data-product-price="110">
-							<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt="">
-							</div>
-							<h5 class="product-card__title">Roast chicken & crispy bread</h5>
-							<div class="product-card__subtitle">olive oil, lemon, garlic, ciabatta, pine
-								nuts
-							</div>
-							<div class="product-card__price">110</div>
-							<button class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer</button>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="product-card js-product" data-product-src="images/menu/steak.jpg" data-product-name="Golden Chevre" data-product-price="130">
-							<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt=""></div>
-							<h5 class="product-card__title">Golden Chevre</h5>
-							<div class="product-card__subtitle">breaded goat cheese, mixed greens,
-								strawberries, dried cranberries
-							</div>
-							<div class="product-card__price">130</div>
-							<button class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer</button>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="product-card js-product"  data-product-src="images/menu/steak.jpg" data-product-name="Spinach Salad" data-product-price="140">
-							<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt="">
-							</div>
-							<h5 class="product-card__title">Spinach Salad</h5>
-							<div class="product-card__subtitle">spinach, raisins, walnuts, gorgonzola,
-								balsamic & dijon vinaigrette
-							</div>
-							<div class="product-card__price">140</div>
-							<button class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer</button>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="product-card js-product" data-product-src="images/menu/steak.jpg" data-product-name="Chop Salad" data-product-price="150">
-							<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt="">
-							</div>
-							<h5 class="product-card__title">Chop Salad</h5>
-							<div class="product-card__subtitle">romaine, egg, red onion, tomato, bleu cheese,
-								bacon
-							</div>
-							<div class="product-card__price">150</div>
-							<button class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer</button>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="product-card js-product"  data-product-src="images/menu/steak.jpg" data-product-name="Caesar" data-product-price="140">
-							<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt="">
-							</div>
-							<h5 class="product-card__title">Caesar</h5>
-							<div class="product-card__subtitle">romaine, parmesan
-							</div>
-							<div class="product-card__price">140</div>
-							<button class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer</button>
-						</div>
-					</div>
-				</div>
-				<!-- Add Arrows -->
-				<div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
-				<div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
-			</div>
-			<h3 class="index-menu__title brown">Deserts</h3>
-			<div class="swiper-container deserts-swiper" data-preset="deserts-swiper">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="product-card js-product" data-product-src="images/menu/cake.jpg" data-product-name="Lychee Icecream" data-product-price="50">
-							<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt="">
-							</div>
-							<h5 class="product-card__title">Lychee Icecream</h5>
-							<div class="product-card__subtitle">Lychee Flavored Ice Cream</div>
-							<div class="product-card__price">50</div>
-							<button class="js-btn-add-to-card product-card__btn btn btn_dark">Make an Offer</button>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="product-card js-product"  data-product-src="images/menu/cake.jpg" data-product-name="Coconut Icecream" data-product-price="40">
-							<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt=""></div>
-							<h5 class="product-card__title">Coconut Icecream</h5>
-							<div class="product-card__subtitle">Coconut Flavored Indian Ice Cream</div>
-							<div class="product-card__price">40</div>
-							<button class="js-btn-add-to-card product-card__btn btn btn_dark">Make an Offer</button>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="product-card js-product" data-product-src="images/menu/cake.jpg" data-product-name="Mint Lemonade" data-product-price="30">
-							<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt="">
-							</div>
-							<h5 class="product-card__title">Mint Lemonade</h5>
-							<div class="product-card__subtitle">Mint Flavored Lemonade</div>
-							<div class="product-card__price">30</div>
-							<button class="js-btn-add-to-card product-card__btn btn btn_dark">Make an Offer</button>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="product-card js-product" data-product-src="images/menu/cake.jpg" data-product-name="Mint Lemonade" data-product-price="30">
-							<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt="">
-							</div>
-							<h5 class="product-card__title">Mint Lemonade</h5>
-							<div class="product-card__subtitle">Mint Flavored Lemonade</div>
-							<div class="product-card__price">30</div>
-							<button class="js-btn-add-to-card product-card__btn btn btn_dark">Make an Offer</button>
-						</div>
-					</div>
-				</div>
-				<!-- Add Arrows -->
-				<div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
-				<div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
-			</div>
-		</div>
-	</section>
-	<section class="wrapper advantages">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-5 col-lg-4 advantages__img-wrap">
-					<img src="images/advantage/pizza.png" alt="" class="advantages__img">
-				</div>
-				<div class="col-xl-7 col-lg-8 col-12 px-0 ">
-					<div class="advantages-content">
-						<h2 class="advantages-content__title">We use only fresh ingredients</h2>
-						<div class="advantages-content__text">Collaboratively benchmark multifunctional methodologies
-							vis-a-vis effective imperatives. Completely morph proactive bandwidth vis-a-vis highly
-							efficient
-							niches. Competently empower clicks-and-mortar data via timely systems. Completely unleash
-							top-line services via emerging e-business
-						</div>
-						<div class="advantages-content__images">
-							<div class="advantages-content__img-wrap"><img src="images/advantage/leaves.png" alt="">
-							</div>
-							<div class="advantages-content__img-wrap"><img src="images/advantage/tomato.png" alt="">
-							</div>
-							<div class="advantages-content__img-wrap"><img src="images/advantage/mango.png" alt="">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="reviews">
-		<div class="container">
-			<h2 class="reviews__title">What They Say</h2>
-			<div class="swiper-container reviews-swiper" data-preset="reviews-swiper">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="reviews__item">
-							<h4 class="reviews__item-title">Amanda Seinfield</h4>
-							<div class="reviews__item-text">“Kallyas Pizza has great pizza. Not only do you get served
-								with
-								a
-								great attitude and delivered delicious pizza, you get a great price. I buy lunch slices
-								in
-								Port
-								Angeles frequently when I’m there, and the price never fails to make me smile.”
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="reviews__item">
-							<h4 class="reviews__item-title">Victor Ried</h4>
-							<div class="reviews__item-text">“The pizza was delivered within a decent time frame, was
-								delicious and
-								tasted like real toppings! The service was great, too, as was the online ordering
-								system.”
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="reviews__item">
-							<h4 class="reviews__item-title">Susana Wellbrook</h4>
-							<div class="reviews__item-text">“These people are great! Kallyas is the longest lasting
-								pizza
-								place in
-								our town and is well run and staffed. We are thankful they are there. Prices are great
-								and
-								allow us
-								to keep coming back.”
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
-				<div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
-			</div>
-		</div>
-
-	</section>
-</main>
-<section class="section section-cart">
-	<div class="container section-cart__container">
-		<h3 class="section-cart__title">Корзина</h3>
-		<div class="cart js-cart-wrapper">
-			<form class="form cart__form">
-				<div class="cart__items js-cart">
-
-				</div>
-				<div class="cart__totals">
-					<div>Всего элементов: <span class="js-cart-total-count-items cart__bold"></span></div>
-					<div>Итого: <span class="cart__bold"><span class="js-cart-total-price"></span> руб.</span></div>
-				</div>
-				<div class="feedback__form-wrap">
-					<h4 class="feedback__form-title">Заполните форму</h4>
-					<div class="feedback__form">
-						<div class="form-group">
-							<input type="text" class="form-control" id="name" name="Имя" required>
-							<label class="form-label" for="name">Ваше имя</label>
-						</div>
-						<div class="form-group">
-							<input type="tel" class="form-control" id="phone" name="Телефон" required>
-							<label class="form-label" for="phone">Ваш телефон</label>
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" id="address" name="Адрес" required>
-							<label class="form-label" for="address">Ваш адрес</label>
-						</div>
-							<input class="js-cart-total-price-input" type="hidden" name="Общая сумма">
-						<div class="form-group">
-							<label class="form-label" for="select-payment">Способ оплаты:</label>
-							<select class="form-control" id="select-payment" name="Способ оплаты">
-								<option value="Оплата картой">картой</option>
-								<option value="Оплата наличными">наличными</option>
-							</select>
-						</div>
-						<button type="submit" class="btn btn_secondary">Отправить заказ</button>
-					</div>
-				</div>
-			</form>
-			<div class="cart__empty">
-				<p class="cart__info">Нет товаров</p>
-			</div>
-		</div>
-	</div>
-</section>
-<footer class="footer"
-        style="background-image:url('images/general-bg/top_deco.png'),url('images/general-bg/main-bg.jpg');">
-
-	<button type="button" class="scroll-up-btn" id="scroll-up"><i class="fas fa-angle-up"></i></button>
-
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-5 col-md-6 col-12">
-				<div class="footer__address">1944 Zappia Drive <br> Little Rock <br> Arkansas 72219</div>
-			</div>
-			<div class="col-lg-4 col-md-6 col-12">
-				<div class="footer__contact">
-					<a href="tel:207006093" class="footer__contact-link">+20 (700) 65903</a>
-					<a href="mailto:orders@kallyaspizza.com" class="footer__contact-link">orders@kallyaspizza.com</a>
-				</div>
-			</div>
-			<div class="col-lg-3 col-12">
-				<div class="footer__social">
-					<a class="footer__social-link" href="#"><i class="fab fa-vk"></i></a>
-					<a class="footer__social-link" href="#"><i class="fab fa-instagram"></i></a>
 				</div>
 			</div>
 		</div>
 	</div>
-</footer>
+</div>
+<!-- /.popup-order -->
+
+<!-- popup-thanks -->
+<div class="popup popup-thanks">
+	<div class="popup__wrapper">
+		<div class="popup__inner">
+			<div class="popup__content">
+				<button class="btn-close popup__btn-close popup-close"></button>
+				<h2 class="page-title popup__title">Успешно отправлено</h2>
+				<p class="popup__subtitle">Мы уже начали готовить вашу пиццу</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.popup-thanks -->
+
+<!-- popup-error -->
+<div class="popup popup-error">
+	<div class="popup__wrapper">
+		<div class="popup__inner">
+			<div class="popup__content">
+				<button class="btn-close popup__btn-close popup-close"></button>
+				<h2 class="page-title popup__title">Произошла ошибка</h2>
+				<p class="popup__subtitle">Пожалуйста, сделайте заказ по номеру <a class="popup__link"
+				                                                                   href="+79999999999">+7 (999)
+					999-99-99</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.popup-error -->
+
 <script src="js/manifest.js"></script>
 <script src="js/vendor.js"></script>
 <script src="js/app.js"></script>

@@ -11,7 +11,7 @@ for (let swiper of swipers) {
     switch (preset) {
         case 'products-swiper':
             options = {
-                loop: true,
+                loop: false,
                 breakpoints: {
                     0: {
                         slidesPerView: 1,
@@ -34,7 +34,7 @@ for (let swiper of swipers) {
             break;
         case 'salads-swiper':
             options = {
-                loop: true,
+                loop: false,
                 breakpoints: {
                     0: {
                         slidesPerView: 1,
@@ -57,7 +57,7 @@ for (let swiper of swipers) {
             break;
         case 'deserts-swiper':
             options = {
-                loop: true,
+                loop: false,
                 breakpoints: {
                     0: {
                         slidesPerView: 1,
@@ -80,7 +80,7 @@ for (let swiper of swipers) {
             break;
         case 'reviews-swiper':
             options = {
-                loop: true,
+                loop: false,
                 breakpoints: {
                     0: {
                         slidesPerView: 1,

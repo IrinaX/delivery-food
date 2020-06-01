@@ -1,7 +1,9 @@
 @import "../variables";
-button:focus{
+
+button:focus {
   outline: none;
 }
+
 .btn {
   border-radius: 80px;
   font-family: "Poster Bodoni", Helvetica, Arial, sans-serif;
@@ -15,36 +17,44 @@ button:focus{
   border: none;
   box-sizing: border-box;
   color: $primary;
-  &:active{
+
+  &:active {
     opacity: 0.8;
   }
-  &:focus{
 
-    box-shadow: 0 0 0 0.2rem rgba($primary,.5);
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($primary, .5);
   }
+
   &.btn_primary {
-  background-color: $danger;
-    &:focus{
-      box-shadow: 0 0 0 0.2rem rgba($danger,.5);
+    background-color: $danger;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba($danger, .5);
     }
   }
 
   &.btn_secondary {
     background-color: $secondary;
-    &:focus{
-      box-shadow: 0 0 0 0.2rem rgba($secondary,.5);
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba($secondary, .5);
     }
   }
+
   &.btn_green {
     background-color: $green;
-    &:focus{
-      box-shadow: 0 0 0 0.2rem rgba($green,.5);
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba($green, .5);
     }
   }
+
   &.btn_dark {
     background-color: $brown;
-    &:focus{
-      box-shadow: 0 0 0 0.2rem rgba($brown,.5);
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba($brown, .5);
     }
   }
 
@@ -55,13 +65,156 @@ button:focus{
     padding: 0;
   }
 }
-.scroll-up-btn{
-  &:focus{
-    box-shadow: 0 0 0 0.2rem rgba($secondary,.5);
+
+.scroll-up-btn {
+  border: none;
+  color: $primary;
+  margin: 0 auto 120px;
+  border-radius: 50%;
+  background-color: $secondary;
+  display: block;
+  text-align: center;
+  padding-top: 13px;
+  font-size: 50px;
+  height: 79px;
+  width: 79px;
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($secondary, .5);
   }
 }
-.cart-item__btn{
-  &:focus{
-    box-shadow: 0 0 0 0.2rem rgba($secondary,.5);
+
+
+.cart-item__btn {
+  cursor: pointer;
+  border-radius: 50%;
+  background: none;
+  text-decoration: none;
+  padding: 0;
+  position: relative;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  color: $secondary;
+  border: none;
+  font-size: 25px;
+  transition: background .2s, opacity .2s;
+
+  &:active {
+    font-size: 22px;
+  }
+
+  &:hover {
+    opacity: .5;
   }
 }
+
+.popup__btn-close {
+  cursor: pointer;
+  border-radius: 50%;
+  background: none;
+  text-decoration: none;
+  padding: 0;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  color: $secondary;
+  border: 2px solid $secondary;
+  transition: background .2s, opacity .2s;
+
+  &:active {
+    font-size: 22px;
+  }
+
+  &:hover {
+    opacity: .5;
+  }
+}
+
+
+/* cart-btn start */
+.cart-btn {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  background: #fff;
+  width: 100px;
+  height: 100px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 -2px 20px rgba(0, 0, 0, .15);
+  z-index: 5;
+  transition: transform .2s, opacity .2s;
+  padding: 0;
+  &:hover{
+    transform: scale(1.1);
+  }
+  &:active{
+    opacity: .6;
+  }
+
+  .cart-btn__counter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(0px, -10px);
+    background: $secondary;
+    min-width: 35px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+  }
+  .cart-btn__icon {
+    padding: 6px 0;
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+@include respond-to(sm){
+  .cart-btn {
+    right: 30px;
+    bottom: 30px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .cart-btn__icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cart-btn__counter {
+    font-size: 12px;
+    min-width: 25px;
+    height: 25px;
+    transform: translate(0, -5px);
+  }
+}
+
+
+
+
+
+/* cart-btn end */
