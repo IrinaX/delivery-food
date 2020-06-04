@@ -21,9 +21,13 @@
 	</div>
 	<div class="navbar-wrap">
 		<div class="container">
+
 			<nav class="navbar">
+				<!--				<div class="navbar-hamburger">-->
+				<button type="button" class="btn-menu" data-popup="popup-menu"><i class="fas fa-bars"></i></button>
+				<!--				</div>-->
 				<ul class="navbar-nav">
-<!--					current_page_item-->
+					<!--					current_page_item-->
 					<li class="page_item"><a href="#pizzas">Пиццы</a></li>
 					<li class="page_item"><a href="#salads">Салаты</a></li>
 					<li class="page_item"><a href="#deserts">Десерты</a></li>
@@ -31,7 +35,8 @@
 					<li class="page_item"><a href="#burger">Бургеры</a></li>
 					<li class="page_item"><a href="#shawarma">Шаурма</a></li>
 					<li class="page_item"><a href="#">Бизнес ланчи</a></li>
-					<li class="page_item"><a href="contact.html">Заказ банкета</a></li>
+					<li class="page_item"><a href="#feedback">Заказ банкета</a></li>
+					<li class="page_item"><a href="#">О нас</a></li>
 				</ul>
 				<button type="button" class="btn btn_secondary" data-popup="popup-order">Корзина</button>
 			</nav>
@@ -44,6 +49,21 @@
 		<div class="container">
 			<h2 class="products__title">Пиццы</h2>
 			<div class="row products-content">
+				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
+				     data-product-name="Ассорти" data-product-price="500">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Ассорти</h5>
+
+						<div class="product-card__subtitle">Картофель из печи, соленые огурчики, цыпленок, соус ранч,
+							томаты, красный лук, чеснок, моцарелла, томатный соус
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">500 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
 				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
 				     data-product-name="Ассорти" data-product-price="500">
 					<div class="product-card__header">
@@ -338,7 +358,7 @@
 	<section class="products" id="burger">
 		<!--			style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')"-->
 		<div class="container">
-			<h2 class="products__title">Салаты</h2>
+			<h2 class="products__title">Бургеры</h2>
 			<div class="row products-content">
 				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
 				     data-product-name="Ассорти" data-product-price="500">
@@ -412,7 +432,7 @@
 	<section class="products" id="shawarma">
 		<!--			style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')"-->
 		<div class="container">
-			<h2 class="products__title">Десерты</h2>
+			<h2 class="products__title">Шаурма</h2>
 			<div class="row products-content">
 				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
 				     data-product-name="Ассорти" data-product-price="500">
@@ -483,6 +503,37 @@
 			</div>
 		</div>
 	</section>
+	<section class="feedback" id="feedback">
+		<div class="container">
+			<h2 class="feedback__title">Заказать банкет</h2>
+			<div class="row">
+				<div class="col-lg-6 col-12">
+					<div class="feedback__content">
+						<div class="feedback__subtitle">Хорошо спланированный банкет – важная часть любого праздника.
+							Поэтому к его организации нужно подойти с особой внимательностью. Если вы хотите устроить
+							пышное или камерное торжество, детский или взрослый день рождения, рабочую конференцию или
+							корпоратив, оставьте ваш номер телефона и мы вам перезвоним!
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-12">
+					<form class="feedback__form">
+						<div class="form-group">
+							<input type="text" class="form-control" id="customer-name" aria-describedby="name"
+							       placeholder="Ваше имя" required>
+							<!--							<label class="form-label" for="customer-name">Ваше имя</label>-->
+						</div>
+						<div class="form-group">
+							<input type="tel" class="form-control" id="customer-number" aria-describedby="number"
+							       placeholder="Ваш телефон" required>
+							<!--							<label class="form-label" for="customer-number">Ваш телефон</label>-->
+						</div>
+						<button type="submit" class="btn btn_secondary">Отправить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
 </main>
 <footer class="footer">
 	<!--	style="background-image:url('images/general-bg/top_deco.png'),url('images/general-bg/main-bg.jpg');"-->
@@ -501,7 +552,7 @@
 					<div class="footer__contact-item"><a href="tel:" class="js-phone-number"><i
 							class="fas fa-phone-alt"></i>+7(922)987-65-43</a></div>
 					<div class="footer__contact-item"><a href="mailto:orders@kallyaspizza.com"
-					class=""><i class="fas fa-envelope"></i>orders@kallyaspizza.com</a>
+					                                     class=""><i class="fas fa-envelope"></i>orders@kallyaspizza.com</a>
 					</div>
 				</div>
 				<div class="footer__social">
@@ -539,16 +590,16 @@
 								<h4 class="feedback__form-title">Заполните форму</h4>
 								<div class="feedback__form">
 									<div class="form-group">
-										<input type="text" class="form-control" id="name" name="Имя" required>
-										<label class="form-label" for="name">Ваше имя</label>
+										<input type="text" class="form-control" id="name" name="Имя"
+										       placeholder="Ваше имя" required>
 									</div>
 									<div class="form-group">
-										<input type="tel" class="form-control" id="phone" name="Телефон" required>
-										<label class="form-label" for="phone">Ваш телефон</label>
+										<input type="tel" class="form-control" id="phone" name="Телефон"
+										       placeholder="Ваш телефон" required>
 									</div>
 									<div class="form-group">
-										<input type="text" class="form-control" id="address" name="Адрес" required>
-										<label class="form-label" for="address">Ваш адрес</label>
+										<input type="text" class="form-control" id="address" name="Адрес"
+										       placeholder="Ваш адрес" required>
 									</div>
 									<input class="js-cart-total-price-input" type="hidden" name="Общая сумма">
 									<div class="form-group">
@@ -558,7 +609,7 @@
 											<option value="Оплата наличными">наличными</option>
 										</select>
 									</div>
-									<button type="submit" class="btn btn_secondary">Отправить заказ</button>
+									<button type="submit" class="btn btn_secondary">Отправить</button>
 								</div>
 							</div>
 						</form>
@@ -573,12 +624,45 @@
 </div>
 <!-- /.popup-order -->
 
+<!--popup-menu-->
+<div class="popup popup-menu">
+	<div class="popup__wrapper">
+		<div class="popup__inner">
+			<div class="popup__content">
+				<button class="btn-close popup__btn-close popup-close"><i class="fas fa-times popup-close"></i></button>
+				<ul class="navbar-nav">
+					<!--					current_page_item-->
+					<li class="page_item"><a href="#pizzas">Пиццы</a></li>
+					<li class="page_item"><a href="#salads">Салаты</a></li>
+					<li class="page_item"><a href="#deserts">Десерты</a></li>
+					<li class="page_item"><a href="#drinks">Напитки</a></li>
+					<li class="page_item"><a href="#burger">Бургеры</a></li>
+					<li class="page_item"><a href="#shawarma">Шаурма</a></li>
+					<li class="page_item"><a href="#">Бизнес ланчи</a></li>
+					<li class="page_item"><a href="#feedback">Заказ банкета</a></li>
+					<li class="page_item"><a href="#">О нас</a></li>
+				</ul>
+				<div class="popup__phone">
+					<a href="tel:" class="js-phone-number"><i
+							class="fas fa-phone-alt"></i>+7(922)987-65-43</a>
+				</div>
+				<div class="popup__social">
+					<a class="popup__social-link" href="#" target="_blank" rel="noopener noreferrer nofollow"><i
+							class="fab fa-vk"></i></a>
+					<a class="popup__social-link" href="#" target="_blank" rel="noopener noreferrer nofollow"><i
+							class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/.popup-menu-->
 <!-- popup-thanks -->
 <div class="popup popup-thanks">
 	<div class="popup__wrapper">
 		<div class="popup__inner">
 			<div class="popup__content">
-				<button class="btn-close popup__btn-close popup-close"></button>
+				<button class="btn-close popup__btn-close popup-close"><i class="fas fa-times popup-close"></i></button>
 				<h2 class="page-title popup__title">Успешно отправлено</h2>
 				<p class="popup__subtitle">Мы уже начали готовить вашу пиццу</p>
 			</div>
@@ -592,7 +676,7 @@
 	<div class="popup__wrapper">
 		<div class="popup__inner">
 			<div class="popup__content">
-				<button class="btn-close popup__btn-close popup-close"></button>
+				<button class="btn-close popup__btn-close popup-close"><i class="fas fa-times popup-close"></i></button>
 				<h2 class="page-title popup__title">Произошла ошибка</h2>
 				<p class="popup__subtitle">Пожалуйста, сделайте заказ по номеру <a class="popup__link"
 				                                                                   href="+79999999999">+7 (999)

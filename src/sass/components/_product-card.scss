@@ -1,14 +1,16 @@
-.product-card__wrap {
-  display: flex;
-  flex-wrap: wrap;
-}
+//.product-card__wrap {
+//  display: flex;
+//  flex-wrap: wrap;
+//}
 
 .product-card {
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-width: 315px;
   padding: 0 15px;
+
 
   .product-card__img-wrap {
     margin-bottom: 15px;

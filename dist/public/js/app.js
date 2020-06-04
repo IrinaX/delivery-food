@@ -9377,6 +9377,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./form */ "./src/js/form.js");
 /* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_form__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _popup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./popup */ "./src/js/popup.js");
+/* harmony import */ var _popup__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_popup__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _phoneNumber__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./phoneNumber */ "./src/js/phoneNumber.js");
 /* harmony import */ var _phoneNumber__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_phoneNumber__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./header */ "./src/js/header.js");
@@ -9699,6 +9700,7 @@ __webpack_require__.r(__webpack_exports__);
   var header = document.querySelector(".header");
   var navHead = document.querySelector(".nav-head");
   window.addEventListener('scroll', function () {
+    // console.log(window.pageYOffset);
     if (window.pageYOffset > navHead.clientHeight) {
       header.classList.add('is-active');
     } else {
@@ -9707,55 +9709,55 @@ __webpack_require__.r(__webpack_exports__);
   });
 })();
 
-/***/ }),
+(function () {})(); // console.log(getOffset(document.querySelector('#deserts')));
 
-/***/ "./src/js/myLib.js":
-/*!*************************!*\
-  !*** ./src/js/myLib.js ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
 
-;
+function getOffset(elem) {
+  if (elem.getBoundingClientRect) {
+    // "правильный" вариант
+    return getOffsetRect(elem);
+  } else {
+    // пусть работает хоть как-то
+    return getOffsetSum(elem);
+  }
+}
 
-(function () {
-  window.myLib = {};
-  window.myLib.body = document.querySelector('body');
+function getOffsetSum(elem) {
+  var top = 0,
+      left = 0;
 
-  window.myLib.closestAttr = function (item, attr) {
-    var node = item;
+  while (elem) {
+    top = top + parseInt(elem.offsetTop);
+    left = left + parseInt(elem.offsetLeft);
+    elem = elem.offsetParent;
+  }
 
-    while (node) {
-      var attrValue = node.getAttribute(attr);
-
-      if (attrValue) {
-        return attrValue;
-      }
-
-      node = node.parentElement;
-    }
-
-    return null;
+  return {
+    top: top,
+    left: left
   };
+}
 
-  window.myLib.closestItemByClass = function (item, className) {
-    var node = item;
+function getOffsetRect(elem) {
+  // (1)
+  var box = elem.getBoundingClientRect(); // (2)
 
-    while (node) {
-      if (node.classList.contains(className)) {
-        return node;
-      }
+  var body = document.body;
+  var docElem = document.documentElement; // (3)
 
-      node = node.parentElement;
-    }
+  var scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop;
+  var scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft; // (4)
 
-    return null;
+  var clientTop = docElem.clientTop || body.clientTop || 0;
+  var clientLeft = docElem.clientLeft || body.clientLeft || 0; // (5)
+
+  var top = box.top + scrollTop - clientTop;
+  var left = box.left + scrollLeft - clientLeft;
+  return {
+    top: Math.round(top),
+    left: Math.round(left)
   };
-
-  window.myLib.toggleScroll = function () {
-    myLib.body.classList.toggle('no-scroll');
-  };
-})();
+}
 
 /***/ }),
 
@@ -9813,17 +9815,49 @@ console.log('w');
 /*!*************************!*\
   !*** ./src/js/popup.js ***!
   \*************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _myLib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./myLib */ "./src/js/myLib.js");
-/* harmony import */ var _myLib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_myLib__WEBPACK_IMPORTED_MODULE_0__);
-
+// import './myLib';
 ;
 
 (function () {
+  var body = document.querySelector('body');
+
+  var closestAttr = function closestAttr(item, attr) {
+    var node = item;
+
+    while (node) {
+      var attrValue = node.getAttribute(attr);
+
+      if (attrValue) {
+        return attrValue;
+      }
+
+      node = node.parentElement;
+    }
+
+    return null;
+  };
+
+  var closestItemByClass = function closestItemByClass(item, className) {
+    var node = item;
+
+    while (node) {
+      if (node.classList.contains(className)) {
+        return node;
+      }
+
+      node = node.parentElement;
+    }
+
+    return null;
+  };
+
+  var toggleScroll = function toggleScroll() {
+    body.classList.toggle('no-scroll');
+  };
+
   var showPopup = function showPopup(target) {
     target.classList.add('is-active');
   };
@@ -9832,9 +9866,9 @@ __webpack_require__.r(__webpack_exports__);
     target.classList.remove('is-active');
   };
 
-  myLib.body.addEventListener('click', function (e) {
+  body.addEventListener('click', function (e) {
     var target = e.target;
-    var popupClass = myLib.closestAttr(target, 'data-popup');
+    var popupClass = closestAttr(target, 'data-popup');
 
     if (popupClass === null) {
       return;
@@ -9845,19 +9879,22 @@ __webpack_require__.r(__webpack_exports__);
 
     if (popup) {
       showPopup(popup);
-      myLib.toggleScroll();
+      toggleScroll();
     }
   });
-  myLib.body.addEventListener('click', function (e) {
+  body.addEventListener('click', function (e) {
     var target = e.target;
+    var popupIsActive = document.querySelector('.popup.is-active');
 
-    if (target.classList.contains('popup-close') || target.classList.contains('popup__inner')) {
-      var popup = myLib.closestItemByClass(target, 'popup');
-      closePopup(popup);
-      myLib.toggleScroll();
+    if (popupIsActive) {
+      if (target.classList.contains('popup-close') || target.classList.contains('popup__inner') || target.classList.contains('page_item') || target.hasAttribute('href')) {
+        var popup = closestItemByClass(target, 'popup');
+        closePopup(popup);
+        toggleScroll();
+      }
     }
   });
-  myLib.body.addEventListener('keydown', function (e) {
+  body.addEventListener('keydown', function (e) {
     if (e.keyCode !== 27) {
       return;
     }
@@ -9866,7 +9903,7 @@ __webpack_require__.r(__webpack_exports__);
 
     if (popup) {
       closePopup(popup);
-      myLib.toggleScroll();
+      toggleScroll();
     }
   });
 })();

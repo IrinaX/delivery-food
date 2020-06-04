@@ -1,9 +1,21 @@
 .products {
-  padding: 50px 0;
+  //padding-top: 50px;
+  //margin-top: 50px;
+  //margin-bottom: 50px;
   .products__title {
+    padding-top: 70px;
     color: $primary;
+    @include respond-to(md){
+      text-align: center;
+    }
   }
   .products-content{
+    @include respond-to(lg){
+justify-content: space-between;
+    }
+    @include respond-to(md){
+      justify-content: center;
+    }
   }
 
 }

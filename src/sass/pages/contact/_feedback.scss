@@ -1,8 +1,6 @@
 .feedback {
-  padding: 100px 0 70px 0;
-  @include respond-to(sm){
-    padding: 60px 0 70px 0;
-  }
+  padding: 50px 0;
+
   .feedback__content{
     padding-right: 32px;
     @include respond-to(xl){

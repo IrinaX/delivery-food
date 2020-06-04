@@ -2,54 +2,80 @@
   padding: 20px 0 10px 0;
   display: flex;
   align-items: center;
+@include respond-to(sm){
+  flex-direction: column;
+  text-align: center;
 }
 
-.navbar-brand {
-  margin-right: 50px;
+  .navbar-brand {
+    margin-right: 50px;
+    @include respond-to(sm){
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
 
-  img {
-    max-width: 150px;
-    height: auto;
+    img {
+      max-width: 150px;
+      height: auto;
+    }
   }
 }
-.navbar-wrap{
+
+.navbar-wrap {
   padding: 10px 0;
   font-size: 16px;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  .navbar-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  border-bottom: 2px solid rgba($green, .5);
+  .navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-
-    .page_item {
-      margin-right: 20px;
-
-      &.current_page_item {
-        a {
-          color: $green;
-        }
+    .btn_secondary{
+      @include respond-to(xl){
+        margin: 0 0 0 auto;
       }
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      a {
-        font-family: $secondary-font;
-        font-style: normal;
-        letter-spacing: .3px;
-        transition: color .1s;
-        &:hover{
-          color: $green;
-        }
+    }
+    .btn-menu{
+      display: none;
+      @include respond-to(xl){
+        display: block;
       }
     }
   }
 }
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  @include respond-to(xl){
+    display: none;
+  }
+
+  .page_item {
+    margin-right: 20px;
+
+    &.current_page_item {
+      a {
+        color: $green;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      font-family: $secondary-font;
+      font-style: normal;
+      letter-spacing: .3px;
+      transition: color .1s;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+}
+
+
