@@ -2,8 +2,8 @@
   padding: 80px 0 40px;
   background-size:auto,auto;
   background-repeat: no-repeat,no-repeat;
-  background-position: 17% 70px, 85% 20px;
-  @include respond-to(lg){
+  background-position: 17% 10px, 85% 10px;
+  @include respond-to(xl){
     background-position: 1000% 1000%, 1000% 1000%;
   }
   .menu__title{

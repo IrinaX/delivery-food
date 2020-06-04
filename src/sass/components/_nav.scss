@@ -24,8 +24,11 @@
     display: flex;
     align-items: center;
 
-    .nav-item {
+    .page_item {
       margin-right: 40px;
+      &.current_page_item {
+        border-bottom: 3px solid $primary;
+      }
       &:last-child{
         margin-right: 0;
       }
@@ -40,15 +43,13 @@
         }
         text-align: center;
       }
-      .nav-link {
+      a {
         font-size: 18px;
         font-family: "Poster Bodoni", Helvetica, Arial, sans-serif;
         line-height: 28px;
         font-weight: 400;
         font-style: normal;
-        &.active {
-          border-bottom: 3px solid $primary;
-        }
+
         @include respond-to(md){
           padding: .5rem;
         }
