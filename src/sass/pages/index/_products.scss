@@ -1,20 +1,9 @@
 .products {
-  padding: 150px 0;
-  background-size: contain, contain, cover;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: center top, center bottom, center center;
-  @include respond-to(xl){
-    background-size: auto, auto, cover;
-  }
-  @media (min-width: 1480px){
-    .container {
-      max-width: 1400px;
-    }
-  }
-
+  padding: 50px 0;
   .products__title {
-    text-align: center;
     color: $primary;
+  }
+  .products-content{
   }
 
 }

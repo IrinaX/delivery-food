@@ -9370,15 +9370,21 @@ module.exports = g;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_initSwipers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/initSwipers */ "./src/js/utils/initSwipers.js");
-/* harmony import */ var _cart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cart */ "./src/js/cart.js");
-/* harmony import */ var _cart__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_cart__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form */ "./src/js/form.js");
-/* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_form__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./popup */ "./src/js/popup.js");
-/* harmony import */ var swiper_js_swiper_min__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/js/swiper.min */ "./node_modules/swiper/js/swiper.min.js");
-/* harmony import */ var swiper_js_swiper_min__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(swiper_js_swiper_min__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! bootstrap.native/dist/bootstrap-native-v4.min */ "./node_modules/bootstrap.native/dist/bootstrap-native-v4.min.js");
-/* harmony import */ var bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var swiper_js_swiper_min__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/js/swiper.min */ "./node_modules/swiper/js/swiper.min.js");
+/* harmony import */ var swiper_js_swiper_min__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(swiper_js_swiper_min__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _cart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cart */ "./src/js/cart.js");
+/* harmony import */ var _cart__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_cart__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./form */ "./src/js/form.js");
+/* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_form__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _popup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./popup */ "./src/js/popup.js");
+/* harmony import */ var _phoneNumber__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./phoneNumber */ "./src/js/phoneNumber.js");
+/* harmony import */ var _phoneNumber__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_phoneNumber__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./header */ "./src/js/header.js");
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_header__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! bootstrap.native/dist/bootstrap-native-v4.min */ "./node_modules/bootstrap.native/dist/bootstrap-native-v4.min.js");
+/* harmony import */ var bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_7__);
+
+
 
 
 
@@ -9626,17 +9632,49 @@ __webpack_require__.r(__webpack_exports__);
     return;
   }
 
+  var serialize = function serialize() {
+    var items = document.querySelectorAll('input, select, textarea');
+    var str = '';
+
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      var name = item.name;
+      var value = item.value;
+      var separator = i === 0 ? '' : '$';
+
+      if (value !== 'Поиск' && name !== 's') {
+        str += separator + name + '=' + value;
+      }
+    }
+
+    return str;
+  };
+
   var formSend = function formSend(form) {
-    var xhr = new XMLHttpRequest();
-    var url = 'mail/mail.php';
+    var data = serialize(form);
+    var xhr = new XMLHttpRequest(); // var url = 'http://eli-cafe.ru/wp-admin/admin-ajax.php?action=send_mail';
+
     xhr.open('POST', url);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
     xhr.onload = function () {
-      console.log('done');
+      console.log(xhr.response);
+      var activePopup = document.querySelector('.popup.is-active');
+
+      if (activePopup) {
+        activePopup.classList.remove('is-active');
+      }
+
+      if (xhr.response === 'success') {
+        document.querySelector('.popup-thanks').classList.add('is-active');
+      } else {
+        document.querySelector('.popup-error').classList.add('is-active');
+      }
+
+      form.reset();
     };
 
-    xhr.send();
+    xhr.send(data);
   };
 
   for (var i = 0; i < forms.length; i++) {
@@ -9646,6 +9684,27 @@ __webpack_require__.r(__webpack_exports__);
       formSend(form);
     });
   }
+})();
+
+/***/ }),
+
+/***/ "./src/js/header.js":
+/*!**************************!*\
+  !*** ./src/js/header.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function () {
+  var header = document.querySelector(".header");
+  var navHead = document.querySelector(".nav-head");
+  window.addEventListener('scroll', function () {
+    if (window.pageYOffset > navHead.clientHeight) {
+      header.classList.add('is-active');
+    } else {
+      header.classList.remove('is-active');
+    }
+  });
 })();
 
 /***/ }),
@@ -9696,6 +9755,56 @@ __webpack_require__.r(__webpack_exports__);
   window.myLib.toggleScroll = function () {
     myLib.body.classList.toggle('no-scroll');
   };
+})();
+
+/***/ }),
+
+/***/ "./src/js/phoneNumber.js":
+/*!*******************************!*\
+  !*** ./src/js/phoneNumber.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+console.log('w');
+;
+
+(function () {
+  var phoneNumberDOMElement = document.querySelector('.js-phone-number');
+
+  if (!phoneNumberDOMElement) {
+    return;
+  }
+
+  var generateNumber = function generateNumber(phoneNumberDOMElement) {
+    var phoneNumberDOMElementContent = phoneNumberDOMElement.textContent;
+    return phoneNumberDOMElementContent.replace(/\D/g, "");
+  };
+
+  var phoneNumberDOMElements = document.querySelectorAll('.js-phone-number');
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = phoneNumberDOMElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var element = _step.value;
+      element.setAttribute('href', 'tel:' + generateNumber(phoneNumberDOMElement));
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+        _iterator["return"]();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
 })();
 
 /***/ }),

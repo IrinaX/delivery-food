@@ -8,376 +8,518 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="wrap">
-	<header class="header header-home" id="header"
-	        style="background-image:url('images/general-bg/bottom_deco.png'),url('images/home-header/header-pizza.png'),url('images/general-bg/main-bg.jpg');">
+<!--<div class="wrap">-->
+<header class="header" id="header">
+	<div class="container">
+		<div class="nav-head">
+			<a class="navbar-brand" href="#"><img src="images/home-header/main-logo.png" alt=""></a>
+			<div class="nav-contact">
+				<p class="m-0">Принимаем заказы по номеру:</p>
+				<a class="nav-contact__phone js-phone-number" href="tel:">+7(922)987-65-43</a>
+			</div>
+		</div>
+	</div>
+	<div class="navbar-wrap">
 		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<nav class="navbar">
-						<ul class="navbar-nav">
-							<li class="page_item page-item-2 current_page_item"><a href="index.html" aria-current="page">Главная</a></li>
-							<li class="page_item page-item-11"><a href="menu.html">Меню</a></li>
-							<li class="page_item page-item-16"><a href="contact.html">Заказ банкета</a></li>
-						</ul>
-						<a class="navbar-brand" href="#">
-							<img src="images/home-header/logo.png" alt="">
-							<span>pizzeria</span>
-						</a>
-							<div class="nav-contact">
-								<a class="nav-link" href="tel:207006093"><span><i class="fas fa-phone-alt"></i></span> +20 (700) 65903</a>
-								<a class="nav-link" href="tel:207006093">бизнес ланчи <span><i class="fab fa-instagram"></i></span></a>
-							</div>
-					</nav>
+			<nav class="navbar">
+				<ul class="navbar-nav">
+<!--					current_page_item-->
+					<li class="page_item"><a href="#pizzas">Пиццы</a></li>
+					<li class="page_item"><a href="#salads">Салаты</a></li>
+					<li class="page_item"><a href="#deserts">Десерты</a></li>
+					<li class="page_item"><a href="#drinks">Напитки</a></li>
+					<li class="page_item"><a href="#burger">Бургеры</a></li>
+					<li class="page_item"><a href="#shawarma">Шаурма</a></li>
+					<li class="page_item"><a href="#">Бизнес ланчи</a></li>
+					<li class="page_item"><a href="contact.html">Заказ банкета</a></li>
+				</ul>
+				<button type="button" class="btn btn_secondary" data-popup="popup-order">Корзина</button>
+			</nav>
+		</div>
+	</div>
+</header>
+<main>
+	<section class="products" id="pizzas">
+		<!--			style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')"-->
+		<div class="container">
+			<h2 class="products__title">Пиццы</h2>
+			<div class="row products-content">
+				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
+				     data-product-name="Ассорти" data-product-price="500">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Ассорти</h5>
+
+						<div class="product-card__subtitle">Картофель из печи, соленые огурчики, цыпленок, соус ранч,
+							томаты, красный лук, чеснок, моцарелла, томатный соус
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">500 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/4-Cheese-Classico.png"
+				     data-product-name="Пепперони Фреш с перцем" data-product-price="550">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/4-Cheese-Classico.png" alt=""></div>
+						<h5 class="product-card__title">Пепперони Фреш с перцем</h5>
+
+						<div class="product-card__subtitle">Пикантная пепперони, увеличенная порция моцареллы, сладкий
+							перец,
+							томатный соус
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">550 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/BBQ-Chicken-Pizza.png"
+				     data-product-name="Чизбургер-пицца" data-product-price="450">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/BBQ-Chicken-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Чизбургер-пицца</h5>
+
+						<div class="product-card__subtitle">Мясной соус болоньезе, моцарелла, красный лук, соленые
+							огурчики,
+							томаты, соус бургер
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">450 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/Best-Pizza.png"
+				     data-product-name="Четыре сезона" data-product-price="600">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Best-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Четыре сезона</h5>
+
+						<div class="product-card__subtitle">Увеличенная порция моцареллы, ветчина, пикантная пепперони,
+							кубики
+							брынзы, томаты, шампиньоны, томатный соус, итальянские травы
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">600 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
 				</div>
 			</div>
-			<div class="header-content">
-				<h1 class="header-content__title">Try not to get too</h1>
-				<div class="header-content__description">
-					<span>attached</span>
+			<div class="">
+
+			</div>
+		</div>
+	</section>
+	<section class="products" id="salads">
+		<!--			style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')"-->
+		<div class="container">
+			<h2 class="products__title">Салаты</h2>
+			<div class="row products-content">
+				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
+				     data-product-name="Ассорти" data-product-price="500">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Ассорти</h5>
+
+						<div class="product-card__subtitle">Картофель из печи, соленые огурчики, цыпленок, соус ранч,
+							томаты, красный лук, чеснок, моцарелла, томатный соус
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">500 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/4-Cheese-Classico.png"
+				     data-product-name="Пепперони Фреш с перцем" data-product-price="550">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/4-Cheese-Classico.png" alt=""></div>
+						<h5 class="product-card__title">Пепперони Фреш с перцем</h5>
+
+						<div class="product-card__subtitle">Пикантная пепперони, увеличенная порция моцареллы, сладкий
+							перец,
+							томатный соус
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">550 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/BBQ-Chicken-Pizza.png"
+				     data-product-name="Чизбургер-пицца" data-product-price="450">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/BBQ-Chicken-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Чизбургер-пицца</h5>
+
+						<div class="product-card__subtitle">Мясной соус болоньезе, моцарелла, красный лук, соленые
+							огурчики,
+							томаты, соус бургер
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">450 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/Best-Pizza.png"
+				     data-product-name="Четыре сезона" data-product-price="600">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Best-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Четыре сезона</h5>
+
+						<div class="product-card__subtitle">Увеличенная порция моцареллы, ветчина, пикантная пепперони,
+							кубики
+							брынзы, томаты, шампиньоны, томатный соус, итальянские травы
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">600 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+			</div>
+			<div class="">
+
+			</div>
+		</div>
+	</section>
+	<section class="products" id="deserts">
+		<!--			style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')"-->
+		<div class="container">
+			<h2 class="products__title">Десерты</h2>
+			<div class="row products-content">
+				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
+				     data-product-name="Ассорти" data-product-price="500">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Ассорти</h5>
+
+						<div class="product-card__subtitle">Картофель из печи, соленые огурчики, цыпленок, соус ранч,
+							томаты, красный лук, чеснок, моцарелла, томатный соус
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">500 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/4-Cheese-Classico.png"
+				     data-product-name="Пепперони Фреш с перцем" data-product-price="550">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/4-Cheese-Classico.png" alt=""></div>
+						<h5 class="product-card__title">Пепперони Фреш с перцем</h5>
+
+						<div class="product-card__subtitle">Пикантная пепперони, увеличенная порция моцареллы, сладкий
+							перец,
+							томатный соус
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">550 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/BBQ-Chicken-Pizza.png"
+				     data-product-name="Чизбургер-пицца" data-product-price="450">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/BBQ-Chicken-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Чизбургер-пицца</h5>
+
+						<div class="product-card__subtitle">Мясной соус болоньезе, моцарелла, красный лук, соленые
+							огурчики,
+							томаты, соус бургер
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">450 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/Best-Pizza.png"
+				     data-product-name="Четыре сезона" data-product-price="600">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Best-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Четыре сезона</h5>
+
+						<div class="product-card__subtitle">Увеличенная порция моцареллы, ветчина, пикантная пепперони,
+							кубики
+							брынзы, томаты, шампиньоны, томатный соус, итальянские травы
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">600 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+			</div>
+			<div class="">
+
+			</div>
+		</div>
+	</section>
+	<section class="products" id="drinks">
+		<!--			style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')"-->
+		<div class="container">
+			<h2 class="products__title">Напитки</h2>
+			<div class="row products-content">
+				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
+				     data-product-name="Ассорти" data-product-price="500">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Ассорти</h5>
+
+						<div class="product-card__subtitle">Картофель из печи, соленые огурчики, цыпленок, соус ранч,
+							томаты, красный лук, чеснок, моцарелла, томатный соус
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">500 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/4-Cheese-Classico.png"
+				     data-product-name="Пепперони Фреш с перцем" data-product-price="550">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/4-Cheese-Classico.png" alt=""></div>
+						<h5 class="product-card__title">Пепперони Фреш с перцем</h5>
+
+						<div class="product-card__subtitle">Пикантная пепперони, увеличенная порция моцареллы, сладкий
+							перец,
+							томатный соус
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">550 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/BBQ-Chicken-Pizza.png"
+				     data-product-name="Чизбургер-пицца" data-product-price="450">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/BBQ-Chicken-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Чизбургер-пицца</h5>
+
+						<div class="product-card__subtitle">Мясной соус болоньезе, моцарелла, красный лук, соленые
+							огурчики,
+							томаты, соус бургер
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">450 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/Best-Pizza.png"
+				     data-product-name="Четыре сезона" data-product-price="600">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Best-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Четыре сезона</h5>
+
+						<div class="product-card__subtitle">Увеличенная порция моцареллы, ветчина, пикантная пепперони,
+							кубики
+							брынзы, томаты, шампиньоны, томатный соус, итальянские травы
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">600 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+			</div>
+			<div class="">
+
+			</div>
+		</div>
+	</section>
+	<section class="products" id="burger">
+		<!--			style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')"-->
+		<div class="container">
+			<h2 class="products__title">Салаты</h2>
+			<div class="row products-content">
+				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
+				     data-product-name="Ассорти" data-product-price="500">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Ассорти</h5>
+
+						<div class="product-card__subtitle">Картофель из печи, соленые огурчики, цыпленок, соус ранч,
+							томаты, красный лук, чеснок, моцарелла, томатный соус
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">500 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/4-Cheese-Classico.png"
+				     data-product-name="Пепперони Фреш с перцем" data-product-price="550">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/4-Cheese-Classico.png" alt=""></div>
+						<h5 class="product-card__title">Пепперони Фреш с перцем</h5>
+
+						<div class="product-card__subtitle">Пикантная пепперони, увеличенная порция моцареллы, сладкий
+							перец,
+							томатный соус
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">550 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/BBQ-Chicken-Pizza.png"
+				     data-product-name="Чизбургер-пицца" data-product-price="450">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/BBQ-Chicken-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Чизбургер-пицца</h5>
+
+						<div class="product-card__subtitle">Мясной соус болоньезе, моцарелла, красный лук, соленые
+							огурчики,
+							томаты, соус бургер
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">450 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/Best-Pizza.png"
+				     data-product-name="Четыре сезона" data-product-price="600">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Best-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Четыре сезона</h5>
+
+						<div class="product-card__subtitle">Увеличенная порция моцареллы, ветчина, пикантная пепперони,
+							кубики
+							брынзы, томаты, шампиньоны, томатный соус, итальянские травы
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">600 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+			</div>
+			<div class="">
+
+			</div>
+		</div>
+	</section>
+	<section class="products" id="shawarma">
+		<!--			style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')"-->
+		<div class="container">
+			<h2 class="products__title">Десерты</h2>
+			<div class="row products-content">
+				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
+				     data-product-name="Ассорти" data-product-price="500">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Ассорти</h5>
+
+						<div class="product-card__subtitle">Картофель из печи, соленые огурчики, цыпленок, соус ранч,
+							томаты, красный лук, чеснок, моцарелла, томатный соус
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">500 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/4-Cheese-Classico.png"
+				     data-product-name="Пепперони Фреш с перцем" data-product-price="550">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/4-Cheese-Classico.png" alt=""></div>
+						<h5 class="product-card__title">Пепперони Фреш с перцем</h5>
+
+						<div class="product-card__subtitle">Пикантная пепперони, увеличенная порция моцареллы, сладкий
+							перец,
+							томатный соус
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">550 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/BBQ-Chicken-Pizza.png"
+				     data-product-name="Чизбургер-пицца" data-product-price="450">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/BBQ-Chicken-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Чизбургер-пицца</h5>
+
+						<div class="product-card__subtitle">Мясной соус болоньезе, моцарелла, красный лук, соленые
+							огурчики,
+							томаты, соус бургер
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">450 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/Best-Pizza.png"
+				     data-product-name="Четыре сезона" data-product-price="600">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Best-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Четыре сезона</h5>
+
+						<div class="product-card__subtitle">Увеличенная порция моцареллы, ветчина, пикантная пепперони,
+							кубики
+							брынзы, томаты, шампиньоны, томатный соус, итальянские травы
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">600 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+			</div>
+			<div class="">
+
+			</div>
+		</div>
+	</section>
+</main>
+<footer class="footer">
+	<!--	style="background-image:url('images/general-bg/top_deco.png'),url('images/general-bg/main-bg.jpg');"-->
+	<!--	<a href="#header" class="scroll-up-btn"><i class="fas fa-angle-up"></i></a>-->
+	<div class="footer-content-wrap">
+		<div class="container">
+			<div class="footer-content">
+				<div class="footer__logo">
+					<a class="footer__logo-link" href="#header">
+						<img class="footer__logo-img" src="images/home-header/main-logo.png" alt="">
+					</a>
+				</div>
+				<div class="footer__contacts">
+					<div class="footer__contact-item"><a href="geo:" class="footer__address"><i
+							class="fas fa-map-marker-alt"></i>г. Сургут, Энтузиастов 47/1</a></div>
+					<div class="footer__contact-item"><a href="tel:" class="js-phone-number"><i
+							class="fas fa-phone-alt"></i>+7(922)987-65-43</a></div>
+					<div class="footer__contact-item"><a href="mailto:orders@kallyaspizza.com"
+					class=""><i class="fas fa-envelope"></i>orders@kallyaspizza.com</a>
+					</div>
+				</div>
+				<div class="footer__social">
+					<a class="footer__social-link" href="#" target="_blank" rel="noopener noreferrer nofollow"><i
+							class="fab fa-vk"></i></a>
+					<a class="footer__social-link" href="#" target="_blank" rel="noopener noreferrer nofollow"><i
+							class="fab fa-instagram"></i></a>
 				</div>
 			</div>
 		</div>
-	</header>
-	<main>
-		<section class="wrapper welcome"
-		         style="background-image:url('images/menu-bg/pizza.jpg'),url('images/menu-bg/vegetables.jpg');">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-7 col-md-12 mx-auto">
-						<h2 class="welcome__title">
-							Welcome to our <br> Pizzeria
-						</h2>
-						<div class="welcome__description">Collaboratively benchmark multifunctional methodologies
-							vis-a-vis
-							effective imperatives. Completely morph proactive bandwidth vis-a-vis highly efficient
-							niches
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-4 col-md-6 col-12">
-						<div class="welcome__item">
-							<img class="welcome__item-img" src="images/welcome/pizza1.jpg" alt="">
-							<h5 class="welcome__item-title">Italian Flavours</h5>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<div class="welcome__item">
-							<img class="welcome__item-img" src="images/welcome/pizza2.jpg" alt="">
-							<h5 class="welcome__item-title">Home Delivery</h5>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 mx-md-auto col-12">
-						<div class="welcome__item mb-0">
-							<img class="welcome__item-img" src="images/welcome/people.jpg" alt="">
-							<h5 class="welcome__item-title">Enjoy With Your Friends</h5>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="products"
-		         style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')">
-			<div class="container">
-				<h2 class="products__title">Selected Pizzas</h2>
-				<div class="swiper-container products-swiper" data-preset="products-swiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
-							     data-product-name="Veggie Fresco Pizza" data-product-price="180">
-								<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png" alt=""></div>
-								<h5 class="product-card__title">Veggie Fresco Pizza</h5>
-								<div class="product-card__subtitle">Tomato, Green Peppers, Onions, Mushrooms,
-									Black-Olives,
-									Melted Mozzarella, Perfect Stone Fired Crust
-								</div>
-								<div class="product-card__price">180 руб.</div>
-								<button class="js-btn-add-to-card product-card__btn btn btn_primary">Make an Offer</button>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="product-card js-product" data-product-src="images/menu/Best-Pizza.png"
-							     data-product-name="Best Pizza" data-product-price="140">
-								<div class="product-card__img-wrap"><img src="images/menu/Best-Pizza.png" alt=""></div>
-								<h5 class="product-card__title">Best Pizza</h5>
-								<div class="product-card__subtitle">Tomato, Green Peppers, Onions, Mushrooms,
-									Black-Olives,
-									Melted Mozzarella, Perfect Stone Fired Crust
-								</div>
-								<div class="product-card__price">140 руб.</div>
-								<button class="js-btn-add-to-card product-card__btn btn btn_primary">Make an Offer</button>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="product-card js-product" data-product-src="images/menu/4-Cheese-Classico.png"
-							     data-product-name="4 Cheese Classico" data-product-price="110">
-								<div class="product-card__img-wrap"><img src="images/menu/4-Cheese-Classico.png" alt=""></div>
-								<h5 class="product-card__title">4 Cheese Classico</h5>
-								<div class="product-card__subtitle">Tomato, Green Peppers, Onions, Mushrooms,
-									Black-Olives,
-									Melted Mozzarella, Perfect Stone Fired Crust
-								</div>
-								<div class="product-card__price">110 руб.</div>
-								<button class="js-btn-add-to-card product-card__btn btn btn_primary">Make an Offer</button>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="product-card js-product" data-product-src="images/menu/BBQ-Chicken-Pizza.png"
-							     data-product-name="BBQ Chicken Pizza" data-product-price="160">
-								<div class="product-card__img-wrap"><img src="images/menu/BBQ-Chicken-Pizza.png" alt="">
-								</div>
-								<h5 class="product-card__title">BBQ Chicken Pizza</h5>
-								<div class="product-card__subtitle">Tomato, Green Peppers, Onions, Mushrooms,
-									Black-Olives,
-									Melted Mozzarella, Perfect Stone Fired Crust
-								</div>
-								<div class="product-card__price">160 руб.</div>
-								<button class="js-btn-add-to-card product-card__btn btn btn_primary">Make an Offer</button>
-							</div>
-						</div>
-					</div>
-					<!-- Add Arrows -->
-					<div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
-					<div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
-				</div>
-			</div>
-		</section>
-		<section class="wrapper index-menu"
-		         style="background-image:url('images/menu-bg/croissant.jpg'),url('images/menu-bg/leaves.jpg');">
-			<div class="container">
-				<h3 class="index-menu__title green">Salads</h3>
-				<div class="swiper-container salads-swiper" data-preset="salads-swiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="product-card js-product" data-product-src="images/menu/steak.jpg"
-							     data-product-name="Roast chicken & crispy bread" data-product-price="110">
-								<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt=""></div>
-								<h5 class="product-card__title">Roast chicken & crispy bread</h5>
-								<div class="product-card__subtitle">olive oil, lemon, garlic, ciabatta, pine nuts</div>
-								<div class="product-card__price">110 руб.</div>
-								<button class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer</button>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="product-card js-product" data-product-src="images/menu/steak.jpg"
-							     data-product-name="Golden Chevre" data-product-price="130">
-								<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt=""></div>
-								<h5 class="product-card__title">Golden Chevre</h5>
-								<div class="product-card__subtitle">breaded goat cheese, mixed greens,
-									strawberries, dried cranberries
-								</div>
-								<div class="product-card__price">130 руб.</div>
-								<button class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer</button>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="product-card js-product" data-product-src="images/menu/steak.jpg"
-							     data-product-name="Spinach Salad" data-product-price="140">
-								<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt="">
-								</div>
-								<h5 class="product-card__title">Spinach Salad</h5>
-								<div class="product-card__subtitle">spinach, raisins, walnuts, gorgonzola,
-									balsamic & dijon vinaigrette
-								</div>
-								<div class="product-card__price">140 руб.</div>
-								<button class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer</button>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="product-card js-product" data-product-src="images/menu/steak.jpg"
-							     data-product-name="Chop Salad" data-product-price="150">
-								<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt="">
-								</div>
-								<h5 class="product-card__title">Chop Salad</h5>
-								<div class="product-card__subtitle">romaine, egg, red onion, tomato, bleu cheese,
-									bacon
-								</div>
-								<div class="product-card__price">150 руб.</div>
-								<button class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer</button>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="product-card js-product" data-product-src="images/menu/steak.jpg"
-							     data-product-name="Caesar" data-product-price="140">
-								<div class="product-card__img-wrap"><img src="images/menu/steak.jpg" alt="">
-								</div>
-								<h5 class="product-card__title">Caesar</h5>
-								<div class="product-card__subtitle">romaine, parmesan
-								</div>
-								<div class="product-card__price">140 руб.</div>
-								<button class="js-btn-add-to-card product-card__btn btn btn_green">Make an Offer</button>
-							</div>
-						</div>
-					</div>
-					<!-- Add Arrows -->
-					<div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
-					<div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
-				</div>
-				<h3 class="index-menu__title brown">Deserts</h3>
-				<div class="swiper-container deserts-swiper" data-preset="deserts-swiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="product-card js-product" data-product-src="images/menu/cake.jpg"
-							     data-product-name="Lychee Icecream" data-product-price="50">
-								<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt="">
-								</div>
-								<h5 class="product-card__title">Lychee Icecream</h5>
-								<div class="product-card__subtitle">Lychee Flavored Ice Cream</div>
-								<div class="product-card__price">50 руб.</div>
-								<button class="js-btn-add-to-card product-card__btn btn btn_dark">Make an Offer</button>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="product-card js-product" data-product-src="images/menu/cake.jpg"
-							     data-product-name="Coconut Icecream" data-product-price="40">
-								<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt=""></div>
-								<h5 class="product-card__title">Coconut Icecream</h5>
-								<div class="product-card__subtitle">Coconut Flavored Indian Ice Cream</div>
-								<div class="product-card__price">40 руб.</div>
-								<button class="js-btn-add-to-card product-card__btn btn btn_dark">Make an Offer</button>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="product-card js-product" data-product-src="images/menu/cake.jpg"
-							     data-product-name="Mint Lemonade" data-product-price="30">
-								<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt="">
-								</div>
-								<h5 class="product-card__title">Mint Lemonade</h5>
-								<div class="product-card__subtitle">Mint Flavored Lemonade</div>
-								<div class="product-card__price">30 руб.</div>
-								<button class="js-btn-add-to-card product-card__btn btn btn_dark">Make an Offer</button>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="product-card js-product" data-product-src="images/menu/cake.jpg"
-							     data-product-name="Mint Lemonade" data-product-price="30">
-								<div class="product-card__img-wrap"><img src="images/menu/cake.jpg" alt="">
-								</div>
-								<h5 class="product-card__title">Mint Lemonade</h5>
-								<div class="product-card__subtitle">Mint Flavored Lemonade</div>
-								<div class="product-card__price">30 руб.</div>
-								<button class="js-btn-add-to-card product-card__btn btn btn_dark">Make an Offer</button>
-							</div>
-						</div>
-					</div>
-					<!-- Add Arrows -->
-					<div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
-					<div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
-				</div>
-			</div>
-		</section>
-		<section class="wrapper advantages">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-xl-5 col-lg-4 advantages__img-wrap">
-						<img src="images/advantage/pizza.png" alt="" class="advantages__img">
-					</div>
-					<div class="col-xl-7 col-lg-8 col-12 px-0 ">
-						<div class="advantages-content">
-							<h2 class="advantages-content__title">We use only fresh ingredients</h2>
-							<div class="advantages-content__text">Collaboratively benchmark multifunctional
-								methodologies
-								vis-a-vis effective imperatives. Completely morph proactive bandwidth vis-a-vis highly
-								efficient
-								niches. Competently empower clicks-and-mortar data via timely systems. Completely
-								unleash
-								top-line services via emerging e-business
-							</div>
-							<div class="advantages-content__images">
-								<div class="advantages-content__img-wrap"><img src="images/advantage/leaves.png" alt="">
-								</div>
-								<div class="advantages-content__img-wrap"><img src="images/advantage/tomato.png" alt="">
-								</div>
-								<div class="advantages-content__img-wrap"><img src="images/advantage/mango.png" alt="">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="reviews">
-			<div class="container">
-				<h2 class="reviews__title">What They Say</h2>
-				<div class="swiper-container reviews-swiper" data-preset="reviews-swiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="reviews__item">
-								<h4 class="reviews__item-title">Amanda Seinfield</h4>
-								<div class="reviews__item-text">“Kallyas Pizza has great pizza. Not only do you get
-									served
-									with
-									a
-									great attitude and delivered delicious pizza, you get a great price. I buy lunch
-									slices
-									in
-									Port
-									Angeles frequently when I’m there, and the price never fails to make me smile.”
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="reviews__item">
-								<h4 class="reviews__item-title">Victor Ried</h4>
-								<div class="reviews__item-text">“The pizza was delivered within a decent time frame, was
-									delicious and
-									tasted like real toppings! The service was great, too, as was the online ordering
-									system.”
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="reviews__item">
-								<h4 class="reviews__item-title">Susana Wellbrook</h4>
-								<div class="reviews__item-text">“These people are great! Kallyas is the longest lasting
-									pizza
-									place in
-									our town and is well run and staffed. We are thankful they are there. Prices are
-									great
-									and
-									allow us
-									to keep coming back.”
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
-					<div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
-				</div>
-			</div>
-		</section>
-	</main>
-	<footer class="footer"
-	        style="background-image:url('images/general-bg/top_deco.png'),url('images/general-bg/main-bg.jpg');">
-		<a href="#header" class="scroll-up-btn"><i class="fas fa-angle-up"></i></a>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-5 col-md-6 col-12">
-					<div class="footer__address">1944 Zappia Drive <br> Little Rock <br> Arkansas 72219</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<div class="footer__contact">
-						<a href="tel:207006093" class="footer__contact-link">+20 (700) 65903</a>
-						<a href="mailto:orders@kallyaspizza.com"
-						   class="footer__contact-link">orders@kallyaspizza.com</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-12">
-					<div class="footer__social">
-						<a class="footer__social-link" href="#"><i class="fab fa-vk"></i></a>
-						<a class="footer__social-link" href="#"><i class="fab fa-instagram"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-</div>
+	</div>
+</footer>
+<!--</div>-->
 <button type="button" class="cart-btn" data-popup="popup-order">
 	<span class="cart-btn__counter js-cart-total-count-items"></span>
 	<span class="cart-btn__icon"><i class="fas fa-shopping-cart"></i></span>
 </button>
-<!-- popup-order &#8381;-->
+<!-- popup-order -->
 <div class="popup popup-order">
 	<div class="popup__wrapper">
 		<div class="popup__inner">

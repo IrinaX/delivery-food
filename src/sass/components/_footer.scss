@@ -1,55 +1,44 @@
 .footer {
-  padding: 0 0 130px;
-  background-size: contain, cover;
-  background-repeat: no-repeat, no-repeat;
-  background-position: center top, center bottom;
-  @include respond-to(xl) {
-    background-size: auto, cover;
+
+  padding: 35px 0 70px;
+
+  .footer-content-wrap {
+    border-top: 1px solid rgba($green, .5);
+    padding-top: 70px;
   }
 
-  .footer__address {
-    font-family: "Poster Bodoni", Helvetica, Arial, sans-serif;
-    font-size: 30px;
-    line-height: 150%;
-    color: $primary;
-    @include respond-to(lg) {
-      font-size: 24px;
-    }
-    @include respond-to(md) {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 22px;
+  .footer-content {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer__logo {
+    .footer__logo-img {
+      max-width: 150px;
+      height: auto;
     }
   }
 
-  .footer__contact {
-    font-family: "Poster Bodoni", Helvetica, Arial, sans-serif;
-    font-size: 22px;
-    line-height: 30px;
-    @include respond-to(lg) {
-      text-align: right;
-    }
-    @include respond-to(md) {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 20px;
+  .footer__contact-item {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
     }
 
-    .footer__contact-link {
-      margin-bottom: 15px;
-      display: block;
-      color: $secondary;
-      @include respond-to(md) {
-        margin-bottom: 0;
-      }
+    i {
+      margin-right: 5px;
+    }
+
+    a:hover {
+      color: $green;
     }
   }
 
   .footer__social {
     text-align: right;
-    @include respond-to(md) {
-      text-align: center;
-    }
 
     .footer__social-link {
       margin-right: 30px;
@@ -59,7 +48,10 @@
       }
 
       font-size: 36px;
-      color: $primary;
+
+      &:hover {
+        color: $green;
+      }
     }
   }
 }

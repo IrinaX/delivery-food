@@ -1,4 +1,4 @@
-/**
+@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap);/**
  * Swiper 5.2.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
@@ -7673,23 +7673,23 @@ template {
 }
 
 .bg-primary {
-  background-color: white !important;
+  background-color: #191919 !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #e6e6e6 !important;
+  background-color: black !important;
 }
 
 .bg-secondary {
-  background-color: #f3a531 !important;
+  background-color: #4f8a11 !important;
 }
 
 a.bg-secondary:hover, a.bg-secondary:focus,
 button.bg-secondary:hover,
 button.bg-secondary:focus {
-  background-color: #e48e0d !important;
+  background-color: #355d0b !important;
 }
 
 .bg-success {
@@ -7733,13 +7733,13 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #afafaf !important;
+  background-color: white !important;
 }
 
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
 button.bg-light:focus {
-  background-color: #969696 !important;
+  background-color: #e6e6e6 !important;
 }
 
 .bg-dark {
@@ -7811,11 +7811,11 @@ button.bg-yellow:focus {
 }
 
 .border-primary {
-  border-color: white !important;
+  border-color: #191919 !important;
 }
 
 .border-secondary {
-  border-color: #f3a531 !important;
+  border-color: #4f8a11 !important;
 }
 
 .border-success {
@@ -7835,7 +7835,7 @@ button.bg-yellow:focus {
 }
 
 .border-light {
-  border-color: #afafaf !important;
+  border-color: white !important;
 }
 
 .border-dark {
@@ -14326,19 +14326,19 @@ button.bg-yellow:focus {
 }
 
 .text-primary {
-  color: white !important;
+  color: #191919 !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: #d9d9d9 !important;
+  color: black !important;
 }
 
 .text-secondary {
-  color: #f3a531 !important;
+  color: #4f8a11 !important;
 }
 
 a.text-secondary:hover, a.text-secondary:focus {
-  color: #cc7f0c !important;
+  color: #284609 !important;
 }
 
 .text-success {
@@ -14374,11 +14374,11 @@ a.text-danger:hover, a.text-danger:focus {
 }
 
 .text-light {
-  color: #afafaf !important;
+  color: white !important;
 }
 
 a.text-light:hover, a.text-light:focus {
-  color: #898989 !important;
+  color: #d9d9d9 !important;
 }
 
 .text-dark {

@@ -5,57 +5,58 @@ button:focus {
 }
 
 .btn {
-  border-radius: 80px;
-  font-family: "Poster Bodoni", Helvetica, Arial, sans-serif;
+  border-radius: 10px;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 600;
   font-size: 18px;
   line-height: 100%;
   display: block;
   text-align: center;
-  padding: 13px 30px;
+  padding: 13px 20px;
   border: none;
   box-sizing: border-box;
-  color: $primary;
-
+  background: transparent;
+  transition: color .2s, background .2s ;
   &:active {
     opacity: 0.8;
   }
 
-  &:focus {
-    box-shadow: 0 0 0 0.2rem rgba($primary, .5);
-  }
-
   &.btn_primary {
-    background-color: $danger;
+    color: $green;
+    border: 1px solid $green;
+    &:hover {
+      background: $green;
+      color: $light;
+      @include respond-to(lg) {
+        color: $green;
+        background: transparent;
+      }
+    }
 
-    &:focus {
-      box-shadow: 0 0 0 0.2rem rgba($danger, .5);
+    &:active {
+      opacity: 0.8;
+      transform: scale(0.9);
     }
   }
 
   &.btn_secondary {
-    background-color: $secondary;
+    color: $light;
+    background: rgba($green, 1);
 
-    &:focus {
-      box-shadow: 0 0 0 0.2rem rgba($secondary, .5);
+    &:hover {
+      background: rgba($green, .8);
+      @include respond-to(lg) {
+        background: rgba($green, 1);
+      }
     }
   }
 
   &.btn_green {
     background-color: $green;
-
-    &:focus {
-      box-shadow: 0 0 0 0.2rem rgba($green, .5);
-    }
   }
 
   &.btn_dark {
     background-color: $brown;
-
-    &:focus {
-      box-shadow: 0 0 0 0.2rem rgba($brown, .5);
-    }
   }
 
   &.btn_link {
@@ -78,10 +79,6 @@ button:focus {
   font-size: 50px;
   height: 79px;
   width: 79px;
-
-  &:focus {
-    box-shadow: 0 0 0 0.2rem rgba($secondary, .5);
-  }
 }
 
 
@@ -101,16 +98,22 @@ button:focus {
   color: $secondary;
   border: none;
   font-size: 25px;
-  transition: background .2s, opacity .2s;
+  transition: opacity .2s;
 
   &:active {
     font-size: 22px;
+    //opacity: .5;
   }
 
   &:hover {
     opacity: .5;
+    @include respond-to(lg) {
+      opacity: 1;
+    }
   }
+
 }
+
 
 .popup__btn-close {
   cursor: pointer;
@@ -155,10 +158,12 @@ button:focus {
   z-index: 5;
   transition: transform .2s, opacity .2s;
   padding: 0;
-  &:hover{
+
+  &:hover {
     transform: scale(1.1);
   }
-  &:active{
+
+  &:active {
     opacity: .6;
   }
 
@@ -179,6 +184,7 @@ button:focus {
     font-weight: 900;
     letter-spacing: 0.05em;
   }
+
   .cart-btn__icon {
     padding: 6px 0;
     font-size: 40px;
@@ -192,7 +198,7 @@ button:focus {
 }
 
 
-@include respond-to(sm){
+@include respond-to(sm) {
   .cart-btn {
     right: 30px;
     bottom: 30px;
@@ -212,9 +218,6 @@ button:focus {
     transform: translate(0, -5px);
   }
 }
-
-
-
 
 
 /* cart-btn end */

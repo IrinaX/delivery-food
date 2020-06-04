@@ -1,9 +1,14 @@
-.product-card__wrap{
+.product-card__wrap {
   display: flex;
+  flex-wrap: wrap;
 }
+
 .product-card {
-  padding:0 15px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 315px;
+  padding: 0 15px;
 
   .product-card__img-wrap {
     margin-bottom: 15px;
@@ -19,17 +24,23 @@
   }
 
   .product-card__subtitle {
+    font-size: 16px;
     margin-bottom: 15px;
   }
 
-  .product-card__price {
-    font-family: "Poster Bodoni", Helvetica, Arial, sans-serif;
-    font-size: 26px;
-    color: $secondary;
-    margin-bottom: 30px;
-  }
+  .product-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  .product-card__btn {
-    margin: 0 auto;
+    .product-card__price {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .product-card__btn {
+      margin: 0;
+    }
   }
 }
