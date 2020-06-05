@@ -147,7 +147,7 @@
         renderCart();
         updateCart();
 
-        document.addEventListener('reset-cart', resetCart());
+        document.addEventListener('reset-cart', resetCart);
 
         document.querySelector('body').addEventListener('click', (e) => {
             const target = e.target;
