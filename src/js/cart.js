@@ -21,12 +21,9 @@
         </div>
         <div class="cart-item__content">
             <div class="cart-item__title">${name}</div>
-            <!--       id-Товар     -->
-            <input type="hidden" name="Товар" value="${name}">
-            <!--       id-Количество     -->
-            <input class="js-cart-input-quantity" type="hidden" name="Количество" value="${quantity}">
-            <!--       id-Цена     -->
-            <input class="js-cart-input-price" type="hidden" name="Цена" value="${price * quantity}">
+            <input type="hidden" name="${id}-Товар" value="${name}">
+            <input class="js-cart-input-quantity" type="hidden" name="${id}-Количество" value="${quantity}">
+            <input class="js-cart-input-price" type="hidden" name="${id}-Цена" value="${price * quantity}">
             <div class="cart-item__end">
                  <div class="cart-item__actions">
                     <button class="cart-item__btn js-btn-product-decrease-quantity" type="button"><i class="fas fa-minus-circle js-btn-product-decrease-quantity"></i></button>
