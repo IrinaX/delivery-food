@@ -1,63 +1,18 @@
 (function () {
-    var header = document.querySelector(".header");
-    var navHead = document.querySelector(".nav-head");
-    window.addEventListener('scroll', function () {
-        // console.log(window.pageYOffset);
-        if (window.pageYOffset > navHead.clientHeight) {
+    var fixedHeader = function () {
+        if (window.pageYOffset > navHead.offsetHeight) {
             header.classList.add('is-active');
+            navHead.style.marginBottom = navWrap + 'px';
         } else {
             header.classList.remove('is-active');
+            navHead.style.marginBottom = 0;
         }
+    };
+    var header = document.querySelector(".header");
+    var navWrap = document.querySelector(".navbar-wrap").offsetHeight;
+    var navHead = document.querySelector(".nav-head");
+    document.addEventListener("DOMContentLoaded", fixedHeader);
+    window.addEventListener('scroll', function () {
+        fixedHeader();
     });
 }());
-(function () {
-
-
-
-})();
-
-// console.log(getOffset(document.querySelector('#deserts')));
-
-function getOffset(elem) {
-    if (elem.getBoundingClientRect) {
-        // "правильный" вариант
-        return getOffsetRect(elem);
-    } else {
-        // пусть работает хоть как-то
-        return getOffsetSum(elem);
-    }
-}
-
-function getOffsetSum(elem) {
-    var top=0, left=0;
-    while(elem) {
-        top = top + parseInt(elem.offsetTop);
-        left = left + parseInt(elem.offsetLeft);
-        elem = elem.offsetParent;
-    }
-
-    return {top: top, left: left};
-}
-
-function getOffsetRect(elem) {
-    // (1)
-    var box = elem.getBoundingClientRect();
-
-    // (2)
-    var body = document.body;
-    var docElem = document.documentElement;
-
-    // (3)
-    var scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop;
-    var scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft;
-
-    // (4)
-    var clientTop = docElem.clientTop || body.clientTop || 0;
-    var clientLeft = docElem.clientLeft || body.clientLeft || 0;
-
-    // (5)
-    var top  = box.top +  scrollTop - clientTop;
-    var left = box.left + scrollLeft - clientLeft;
-
-    return { top: Math.round(top), left: Math.round(left) };
-}

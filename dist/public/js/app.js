@@ -9382,8 +9382,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _phoneNumber__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_phoneNumber__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./header */ "./src/js/header.js");
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_header__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! bootstrap.native/dist/bootstrap-native-v4.min */ "./node_modules/bootstrap.native/dist/bootstrap-native-v4.min.js");
-/* harmony import */ var bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _smoothScroll__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./smoothScroll */ "./src/js/smoothScroll.js");
+/* harmony import */ var _smoothScroll__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_smoothScroll__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! bootstrap.native/dist/bootstrap-native-v4.min */ "./node_modules/bootstrap.native/dist/bootstrap-native-v4.min.js");
+/* harmony import */ var bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(bootstrap_native_dist_bootstrap_native_v4_min__WEBPACK_IMPORTED_MODULE_8__);
+
 
 
 
@@ -9399,6 +9402,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 // import jQuery from "jquery";
 // window.$ = window.jQuery = jQuery;
+
+console.log('Work Hard Play Hard');
 
 /***/ }),
 
@@ -9697,67 +9702,24 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 (function () {
-  var header = document.querySelector(".header");
-  var navHead = document.querySelector(".nav-head");
-  window.addEventListener('scroll', function () {
-    // console.log(window.pageYOffset);
-    if (window.pageYOffset > navHead.clientHeight) {
+  var fixedHeader = function fixedHeader() {
+    if (window.pageYOffset > navHead.offsetHeight) {
       header.classList.add('is-active');
+      navHead.style.marginBottom = navWrap + 'px';
     } else {
       header.classList.remove('is-active');
+      navHead.style.marginBottom = 0;
     }
+  };
+
+  var header = document.querySelector(".header");
+  var navWrap = document.querySelector(".navbar-wrap").offsetHeight;
+  var navHead = document.querySelector(".nav-head");
+  document.addEventListener("DOMContentLoaded", fixedHeader);
+  window.addEventListener('scroll', function () {
+    fixedHeader();
   });
 })();
-
-(function () {})(); // console.log(getOffset(document.querySelector('#deserts')));
-
-
-function getOffset(elem) {
-  if (elem.getBoundingClientRect) {
-    // "правильный" вариант
-    return getOffsetRect(elem);
-  } else {
-    // пусть работает хоть как-то
-    return getOffsetSum(elem);
-  }
-}
-
-function getOffsetSum(elem) {
-  var top = 0,
-      left = 0;
-
-  while (elem) {
-    top = top + parseInt(elem.offsetTop);
-    left = left + parseInt(elem.offsetLeft);
-    elem = elem.offsetParent;
-  }
-
-  return {
-    top: top,
-    left: left
-  };
-}
-
-function getOffsetRect(elem) {
-  // (1)
-  var box = elem.getBoundingClientRect(); // (2)
-
-  var body = document.body;
-  var docElem = document.documentElement; // (3)
-
-  var scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop;
-  var scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft; // (4)
-
-  var clientTop = docElem.clientTop || body.clientTop || 0;
-  var clientLeft = docElem.clientLeft || body.clientLeft || 0; // (5)
-
-  var top = box.top + scrollTop - clientTop;
-  var left = box.left + scrollLeft - clientLeft;
-  return {
-    top: Math.round(top),
-    left: Math.round(left)
-  };
-}
 
 /***/ }),
 
@@ -9768,7 +9730,6 @@ function getOffsetRect(elem) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log('w');
 ;
 
 (function () {
@@ -9907,6 +9868,108 @@ console.log('w');
     }
   });
 })();
+
+/***/ }),
+
+/***/ "./src/js/smoothScroll.js":
+/*!********************************!*\
+  !*** ./src/js/smoothScroll.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function () {
+  var smoothScroll = function smoothScroll(linkAttribute) {
+    var section = document.querySelector(linkAttribute); // var targetTop = section.getBoundingClientRect().top;
+    // var scrollTop = window.pageYOffset;
+    // var targetOffsetTop = targetTop + scrollTop;
+
+    window.scrollTo({
+      top: getOffset(section).top,
+      left: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  var closestAttr = function closestAttr(item, attr) {
+    var node = item;
+
+    while (node) {
+      var attrValue = node.getAttribute(attr);
+
+      if (attrValue) {
+        return attrValue;
+      }
+
+      node = node.parentElement;
+    }
+
+    return null;
+  };
+
+  var body = document.querySelector('body');
+  body.addEventListener('click', function (e) {
+    var target = e.target; // console.log(target);
+
+    var linkAttribute = closestAttr(target, 'href');
+
+    if (linkAttribute) {
+      if (linkAttribute.indexOf('#', 0) !== -1 && linkAttribute.length > 1) {
+        e.preventDefault();
+        smoothScroll(linkAttribute);
+      } else {
+        return;
+      }
+    }
+  });
+})();
+
+function getOffset(elem) {
+  if (elem.getBoundingClientRect) {
+    // "правильный" вариант
+    return getOffsetRect(elem);
+  } else {
+    // пусть работает хоть как-то
+    return getOffsetSum(elem);
+  }
+}
+
+function getOffsetSum(elem) {
+  var top = 0,
+      left = 0;
+
+  while (elem) {
+    top = top + parseInt(elem.offsetTop);
+    left = left + parseInt(elem.offsetLeft);
+    elem = elem.offsetParent;
+  }
+
+  return {
+    top: top,
+    left: left
+  };
+}
+
+function getOffsetRect(elem) {
+  // (1)
+  var box = elem.getBoundingClientRect(); // (2)
+
+  var body = document.body;
+  var docElem = document.documentElement; // (3)
+
+  var scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop;
+  var scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft; // (4)
+
+  var clientTop = docElem.clientTop || body.clientTop || 0;
+  var clientLeft = docElem.clientLeft || body.clientLeft || 0; // (5)
+
+  var top = box.top + scrollTop - clientTop;
+  var left = box.left + scrollLeft - clientLeft;
+  return {
+    top: Math.round(top),
+    left: Math.round(left)
+  };
+}
 
 /***/ }),
 
