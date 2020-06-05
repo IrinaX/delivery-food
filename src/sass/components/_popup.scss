@@ -94,7 +94,12 @@
     }
   }
 }
-
+.popup__title{
+  text-align: center;
+}
+.popup__subtitle{
+  text-align: center;
+}
 .popup__btn-close {
   position: absolute;
   top: 20px;

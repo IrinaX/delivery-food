@@ -1,11 +1,11 @@
 import './utils/initSwipers';
 import 'swiper/js/swiper.min';
-import './cart';
-import './form';
-import './popup';
-import './phoneNumber';
-import './header';
-import './smoothScroll';
+// import './cart';
+// import './form';
+// import './popup';
+// import './phoneNumber';
+// import './header';
+// import './smoothScroll';
 
 
 import 'bootstrap.native/dist/bootstrap-native-v4.min';
@@ -18,4 +18,4 @@ import 'bootstrap.native/dist/bootstrap-native-v4.min';
 //
 // import jQuery from "jquery";
 // window.$ = window.jQuery = jQuery;
-console.log('Work Hard Play Hard');
+console.log('test');
