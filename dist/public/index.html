@@ -8,7 +8,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<!--<div class="wrap">-->
 <header class="header " id="header">
 	<div class="container">
 		<div class="nav-head">
@@ -21,11 +20,8 @@
 	</div>
 	<div class="navbar-wrap">
 		<div class="container">
-
 			<nav class="navbar">
-				<!--				<div class="navbar-hamburger">-->
 				<button type="button" class="btn-menu" data-popup="popup-menu"><i class="fas fa-bars"></i></button>
-				<!--				</div>-->
 				<ul class="navbar-nav">
 					<!--					current_page_item-->
 					<li class="page_item"><a href="#pizzas">Пиццы</a></li>
@@ -38,14 +34,12 @@
 					<li class="page_item"><a href="#feedback">Заказ банкета</a></li>
 					<li class="page_item"><a href="index.html">О нас</a></li>
 				</ul>
-				<button type="button" class="btn btn_secondary" data-popup="popup-order">Корзина</button>
 			</nav>
 		</div>
 	</div>
 </header>
 <main>
 	<section class="products" id="pizzas">
-		<!--			style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')"-->
 		<div class="container">
 			<h2 class="products__title">Пиццы</h2>
 			<div class="row products-content">
@@ -430,7 +424,6 @@
 		</div>
 	</section>
 	<section class="products" id="shawarma">
-		<!--			style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')"-->
 		<div class="container">
 			<h2 class="products__title">Шаурма</h2>
 			<div class="row products-content">
@@ -439,7 +432,6 @@
 					<div class="product-card__header">
 						<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png" alt=""></div>
 						<h5 class="product-card__title">Ассорти</h5>
-
 						<div class="product-card__subtitle">Картофель из печи, соленые огурчики, цыпленок, соус ранч,
 							томаты, красный лук, чеснок, моцарелла, томатный соус
 						</div>
@@ -454,7 +446,6 @@
 					<div class="product-card__header">
 						<div class="product-card__img-wrap"><img src="images/menu/4-Cheese-Classico.png" alt=""></div>
 						<h5 class="product-card__title">Пепперони Фреш с перцем</h5>
-
 						<div class="product-card__subtitle">Пикантная пепперони, увеличенная порция моцареллы, сладкий
 							перец,
 							томатный соус
@@ -470,7 +461,6 @@
 					<div class="product-card__header">
 						<div class="product-card__img-wrap"><img src="images/menu/BBQ-Chicken-Pizza.png" alt=""></div>
 						<h5 class="product-card__title">Чизбургер-пицца</h5>
-
 						<div class="product-card__subtitle">Мясной соус болоньезе, моцарелла, красный лук, соленые
 							огурчики,
 							томаты, соус бургер
@@ -486,7 +476,6 @@
 					<div class="product-card__header">
 						<div class="product-card__img-wrap"><img src="images/menu/Best-Pizza.png" alt=""></div>
 						<h5 class="product-card__title">Четыре сезона</h5>
-
 						<div class="product-card__subtitle">Увеличенная порция моцареллы, ветчина, пикантная пепперони,
 							кубики
 							брынзы, томаты, шампиньоны, томатный соус, итальянские травы
@@ -497,9 +486,6 @@
 						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
 					</div>
 				</div>
-			</div>
-			<div class="">
-
 			</div>
 		</div>
 	</section>
@@ -517,7 +503,7 @@
 					</div>
 				</div>
 				<div class="col-lg-6 col-12">
-					<form class="feedback__form">
+					<form class="feedback__form form-send">
 						<div class="form-group">
 							<input type="text" class="form-control" id="customer-name" aria-describedby="name"
 							       placeholder="Ваше имя" required>
@@ -536,8 +522,6 @@
 	</section>
 </main>
 <footer class="footer">
-	<!--	style="background-image:url('images/general-bg/top_deco.png'),url('images/general-bg/main-bg.jpg');"-->
-	<!--	<a href="#header" class="scroll-up-btn"><i class="fas fa-angle-up"></i></a>-->
 	<div class="footer-content-wrap">
 		<div class="container">
 			<div class="footer-content">
@@ -565,7 +549,7 @@
 		</div>
 	</div>
 </footer>
-<!--</div>-->
+
 <button type="button" class="cart-btn" data-popup="popup-order">
 	<span class="cart-btn__counter js-cart-total-count-items"></span>
 	<span class="cart-btn__icon"><i class="fas fa-shopping-cart"></i></span>
@@ -678,7 +662,7 @@
 			<div class="popup__content">
 				<button class="btn-close popup__btn-close popup-close"><i class="fas fa-times popup-close"></i></button>
 				<h2 class="popup__title">Произошла ошибка</h2>
-				<p class="popup__subtitle">Пожалуйста, сделайте заказ по номеру <a class="popup__link"
+				<p class="popup__subtitle">Пожалуйста, сделайте заказ по номеру <br> <a class="popup__link"
 				                                                                   href="+79999999999">+7 (999)
 					999-99-99</a></p>
 			</div>

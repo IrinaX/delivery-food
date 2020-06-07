@@ -29,14 +29,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .btn_secondary{
-      @include respond-to(xl){
-        margin: 0 0 0 auto;
-      }
-    }
     .btn-menu{
       display: none;
-      @include respond-to(xl){
+      @include respond-to(lg){
         display: block;
       }
     }
@@ -48,7 +43,7 @@
   margin: 0;
   display: flex;
   align-items: center;
-  @include respond-to(xl){
+  @include respond-to(lg){
     display: none;
   }
 
