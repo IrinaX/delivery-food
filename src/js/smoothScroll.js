@@ -1,6 +1,10 @@
 (function () {
     var smoothScroll = function (linkAttribute) {
         var section = document.querySelector(linkAttribute);
+        if (!section){
+            goToHome(linkAttribute);
+            return;
+        }
         // var targetTop = section.getBoundingClientRect().top;
         // var scrollTop = window.pageYOffset;
         // var targetOffsetTop = targetTop + scrollTop;
@@ -31,8 +35,6 @@
             if (linkAttribute.indexOf('#', 0) !== -1 && linkAttribute.length > 1) {
                 e.preventDefault();
                 smoothScroll(linkAttribute);
-            } else {
-                return;
             }
         }
     });

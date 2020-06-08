@@ -27,7 +27,6 @@
   border-bottom: 2px solid rgba($green, .5);
   .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     .btn-menu{
       display: none;
@@ -43,6 +42,10 @@
   margin: 0;
   display: flex;
   align-items: center;
+  margin-right: 20px;
+  &:last-child{
+    margin-right: 0;
+  }
   @include respond-to(lg){
     display: none;
   }
@@ -50,11 +53,11 @@
   .page_item {
     margin-right: 20px;
 
-    &.current_page_item {
-      a {
-        color: $green;
-      }
-    }
+    //&.current_page_item {
+    //  a {
+    //    color: $green;
+    //  }
+    //}
 
     &:last-child {
       margin-right: 0;

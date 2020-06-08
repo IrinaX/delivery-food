@@ -1,7 +1,7 @@
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~@fortawesome/fontawesome-free/scss/variables";
-@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap);
+//@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap);
 $primary: rgba(#191919, 1);
 $secondary: rgba(#4f8a11, 1);
 $yellow: rgba(#EBFF00, 1);
@@ -14,7 +14,7 @@ $danger: rgba(#d10606, 1);
 $base-font:500 18px/28px Manrope, sans-serif;
 $secondary-font: Manrope, sans-serif;
 //"Poster Bodoni"
-$extra-font: "Streetbrush", serif;
+//$extra-font: "Streetbrush", serif;
 
 $h1-font: 500 80px/100% $secondary-font;
 $h1-font-sm: 400 55px/100% sans-serif;

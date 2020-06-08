@@ -70,16 +70,13 @@
     justify-content: center;
     flex-wrap: wrap;
 
-
+    .menu-item{
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
     .page_item {
       margin-right: 0;
       margin-bottom: 15px;
-
-      &.current_page_item {
-        a {
-          color: $green;
-        }
-      }
 
       &:last-child {
         margin-right: 0;

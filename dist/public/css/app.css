@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap);html {
+html {
   overflow-x: hidden;
 }
 
@@ -13,14 +13,46 @@ body {
 }
 
 @font-face {
-  font-family: "Poster Bodoni";
+  font-family: Manrope;
   font-style: normal;
-  src: url("../fonts/PosterBodoni.svg") format("svg"), url("../fonts/PosterBodoni.woff") format("woff"), url("../fonts/PosterBodoni.woff2") format("woff2"), url("../fonts/PosterBodoni.eot") format("eot"), url("../fonts/PosterBodoni.otf") format("otf"), url("../fonts/PosterBodoni.ttf") format("ttf");
+  font-weight: 200;
+  src: url("../fonts/Manrope/Manrope-ExtraLight/Manrope-ExtraLight.svg") format("svg"), url("../fonts/Manrope/Manrope-ExtraLight/Manrope-ExtraLight.woff") format("woff"), url("../fonts/Manrope/Manrope-ExtraLight/Manrope-ExtraLight.woff2") format("woff2"), url("../fonts/Manrope/Manrope-ExtraLight/Manrope-ExtraLight.eot") format("eot"), url("../fonts/Manrope/Manrope-ExtraLight/Manrope-ExtraLight.ttf") format("ttf");
 }
 @font-face {
-  font-family: "Streetbrush";
+  font-family: Manrope;
   font-style: normal;
-  src: url("../fonts/StreetbrushW01-Regular.svg") format("svg"), url("../fonts/StreetbrushW01-Regular.woff") format("woff"), url("../fonts/StreetbrushW01-Regular.woff2") format("woff2"), url("../fonts/StreetbrushW01-Regular.eot") format("eot"), url("../fonts/StreetbrushW01-Regular.otf") format("otf"), url("../fonts/StreetbrushW01-Regular.ttf") format("ttf");
+  font-weight: 300;
+  src: url("../fonts/Manrope/Manrope-Light/Manrope-Light.svg") format("svg"), url("../fonts/Manrope/Manrope-Light/Manrope-Light.woff") format("woff"), url("../fonts/Manrope/Manrope-Light/Manrope-Light.woff2") format("woff2"), url("../fonts/Manrope/Manrope-Light/Manrope-Light.eot") format("eot"), url("../fonts/Manrope/Manrope-Light/Manrope-Light.ttf") format("ttf");
+}
+@font-face {
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Manrope/Manrope-Regular/Manrope-Regular.svg") format("svg"), url("../fonts/Manrope/Manrope-Regular/Manrope-Regular.woff") format("woff"), url("../fonts/Manrope/Manrope-Regular/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope/Manrope-Regular/Manrope-Regular.eot") format("eot"), url("../fonts/Manrope/Manrope-Regular/Manrope-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Manrope/Manrope-Medium/Manrope-Medium.svg") format("svg"), url("../fonts/Manrope/Manrope-Medium/Manrope-Medium.woff") format("woff"), url("../fonts/Manrope/Manrope-Medium/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope/Manrope-Medium/Manrope-Medium.eot") format("eot"), url("../fonts/Manrope/Manrope-Medium/Manrope-Medium.ttf") format("ttf");
+}
+@font-face {
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/Manrope/Manrope-SemiBold/Manrope-SemiBold.svg") format("svg"), url("../fonts/Manrope/Manrope-SemiBold/Manrope-SemiBold.woff") format("woff"), url("../fonts/Manrope/Manrope-SemiBold/Manrope-SemiBold.woff2") format("woff2"), url("../fonts/Manrope/Manrope-SemiBold/Manrope-SemiBold.eot") format("eot"), url("../fonts/Manrope/Manrope-SemiBold/Manrope-SemiBold.ttf") format("ttf");
+}
+@font-face {
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Manrope/Manrope-Bold/Manrope-Bold.svg") format("svg"), url("../fonts/Manrope/Manrope-Bold/Manrope-Bold.woff") format("woff"), url("../fonts/Manrope/Manrope-Bold/Manrope-Bold.woff2") format("woff2"), url("../fonts/Manrope/Manrope-Bold/Manrope-Bold.eot") format("eot"), url("../fonts/Manrope/Manrope-Bold/Manrope-Bold.ttf") format("ttf");
+}
+@font-face {
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/Manrope/Manrope-ExtraBold/Manrope-ExtraBold.svg") format("svg"), url("../fonts/Manrope/Manrope-ExtraBold/Manrope-ExtraBold.woff") format("woff"), url("../fonts/Manrope/Manrope-ExtraBold/Manrope-ExtraBold.woff2") format("woff2"), url("../fonts/Manrope/Manrope-ExtraBold/Manrope-ExtraBold.eot") format("eot"), url("../fonts/Manrope/Manrope-ExtraBold/Manrope-ExtraBold.ttf") format("ttf");
 }
 body {
   font: 500 18px/28px Manrope, sans-serif;
@@ -500,7 +532,6 @@ button:focus {
             transform: translate(0, -5px);
   }
 }
-/* cart-btn end */
 .tabs .nav-tabs {
   -webkit-box-pack: center;
           justify-content: center;
@@ -617,8 +648,6 @@ button:focus {
 .navbar-wrap .navbar {
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
           align-items: center;
 }
@@ -639,6 +668,10 @@ button:focus {
   display: flex;
   -webkit-box-align: center;
           align-items: center;
+  margin-right: 20px;
+}
+.navbar-nav:last-child {
+  margin-right: 0;
 }
 @media (max-width: 1023px) {
   .navbar-nav {
@@ -647,9 +680,6 @@ button:focus {
 }
 .navbar-nav .page_item {
   margin-right: 20px;
-}
-.navbar-nav .page_item.current_page_item a {
-  color: #4f8a11;
 }
 .navbar-nav .page_item:last-child {
   margin-right: 0;
@@ -959,12 +989,13 @@ button:focus {
           justify-content: center;
   flex-wrap: wrap;
 }
-.popup__content .navbar-nav .page_item {
+.popup__content .navbar-nav .menu-item {
   margin-right: 0;
   margin-bottom: 15px;
 }
-.popup__content .navbar-nav .page_item.current_page_item a {
-  color: #4f8a11;
+.popup__content .navbar-nav .page_item {
+  margin-right: 0;
+  margin-bottom: 15px;
 }
 .popup__content .navbar-nav .page_item:last-child {
   margin-right: 0;
@@ -1147,4 +1178,47 @@ button:focus {
 }
 .feedback .feedback__title {
   color: #191919;
+}
+
+.section-about {
+  padding-top: 70px;
+}
+@media (max-width: 575px) {
+  .section-about .about__title {
+    text-align: center;
+  }
+}
+.section-about .about__subtitle p:last-child {
+  margin-bottom: 0;
+}
+.section-about .about__img-wrap .about__img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 575px) {
+  .section-about .about-item .about-item__title {
+    text-align: center;
+  }
+}
+.section-about .about-item .about-item__list {
+  list-style: none;
+  padding: 0;
+}
+.section-about .about-item .about-item__list li {
+  margin-bottom: 10px;
+  padding-left: 45px;
+  position: relative;
+}
+.section-about .about-item .about-item__list li:before {
+  content: ">";
+  color: white;
+  line-height: 125%;
+  background-color: #4f8a11;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 2px;
 }
