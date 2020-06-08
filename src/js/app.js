@@ -8,7 +8,6 @@ import './header';
 import './smoothScroll';
 import './footer';
 
-
 // import 'bootstrap.native/dist/bootstrap-native-v4.min';
 // import 'bootstrap.native/lib/V4/utils'
 // import 'bootstrap.native/lib/V4/tab-native'
