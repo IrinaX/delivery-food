@@ -28,19 +28,20 @@
   display: table-cell;
   vertical-align: middle;
   padding: 50px 0;
-  @include respond-to(md){
+  @include respond-to(md) {
     padding: 0;
   }
 }
 
 .popup-menu .popup__content {
-  max-width: 380px;
-  @include respond-to(sm){
+  max-width: 415px;
+  @include respond-to(sm) {
     max-width: 100%;
   }
 }
+
 .popup-thanks .popup__content,
-.popup-error .popup__content{
+.popup-error .popup__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +54,7 @@
   margin: 0 auto;
   position: relative;
   border-radius: 20px;
-  @include respond-to(md){
+  @include respond-to(md) {
     max-width: 100%;
     min-height: 100vh;
     border-radius: 0;
@@ -70,10 +71,11 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    .menu-item{
+    .menu-item {
       margin-right: 0;
       margin-bottom: 15px;
     }
+
     .page_item {
       margin-right: 0;
       margin-bottom: 15px;
@@ -95,11 +97,17 @@
     }
   }
 
-  .popup__phone {
-    text-align: center;
-    margin-bottom: 15px;
+  .popup__info {
+    .popup__info-item {
+      text-align: center;
+      margin-bottom: 15px;
 
+      i {
+        margin-right: 10px;
+      }
+    }
   }
+
 
   .popup__social {
     text-align: center;
@@ -107,19 +115,23 @@
     &-link {
       font-size: 30px;
       margin-right: 15px;
-      &:last-child{
+
+      &:last-child {
         margin-right: 0;
       }
     }
   }
 }
-.popup__title{
+
+.popup__title {
   text-align: center;
 }
-.popup__subtitle{
+
+.popup__subtitle {
   text-align: center;
   font-size: 22px;
 }
+
 .popup__btn-close {
   position: absolute;
   top: 20px;

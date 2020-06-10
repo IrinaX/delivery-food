@@ -646,6 +646,36 @@ button:focus {
   max-width: 150px;
   height: auto;
 }
+.nav-head .nav-contact {
+  margin-right: 50px;
+}
+@media (max-width: 575px) {
+  .nav-head .nav-contact {
+    margin-right: 0;
+  }
+}
+.nav-head .nav-contact__phone {
+  font-size: 24px;
+  font-weight: bold;
+}
+.nav-head .nav-contact__phone:hover {
+  color: #4f8a11;
+}
+@media (max-width: 1023px) {
+  .nav-head .nav-info {
+    display: none;
+  }
+}
+.nav-head .nav-info .nav-info__item a:hover {
+  color: #4f8a11;
+}
+.nav-head .nav-info .nav-info__item .fa-map-marker-alt {
+  margin-right: 13px;
+  margin-left: 2px;
+}
+.nav-head .nav-info .nav-info__item .fa-clock {
+  margin-right: 7px;
+}
 
 .navbar-wrap {
   padding: 10px 0;
@@ -946,7 +976,7 @@ button:focus {
 }
 
 .popup-menu .popup__content {
-  max-width: 380px;
+  max-width: 415px;
 }
 @media (max-width: 575px) {
   .popup-menu .popup__content {
@@ -1017,9 +1047,12 @@ button:focus {
 .popup__content .navbar-nav .page_item a:hover {
   color: #4f8a11;
 }
-.popup__content .popup__phone {
+.popup__content .popup__info .popup__info-item {
   text-align: center;
   margin-bottom: 15px;
+}
+.popup__content .popup__info .popup__info-item i {
+  margin-right: 10px;
 }
 .popup__content .popup__social {
   text-align: center;
@@ -1117,6 +1150,7 @@ button:focus {
 @media (max-width: 575px) {
   .footer .footer__contacts {
     margin-bottom: 20px;
+    text-align: center;
   }
 }
 .footer .footer__contact-item {

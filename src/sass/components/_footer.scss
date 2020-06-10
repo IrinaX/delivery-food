@@ -1,5 +1,6 @@
 .footer {
   padding: 35px 0 70px;
+
   .footer-content-wrap {
     border-top: 2px solid rgba($green, .5);
     padding-top: 70px;
@@ -9,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include respond-to(sm){
+    @include respond-to(sm) {
       flex-direction: column;
     }
   }
@@ -19,16 +20,19 @@
       max-width: 150px;
       height: auto;
     }
-    @include respond-to(sm){
+
+    @include respond-to(sm) {
       margin-bottom: 20px;
     }
   }
 
-  .footer__contacts{
-    @include respond-to(sm){
+  .footer__contacts {
+    @include respond-to(sm) {
       margin-bottom: 20px;
+      text-align: center;
     }
   }
+
   .footer__contact-item {
     margin-bottom: 15px;
 
