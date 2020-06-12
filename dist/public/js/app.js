@@ -171,14 +171,37 @@ console.log('tes');
     localStorage.setItem('cart', JSON.stringify(cart));
   };
 
+  var updateDeliveryPrice = function updateDeliveryPrice(deliveryPrice) {
+    var cartDeliveryPriceDOMElement = document.querySelector('.js-cart-delivery');
+    var cartDeliveryPriceInputDOMElement = document.querySelector('.js-cart-input-delivery');
+
+    if (cartDeliveryPriceDOMElement) {
+      cartDeliveryPriceDOMElement.innerHTML = deliveryPrice;
+    }
+
+    if (cartDeliveryPriceInputDOMElement) {
+      cartDeliveryPriceInputDOMElement.value = deliveryPrice;
+    }
+  };
+
   var updateCartTotalPrice = function updateCartTotalPrice() {
     var ids = Object.keys(cart);
     var totalPrice = 0;
+    var deliveryPrice = 0;
+    var cityDeliveryPrice = 50;
+    var minAmountFreeShipping = 1000;
 
     for (var i = 0; i < ids.length; i++) {
       var id = ids[i];
       totalPrice += cart[id].price * cart[id].quantity;
     }
+
+    if (totalPrice < minAmountFreeShipping) {
+      totalPrice += cityDeliveryPrice;
+      deliveryPrice = cityDeliveryPrice;
+    }
+
+    updateDeliveryPrice(deliveryPrice);
 
     if (cartTotalPriceInputDOMElement) {
       cartTotalPriceInputDOMElement.value = totalPrice;

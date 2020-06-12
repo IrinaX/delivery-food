@@ -43,13 +43,31 @@
     const saveCart = () => {
         localStorage.setItem('cart', JSON.stringify(cart));
     };
+    const updateDeliveryPrice = (deliveryPrice)=>{
+        const cartDeliveryPriceDOMElement = document.querySelector('.js-cart-delivery');
+        const cartDeliveryPriceInputDOMElement = document.querySelector('.js-cart-input-delivery');
+        if  ( cartDeliveryPriceDOMElement){
+            cartDeliveryPriceDOMElement.innerHTML = deliveryPrice;
+        }
+        if  ( cartDeliveryPriceInputDOMElement){
+            cartDeliveryPriceInputDOMElement.value = deliveryPrice;
+        }
+    };
     const updateCartTotalPrice = () => {
         const ids = Object.keys(cart);
         let totalPrice = 0;
+        let deliveryPrice = 0;
+        const cityDeliveryPrice = 50;
+        const minAmountFreeShipping = 1000;
         for (let i = 0; i < ids.length; i++) {
             const id = ids[i];
             totalPrice += cart[id].price * cart[id].quantity;
         }
+        if (totalPrice < minAmountFreeShipping){
+            totalPrice += cityDeliveryPrice;
+            deliveryPrice = cityDeliveryPrice;
+        }
+        updateDeliveryPrice(deliveryPrice);
         if (cartTotalPriceInputDOMElement) {
             cartTotalPriceInputDOMElement.value = totalPrice;
         }
