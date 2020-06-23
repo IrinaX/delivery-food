@@ -146,12 +146,3 @@ a {
     color: $primary;
   }
 }
-
-p, .list-styled {
-  a {
-    border-bottom: 1px dashed orange;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}

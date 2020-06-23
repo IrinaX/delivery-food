@@ -1,18 +1,15 @@
-.products {
-  .products__title {
-    padding-top: 70px;
-    color: $primary;
-    @include respond-to(md){
-      text-align: center;
-    }
+.products__title {
+  padding-top: 70px;
+  color: $primary;
+  @include respond-to(md){
+    text-align: center;
   }
-  .products-content{
-    @include respond-to(lg){
-justify-content: space-between;
-    }
-    @include respond-to(md){
-      justify-content: center;
-    }
+}
+.products-content{
+  @include respond-to(lg){
+    justify-content: space-between;
   }
-
+  @include respond-to(md){
+    justify-content: center;
+  }
 }

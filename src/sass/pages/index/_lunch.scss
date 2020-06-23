@@ -1,0 +1,22 @@
+.lunch {
+  .lunch__title {
+    padding-top: 70px;
+    color: $primary;
+    @include respond-to(md) {
+      text-align: center;
+    }
+  }
+
+  .lunch__subtitle {
+    max-width: 780px;
+    margin-bottom: 30px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .lunch__social-link {
+    color: $green;
+  }
+}
