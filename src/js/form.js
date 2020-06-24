@@ -4,8 +4,8 @@
         return;
     }
 
-    var serialize = function () {
-        var items = document.querySelectorAll('input, select, textarea');
+    var serialize = function (form) {
+        var items = form.querySelectorAll('input, select, textarea');
         var str = '';
 
         for (let i = 0; i < items.length; i++) {
@@ -17,6 +17,7 @@
                 str += separator + name + '=' + value;
             }
         }
+        // console.log(str);
         return str;
     };
     var formSend = function (form) {
@@ -26,7 +27,7 @@
         xhr.open('POST', url);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function () {
-            console.log(xhr.response);
+            // console.log(xhr.response);
             var activePopup = document.querySelector('.popup.is-active');
             if (activePopup) {
                 activePopup.classList.remove('is-active');
@@ -37,7 +38,6 @@
             } else {
                 document.querySelector('.popup-error').classList.add('is-active');
             }
-
             form.reset();
         };
         xhr.send(data);

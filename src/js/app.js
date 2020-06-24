@@ -1,5 +1,7 @@
 // import './utils/initSwipers';
 // import 'swiper/js/swiper.min';
+
+import 'bootstrap.native/dist/bootstrap-native-v4.min';
 import './cart';
 import './form';
 import './popup';
@@ -8,8 +10,7 @@ import './header';
 import './smoothScroll';
 import './footer';
 
-// import 'bootstrap.native/dist/bootstrap-native-v4.min';
-// import 'bootstrap.native/lib/V4/utils'
+
 // import 'bootstrap.native/lib/V4/tab-native'
 
 // import 'bootstrap/dist/js/bootstrap'
@@ -18,4 +19,4 @@ import './footer';
 //
 // import jQuery from "jquery";
 // window.$ = window.jQuery = jQuery;
-console.log('tes');
+// console.log('test');

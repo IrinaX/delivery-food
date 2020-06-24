@@ -29,17 +29,28 @@
 			<nav class="navbar">
 				<button type="button" class="btn-menu" data-popup="popup-menu"><i class="fas fa-bars"></i></button>
 				<ul class="navbar-nav">
-					<!--					current_page_item-->
-					<li class="page_item"><a href="#pizzas">Пиццы</a></li>
-					<li class="page_item"><a href="#salads">Салаты</a></li>
-					<li class="page_item"><a href="#deserts">Десерты</a></li>
-					<li class="page_item"><a href="#drinks">Напитки</a></li>
-					<li class="page_item"><a href="#burger">Бургеры</a></li>
-					<li class="page_item"><a href="#shawarma">Шаурма</a></li>
-					<li class="page_item"><a href="#feedback">Заказ банкета</a></li>
+					<li class="page_item dropdown">
+						<a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+						   aria-haspopup="true" aria-expanded="false">
+							Меню
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<div>
+								<a class="dropdown-item" href="#pizzas">Пиццы</a>
+								<a class="dropdown-item" href="#salads">Салаты</a>
+								<a class="dropdown-item" href="#deserts">Десерты</a>
+								<a class="dropdown-item" href="#drinks">Напитки</a>
+							</div>
+							<div>
+								<a class="dropdown-item" href="#burger">Бургеры</a>
+								<a class="dropdown-item" href="#shawarma">Шаурма</a>
+								<a class="dropdown-item" href="#lunch">Бизнес ланчи</a>
+							</div>
+						</div>
+					</li>
 				</ul>
 				<ul class="navbar-nav">
-					<li class="page_item"><a href="#lunch">Бизнес ланчи</a></li>
+					<li class="page_item"><a href="#feedback">Заказ банкета</a></li>
 					<li class="page_item"><a href="about.html">О нас</a></li>
 				</ul>
 			</nav>
@@ -500,8 +511,11 @@
 	<section class="lunch" id="lunch">
 		<div class="container">
 			<h2 class="lunch__title">Бизнес ланчи</h2>
-			<div class="lunch__subtitle">Бизнес-ланч в нашем кафе – это комплексный обед, состоящий из салата, первого блюда, горячего, десерта и напитка (зависит от вашего выбора).<br> Мы каждый день обновляем меню бизнес ланчей, поэтому Вы можете более подробно ознакомиться с меню в нашем
-				<a class="lunch__social-link" href="#">инстаграме</a>.</div>
+			<div class="lunch__subtitle">Бизнес-ланч в нашем кафе – это комплексный обед, состоящий из салата, первого
+				блюда, горячего, десерта и напитка (зависит от вашего выбора).<br> Мы каждый день обновляем меню бизнес
+				ланчей, поэтому Вы можете более подробно ознакомиться с меню в нашем
+				<a class="lunch__social-link" href="#">инстаграме</a>.
+			</div>
 			<div class="row products-content">
 				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
 				     data-product-name="Салат + одно блюдо на выбор" data-product-price="220">
@@ -690,6 +704,7 @@
 			<div class="popup__content">
 				<button class="btn-close popup__btn-close popup-close"><i class="fas fa-times popup-close"></i></button>
 				<ul class="navbar-nav">
+					<li class="page_item"><a class="navbar-brand" href="index.html"><img style="max-width: 150px; height: auto;" src="images/home-header/main-logo.png" alt=""></a></li>
 					<!--					current_page_item-->
 					<li class="page_item"><a href="#pizzas">Пиццы</a></li>
 					<li class="page_item"><a href="#salads">Салаты</a></li>

@@ -35,6 +35,8 @@
             if (linkAttribute.indexOf('#', 0) !== -1 && linkAttribute.length > 1) {
                 e.preventDefault();
                 smoothScroll(linkAttribute);
+            } else {
+                return;
             }
         }
     });
