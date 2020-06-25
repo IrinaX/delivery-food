@@ -764,6 +764,7 @@ button:focus {
   -webkit-box-pack: justify;
           justify-content: space-between;
   max-width: 315px;
+  width: 315px;
   padding: 0 15px;
 }
 .product-card .product-card__img-wrap {
