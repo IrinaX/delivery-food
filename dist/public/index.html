@@ -11,7 +11,7 @@
 <header class="header" id="header">
 	<div class="container">
 		<div class="nav-head">
-			<a class="navbar-brand" href="index.html"><img src="images/home-header/main-logo.png" alt=""></a>
+			<a class="navbar-brand" href="index.html"><img class="navbar-brand__img" src="images/home-header/main-logo.png" alt="логотип кароче"></a>
 			<div class="nav-contact">
 				<p class="m-0">Телефон доставки:</p>
 				<a class="nav-contact__phone js-phone-number" href="tel:">+7(922)987-65-43</a>
@@ -28,7 +28,7 @@
 		<div class="container">
 			<nav class="navbar">
 				<button type="button" class="btn-menu" data-popup="popup-menu"><i class="fas fa-bars"></i></button>
-				<ul class="navbar-nav">
+				<ul class="navbar-nav" id="main-nav">
 					<li class="page_item dropdown">
 						<a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
 						   aria-haspopup="true" aria-expanded="false">
@@ -600,7 +600,7 @@
 			<div class="footer-content">
 				<div class="footer__logo">
 					<a class="footer__logo-link" href="#header">
-						<img class="footer__logo-img" src="images/home-header/main-logo.png" alt="">
+						<img class="footer__logo-img" src="images/home-header/main-logo.png" alt="" title="Вернуться наверх">
 					</a>
 				</div>
 				<div class="footer__contacts">
@@ -704,7 +704,9 @@
 			<div class="popup__content">
 				<button class="btn-close popup__btn-close popup-close"><i class="fas fa-times popup-close"></i></button>
 				<ul class="navbar-nav">
-					<li class="page_item"><a class="navbar-brand" href="index.html"><img style="max-width: 150px; height: auto;" src="images/home-header/main-logo.png" alt=""></a></li>
+					<li class="page_item"><a class="navbar-brand" href="index.html"><img
+							style="max-width: 150px; height: auto;" src="images/home-header/main-logo.png" alt=""></a>
+					</li>
 					<!--					current_page_item-->
 					<li class="page_item"><a href="#pizzas">Пиццы</a></li>
 					<li class="page_item"><a href="#salads">Салаты</a></li>
