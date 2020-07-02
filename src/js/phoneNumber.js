@@ -1,4 +1,3 @@
-console.log('w');
 ;(function () {
     const phoneNumberDOMElement = document.querySelector('.js-phone-number');
     if (!phoneNumberDOMElement) {

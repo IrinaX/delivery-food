@@ -1,0 +1,59 @@
+.section-about {
+  padding-top: 70px;
+
+  .about__title {
+    @include respond-to(sm) {
+      text-align: center;
+    }
+  }
+
+  .about__subtitle {
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .about__img-wrap {
+    .about__img {
+      width: 100%;
+      height: auto
+    }
+  }
+
+  .about-item {
+    .about-item__title {
+      @include respond-to(sm) {
+        text-align: center;
+      }
+    }
+
+    .about-item__list {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+        padding-left: 45px;
+        position: relative;
+
+        &:before {
+          content: '>';
+          color: white;
+          line-height: 125%;
+          background-color: $green;
+          text-align: center;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          position: absolute;
+          left: 0;
+          top: 2px;
+        }
+      }
+    }
+  }
+}
+
+
+
+

@@ -114,6 +114,21 @@
       }
     }
 
+.cart__delivery{
+  display: flex;
+  padding: 20px 0 15px 0;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  .cart__delivery-title{
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .cart__delivery-subtitle{
+    font-size: 14px;
+    line-height: 130%;
+  }
+}
+
     .cart__totals {
       text-align: right;
       margin-top: 20px;

@@ -8,42 +8,75 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<!--<div class="wrap">-->
 <header class="header" id="header">
 	<div class="container">
 		<div class="nav-head">
-			<a class="navbar-brand" href="#"><img src="images/home-header/main-logo.png" alt=""></a>
+			<a class="navbar-brand" href="index.html"><img class="navbar-brand__img" src="images/home-header/main-logo.png" alt="логотип кароче"></a>
 			<div class="nav-contact">
-				<p class="m-0">Принимаем заказы по номеру:</p>
+				<p class="m-0">Телефон доставки:</p>
 				<a class="nav-contact__phone js-phone-number" href="tel:">+7(922)987-65-43</a>
+			</div>
+			<div class="nav-info">
+				<div class="nav-info__item"><a
+						href="https://www.google.com/maps/place/Ulitsa+Entuziastov,+47%2F1,+Surgut,+Khanty-Mansiyskiy+avtonomnyy+okrug,+628404/@61.2596361,73.3588676,16.17z/data=!4m5!3m4!1s0x4373974b5ae95925:0x58a3f67c384fcc73!8m2!3d61.259741!4d73.3618979?hl=ru"
+						target="_blank"><i class="fas fa-map-marker-alt"></i>г. Сургут, Энтузиастов 47/1</a></div>
+				<div class="nav-info__item"><i class="far fa-clock"></i> с 11:00 до 23:00</div>
 			</div>
 		</div>
 	</div>
 	<div class="navbar-wrap">
 		<div class="container">
 			<nav class="navbar">
-				<ul class="navbar-nav">
-<!--					current_page_item-->
-					<li class="page_item"><a href="#pizzas">Пиццы</a></li>
-					<li class="page_item"><a href="#salads">Салаты</a></li>
-					<li class="page_item"><a href="#deserts">Десерты</a></li>
-					<li class="page_item"><a href="#drinks">Напитки</a></li>
-					<li class="page_item"><a href="#burger">Бургеры</a></li>
-					<li class="page_item"><a href="#shawarma">Шаурма</a></li>
-					<li class="page_item"><a href="#">Бизнес ланчи</a></li>
-					<li class="page_item"><a href="contact.html">Заказ банкета</a></li>
+				<button type="button" class="btn-menu" data-popup="popup-menu"><i class="fas fa-bars"></i></button>
+				<ul class="navbar-nav" id="main-nav">
+					<li class="page_item dropdown">
+						<a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+						   aria-haspopup="true" aria-expanded="false">
+							Меню
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<div>
+								<a class="dropdown-item" href="#pizzas">Пиццы</a>
+								<a class="dropdown-item" href="#salads">Салаты</a>
+								<a class="dropdown-item" href="#deserts">Десерты</a>
+								<a class="dropdown-item" href="#drinks">Напитки</a>
+							</div>
+							<div>
+								<a class="dropdown-item" href="#burger">Бургеры</a>
+								<a class="dropdown-item" href="#shawarma">Шаурма</a>
+								<a class="dropdown-item" href="#lunch">Бизнес ланчи</a>
+							</div>
+						</div>
+					</li>
 				</ul>
-				<button type="button" class="btn btn_secondary" data-popup="popup-order">Корзина</button>
+				<ul class="navbar-nav">
+					<li class="page_item"><a href="#feedback">Заказ банкета</a></li>
+					<li class="page_item"><a href="about.html">О нас</a></li>
+				</ul>
 			</nav>
 		</div>
 	</div>
 </header>
 <main>
 	<section class="products" id="pizzas">
-		<!--			style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')"-->
 		<div class="container">
 			<h2 class="products__title">Пиццы</h2>
 			<div class="row products-content">
+				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
+				     data-product-name="Ассорти" data-product-price="500">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Ассорти</h5>
+
+						<div class="product-card__subtitle">Картофель из печи, соленые огурчики, цыпленок, соус ранч,
+							томаты, красный лук, чеснок, моцарелла, томатный соус
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">500 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
 				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
 				     data-product-name="Ассорти" data-product-price="500">
 					<div class="product-card__header">
@@ -338,7 +371,7 @@
 	<section class="products" id="burger">
 		<!--			style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')"-->
 		<div class="container">
-			<h2 class="products__title">Салаты</h2>
+			<h2 class="products__title">Бургеры</h2>
 			<div class="row products-content">
 				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
 				     data-product-name="Ассорти" data-product-price="500">
@@ -410,16 +443,14 @@
 		</div>
 	</section>
 	<section class="products" id="shawarma">
-		<!--			style="background-image:url('images/general-bg/top_deco.png'), url('images/general-bg/bottom_deco.png'), url('images/general-bg/main-bg.jpg')"-->
 		<div class="container">
-			<h2 class="products__title">Десерты</h2>
+			<h2 class="products__title">Шаурма</h2>
 			<div class="row products-content">
 				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
 				     data-product-name="Ассорти" data-product-price="500">
 					<div class="product-card__header">
 						<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png" alt=""></div>
 						<h5 class="product-card__title">Ассорти</h5>
-
 						<div class="product-card__subtitle">Картофель из печи, соленые огурчики, цыпленок, соус ранч,
 							томаты, красный лук, чеснок, моцарелла, томатный соус
 						</div>
@@ -434,7 +465,6 @@
 					<div class="product-card__header">
 						<div class="product-card__img-wrap"><img src="images/menu/4-Cheese-Classico.png" alt=""></div>
 						<h5 class="product-card__title">Пепперони Фреш с перцем</h5>
-
 						<div class="product-card__subtitle">Пикантная пепперони, увеличенная порция моцареллы, сладкий
 							перец,
 							томатный соус
@@ -450,7 +480,6 @@
 					<div class="product-card__header">
 						<div class="product-card__img-wrap"><img src="images/menu/BBQ-Chicken-Pizza.png" alt=""></div>
 						<h5 class="product-card__title">Чизбургер-пицца</h5>
-
 						<div class="product-card__subtitle">Мясной соус болоньезе, моцарелла, красный лук, соленые
 							огурчики,
 							томаты, соус бургер
@@ -466,7 +495,6 @@
 					<div class="product-card__header">
 						<div class="product-card__img-wrap"><img src="images/menu/Best-Pizza.png" alt=""></div>
 						<h5 class="product-card__title">Четыре сезона</h5>
-
 						<div class="product-card__subtitle">Увеличенная порция моцареллы, ветчина, пикантная пепперони,
 							кубики
 							брынзы, томаты, шампиньоны, томатный соус, итальянские травы
@@ -478,30 +506,113 @@
 					</div>
 				</div>
 			</div>
-			<div class="">
-
+		</div>
+	</section>
+	<section class="lunch" id="lunch">
+		<div class="container">
+			<h2 class="lunch__title">Бизнес ланчи</h2>
+			<div class="lunch__subtitle">Бизнес-ланч в нашем кафе – это комплексный обед, состоящий из салата, первого
+				блюда, горячего, десерта и напитка (зависит от вашего выбора).<br> Мы каждый день обновляем меню бизнес
+				ланчей, поэтому Вы можете более подробно ознакомиться с меню в нашем
+				<a class="lunch__social-link" href="#">инстаграме</a>.
+			</div>
+			<div class="row products-content">
+				<div class="product-card js-product" data-product-src="images/menu/Veggie-Fresco-Pizza.png"
+				     data-product-name="Салат + одно блюдо на выбор" data-product-price="220">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Veggie-Fresco-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Салат + одно блюдо на выбор</h5>
+						<div class="product-card__subtitle">Увеличенная порция моцареллы, ветчина, пикантная пепперони,
+							кубики брынзы, томаты, шампиньоны, томатный соус, итальянские травы
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">220 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/BBQ-Chicken-Pizza.png"
+				     data-product-name="Салат + первое + второе" data-product-price="250">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/BBQ-Chicken-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Салат + первое + второе</h5>
+						<div class="product-card__subtitle">Увеличенная порция моцареллы, ветчина, пикантная пепперони,
+							кубики брынзы, томаты, шампиньоны, томатный соус, итальянские травы
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">250 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+				<div class="product-card js-product" data-product-src="images/menu/Best-Pizza.png"
+				     data-product-name="Четыре сезона" data-product-price="300">
+					<div class="product-card__header">
+						<div class="product-card__img-wrap"><img src="images/menu/Best-Pizza.png" alt=""></div>
+						<h5 class="product-card__title">Салат + первое + второе + десерт</h5>
+						<div class="product-card__subtitle">Увеличенная порция моцареллы, ветчина, пикантная пепперони,
+							кубики брынзы, томаты, шампиньоны, томатный соус, итальянские травы
+						</div>
+					</div>
+					<div class="product-card__footer">
+						<div class="product-card__price">300 &#8381;</div>
+						<button class="js-btn-add-to-card product-card__btn btn btn_primary">Выбрать</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="feedback" id="feedback">
+		<div class="container">
+			<h2 class="feedback__title">Заказать банкет</h2>
+			<div class="row">
+				<div class="col-lg-6 col-12">
+					<div class="feedback__content">
+						<div class="feedback__subtitle">Хорошо спланированный банкет – важная часть любого праздника.
+							Поэтому к его организации нужно подойти с особой внимательностью. Если вы хотите устроить
+							пышное или камерное торжество, детский или взрослый день рождения, рабочую конференцию или
+							корпоратив, оставьте ваш номер телефона и мы вам перезвоним!
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-12">
+					<form class="feedback__form form-send">
+						<div class="form-group">
+							<input type="text" class="form-control" id="customer-name" aria-describedby="name"
+							       placeholder="Ваше имя" required>
+							<!--							<label class="form-label" for="customer-name">Ваше имя</label>-->
+						</div>
+						<div class="form-group">
+							<input type="tel" class="form-control" id="customer-number" aria-describedby="number"
+							       placeholder="Ваш телефон" required>
+							<!--							<label class="form-label" for="customer-number">Ваш телефон</label>-->
+						</div>
+						<button type="submit" class="btn btn_secondary">Отправить</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	</section>
 </main>
 <footer class="footer">
-	<!--	style="background-image:url('images/general-bg/top_deco.png'),url('images/general-bg/main-bg.jpg');"-->
-	<!--	<a href="#header" class="scroll-up-btn"><i class="fas fa-angle-up"></i></a>-->
 	<div class="footer-content-wrap">
 		<div class="container">
 			<div class="footer-content">
 				<div class="footer__logo">
 					<a class="footer__logo-link" href="#header">
-						<img class="footer__logo-img" src="images/home-header/main-logo.png" alt="">
+						<img class="footer__logo-img" src="images/home-header/main-logo.png" alt="" title="Вернуться наверх">
 					</a>
 				</div>
 				<div class="footer__contacts">
-					<div class="footer__contact-item"><a href="geo:" class="footer__address"><i
+					<div class="footer__contact-item"><a
+							href="https://www.google.com/maps/place/Ulitsa+Entuziastov,+47%2F1,+Surgut,+Khanty-Mansiyskiy+avtonomnyy+okrug,+628404/@61.2596361,73.3588676,16.17z/data=!4m5!3m4!1s0x4373974b5ae95925:0x58a3f67c384fcc73!8m2!3d61.259741!4d73.3618979?hl=ru"
+							class="footer__address" target="_blank" rel="noopener noreferrer nofollow"><i
 							class="fas fa-map-marker-alt"></i>г. Сургут, Энтузиастов 47/1</a></div>
+					<div class="footer__contact-item"><i class="far fa-clock"></i> с 11:00 до 23:00</div>
 					<div class="footer__contact-item"><a href="tel:" class="js-phone-number"><i
 							class="fas fa-phone-alt"></i>+7(922)987-65-43</a></div>
 					<div class="footer__contact-item"><a href="mailto:orders@kallyaspizza.com"
-					class=""><i class="fas fa-envelope"></i>orders@kallyaspizza.com</a>
+					                                     class=""><i class="fas fa-envelope"></i>orders@kallyaspizza.com</a>
 					</div>
 				</div>
 				<div class="footer__social">
@@ -514,7 +625,7 @@
 		</div>
 	</div>
 </footer>
-<!--</div>-->
+
 <button type="button" class="cart-btn" data-popup="popup-order">
 	<span class="cart-btn__counter js-cart-total-count-items"></span>
 	<span class="cart-btn__icon"><i class="fas fa-shopping-cart"></i></span>
@@ -530,6 +641,19 @@
 					<div class="cart js-cart-wrapper">
 						<form class="form cart__form form-send">
 							<div class="cart__items js-cart"></div>
+							<div class="cart__delivery">
+								<div class="cart__delivery-head">
+									<div class="cart__delivery-title">Доставка</div>
+									<div class="cart__delivery-subtitle">
+										Стоимость доставки по г. Сургут — 50 руб.<br>
+										Бесплатная доставка при заказе от 1000 руб.
+									</div>
+								</div>
+								<div class="cart__delivery-end">
+									<input class="js-cart-input-delivery" type="hidden" name="Доставка">
+									<span class="js-cart-delivery"></span>&#8381;
+								</div>
+							</div>
 							<div class="cart__totals">
 								<div>Всего элементов: <span class="js-cart-total-count-items cart__bold"></span></div>
 								<div>Итого: <span class="cart__bold"><span
@@ -539,16 +663,16 @@
 								<h4 class="feedback__form-title">Заполните форму</h4>
 								<div class="feedback__form">
 									<div class="form-group">
-										<input type="text" class="form-control" id="name" name="Имя" required>
-										<label class="form-label" for="name">Ваше имя</label>
+										<input type="text" class="form-control" id="name" name="Имя"
+										       placeholder="Ваше имя" required>
 									</div>
 									<div class="form-group">
-										<input type="tel" class="form-control" id="phone" name="Телефон" required>
-										<label class="form-label" for="phone">Ваш телефон</label>
+										<input type="tel" class="form-control" id="phone" name="Телефон"
+										       placeholder="Ваш телефон" required>
 									</div>
 									<div class="form-group">
-										<input type="text" class="form-control" id="address" name="Адрес" required>
-										<label class="form-label" for="address">Ваш адрес</label>
+										<input type="text" class="form-control" id="address" name="Адрес"
+										       placeholder="Ваш адрес" required>
 									</div>
 									<input class="js-cart-total-price-input" type="hidden" name="Общая сумма">
 									<div class="form-group">
@@ -558,7 +682,7 @@
 											<option value="Оплата наличными">наличными</option>
 										</select>
 									</div>
-									<button type="submit" class="btn btn_secondary">Отправить заказ</button>
+									<button type="submit" class="btn btn_secondary">Отправить</button>
 								</div>
 							</div>
 						</form>
@@ -573,14 +697,59 @@
 </div>
 <!-- /.popup-order -->
 
+<!--popup-menu-->
+<div class="popup popup-menu">
+	<div class="popup__wrapper">
+		<div class="popup__inner">
+			<div class="popup__content">
+				<button class="btn-close popup__btn-close popup-close"><i class="fas fa-times popup-close"></i></button>
+				<ul class="navbar-nav">
+					<li class="page_item"><a class="navbar-brand" href="index.html"><img
+							style="max-width: 150px; height: auto;" src="images/home-header/main-logo.png" alt=""></a>
+					</li>
+					<!--					current_page_item-->
+					<li class="page_item"><a href="#pizzas">Пиццы</a></li>
+					<li class="page_item"><a href="#salads">Салаты</a></li>
+					<li class="page_item"><a href="#deserts">Десерты</a></li>
+					<li class="page_item"><a href="#drinks">Напитки</a></li>
+					<li class="page_item"><a href="#burger">Бургеры</a></li>
+					<li class="page_item"><a href="#shawarma">Шаурма</a></li>
+					<li class="page_item"><a href="#feedback">Заказ банкета</a></li>
+				</ul>
+				<ul class="navbar-nav">
+					<li class="page_item"><a href="#lunch">Бизнес ланчи</a></li>
+					<li class="page_item"><a href="about.html">О нас</a></li>
+				</ul>
+				<div class="popup__info">
+					<div class="popup__info-item">
+						<a href="tel:" class="js-phone-number"><i
+								class="fas fa-phone-alt"></i>+7(922)987-65-43</a>
+					</div>
+					<div class="popup__info-item"><a
+							href="https://www.google.com/maps/place/Ulitsa+Entuziastov,+47%2F1,+Surgut,+Khanty-Mansiyskiy+avtonomnyy+okrug,+628404/@61.2596361,73.3588676,16.17z/data=!4m5!3m4!1s0x4373974b5ae95925:0x58a3f67c384fcc73!8m2!3d61.259741!4d73.3618979?hl=ru"
+							target="_blank" rel="noopener noreferrer nofollow"><i
+							class="fas fa-map-marker-alt"></i>г. Сургут, Энтузиастов 47/1</a></div>
+					<div class="popup__info-item"><i class="far fa-clock"></i> с 11:00 до 23:00</div>
+				</div>
+				<div class="popup__social">
+					<a class="popup__social-link" href="#" target="_blank" rel="noopener noreferrer nofollow"><i
+							class="fab fa-vk"></i></a>
+					<a class="popup__social-link" href="#" target="_blank" rel="noopener noreferrer nofollow"><i
+							class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/.popup-menu-->
 <!-- popup-thanks -->
 <div class="popup popup-thanks">
 	<div class="popup__wrapper">
 		<div class="popup__inner">
 			<div class="popup__content">
-				<button class="btn-close popup__btn-close popup-close"></button>
-				<h2 class="page-title popup__title">Успешно отправлено</h2>
-				<p class="popup__subtitle">Мы уже начали готовить вашу пиццу</p>
+				<button class="btn-close popup__btn-close popup-close"><i class="fas fa-times popup-close"></i></button>
+				<h2 class="popup__title">Успешно отправлено</h2>
+				<p class="popup__subtitle">Мы уже начали готовить ваш заказ!</p>
 			</div>
 		</div>
 	</div>
@@ -592,10 +761,10 @@
 	<div class="popup__wrapper">
 		<div class="popup__inner">
 			<div class="popup__content">
-				<button class="btn-close popup__btn-close popup-close"></button>
-				<h2 class="page-title popup__title">Произошла ошибка</h2>
-				<p class="popup__subtitle">Пожалуйста, сделайте заказ по номеру <a class="popup__link"
-				                                                                   href="+79999999999">+7 (999)
+				<button class="btn-close popup__btn-close popup-close"><i class="fas fa-times popup-close"></i></button>
+				<h2 class="popup__title">Произошла ошибка</h2>
+				<p class="popup__subtitle">Пожалуйста, сделайте заказ по номеру <br> <a class="popup__link"
+				                                                                        href="+79999999999">+7 (999)
 					999-99-99</a></p>
 			</div>
 		</div>

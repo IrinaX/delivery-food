@@ -66,6 +66,13 @@ button:focus {
     padding: 0;
   }
 }
+.btn-menu{
+  border: none;
+  box-sizing: border-box;
+  background: transparent;
+  padding: 5px;
+  font-size: 32px;
+}
 
 .scroll-up-btn {
   border: none;
@@ -218,6 +225,3 @@ button:focus {
     transform: translate(0, -5px);
   }
 }
-
-
-/* cart-btn end */
